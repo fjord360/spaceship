@@ -35,10 +35,14 @@
 	db.CreateDB("jdbc:mysql://localhost/space?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
 	out.println(query);
-	db.Query(query);
 	
-	while( db.getDB().next() ) {
-		out.println("<p>결과 : " + db.getDB().getString("별밝기") + "</p>");
+	if( !query.equals("NoResult") ) {
+		db.Query(query);
+		String gf = db.getField(query);
+		System.out.println(gf);
+		while( db.getDB().next() ) {
+			out.println("<p>결과 : " + db.getDB().getString(gf) + "</p>");
+		}
 	}
 
 	/*FileOutputStream fos = new FileOutputStream("WebContent/log.txt");
