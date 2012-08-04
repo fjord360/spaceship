@@ -215,6 +215,7 @@ public class TextAnalyzer {
 				// 의미분석 결과 (정호) -> 쿼리로 리턴됨.
 				ResultAnalyzer ra = new ResultAnalyzer();
 				query = ra.Analyze(sentence);
+				System.out.println(query);
 				
 				html += "</div>";
 			}
