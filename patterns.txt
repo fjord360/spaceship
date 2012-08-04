@@ -1,0 +1,3 @@
+SELECT  `별밝기` FROM `stardb`.`별자리` where 이름='NONAME':NONAME/C_의/X_밝/X
+SELECT  `별자리` FROM `stardb`.`stars` where 이름='NONAME':NONAME/S_의/X_별자리/X
+SELECT `이름` FROM `stardb`.`별자리` where `별밝기`=(SELECT MAX(`별밝기`) FROM `stardb`.`별자리`):가장/j_밝은/V_별자리/N
