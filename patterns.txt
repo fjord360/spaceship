@@ -1,7 +1,10 @@
 // pattern list
 
 // ① 별자리 DB 관련 패턴
-// 1-1. 필드에 관한 대표적 패턴
+// 1-1. 기본적인 패턴
+SELECT * FROM 별자리 WHERE 이름='NONAME':NONAME/C
+
+// 1-2. 필드에 관한 대표적 패턴
 SELECT 별밝기 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_밝/X_기/X
 SELECT 별밝기 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_밝/X_은/X_정/X_도/X
 SELECT 별밝기 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_밝은정/X_도/X
@@ -40,7 +43,7 @@ SELECT 별밝기 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_밝/X_은/X_별/X_의/X_
 SELECT 유성군 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_유성군/X
 SELECT 이웃별자리 FROM 별자리 WHERE 이름='NONAME':NONAME/C_의/X_이웃/X_별자리/X
 
-// 1-2. 필드 중 최고나 최대, 최소, 최저 값을 찾는 대표적 패턴
+// 1-3. 필드 중 최고나 최대, 최소, 최저 값을 찾는 대표적 패턴
 SELECT 이름 FROM 별자리 WHERE 별밝기=(SELECT MAX(별밝기) FROM 별자리):가장/X_밝/X_은/X_별자리/N
 SELECT 이름 FROM 별자리 WHERE 별밝기=(SELECT MIN(별밝기) FROM 별자리):가장/X_어둡/X+ㄴ/X_별자리/N
 SELECT 이름 FROM 별자리 WHERE 별밝기=(SELECT MAX(별밝기) FROM 별자리):가장/X_눈부시/X_ㄴ/X_별자리/N
@@ -72,8 +75,13 @@ SELECT 이름 FROM 별자리 WHERE 별의수=(SELECT MIN(별의수) FROM 별자리):별/X_의/X_
 SELECT 이름 FROM 별자리 WHERE 별의수=(SELECT MIN(별의수) FROM 별자리):별수/X_가/X_가장/X_적/X_은/X_별자리/N
 SELECT 이름 FROM 별자리 WHERE 별의수=(SELECT MIN(별의수) FROM 별자리):별의수/X_가장/X_적/X_은/X_별자리/N
 
+// 1-4. 
+
 // ② 별 DB 관련 패턴
-// 2-1. 필드에 관한 대표적 패턴
+// 1-1. 기본적인 패턴
+SELECT * FROM 별 WHERE 이름='NONAME':NONAME/S
+
+// 2-2. 필드에 관한 대표적 패턴
 SELECT 별자리 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_별자리/X
 SELECT 실시등급 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_실시등급/X
 SELECT 실시등급 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_겉보기등급/X
@@ -124,7 +132,7 @@ SELECT 동반성수 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_짝/X_별/X_몇개/X
 SELECT 동반성수 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_짝/X_별/X_은/X_몇/X_개/X_어/X
 SELECT 동반성수 FROM 별 WHERE 이름='NONAME':NONAME/S_의/X_짝/X_별/X_몇/X_개/X_어/X
 
-// 2-2. 필드 중 최고나 최대, 최소, 최저 값을 찾는 대표적 패턴
+// 2-3. 필드 중 최고나 최대, 최소, 최저 값을 찾는 대표적 패턴
 SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별):가장/X_실시등급/X_이/X_높/X+은/X_별/N
 SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별):실시등급/X_이/X_가장/X_높/X+은/X_별/N
 SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별):가장/X_실시등급/X_이/X_낮/X+은/X_별/N
@@ -215,3 +223,7 @@ SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별):짝/X_별/X_수/X
 SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별):짝/X_별/X_이/X_가장/X_적/X_은/X_별/X
 SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별):짝/X_별수/X_가/X_가장/X_적/X_은/X_별/X
 SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별):짝/X_별/X_수/X_가/X_가장/X_적/X_은/X_별/X
+
+// 2-4. 
+
+// ③ 별자리 DB -> 별 DB로 질의하는 패턴
