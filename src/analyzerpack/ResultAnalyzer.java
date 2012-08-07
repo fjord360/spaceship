@@ -38,6 +38,9 @@ public class ResultAnalyzer {
 			// 패턴을 한 줄씩 수집합니다.
 			while( (pattern = br.readLine()) != null )
 			{
+				if( pattern.compareTo("") == 0 || pattern.substring(0, 2).compareTo("//") == 0 )
+					continue;
+				
 				Sentence sentence = new Sentence("");
 				String queryform;
 				// 먼저 쿼리를 수집합니다. :를 기준으로 수집합니다.
@@ -82,17 +85,19 @@ public class ResultAnalyzer {
 				Patterns.add(sentence);
 			}
 			
+			System.out.println("패턴 종류 : " + Patterns.size());
 			br.close();
 			fr.close();
 		}
 		catch(IOException ioe)
 		{
 			ioe.printStackTrace();
+			System.out.println(System.getProperty("user.dir"));
 		}
 		
 		// 패턴이 제대로 구성됐는지 한 줄씩 출력하면서 검증합니다.
-		for( int iter = 0; iter < Patterns.size(); iter++ )
-			PrintSentence(Patterns.get(iter));
+		//for( int iter = 0; iter < Patterns.size(); iter++ )
+		//	PrintSentence(Patterns.get(iter));
 	}
 	
 	// 본격적으로 sentence로 받아온 형태소 분석결과를 다시 분석해서 쿼리로 만들어 보내줍니다.
@@ -156,7 +161,8 @@ public class ResultAnalyzer {
 					}
 					// 세 가지 방법중 하나라도 검출해서 -1이 나온다면 현재 이 패턴은 match될 수 없다고 판단한 것입니다.
 					// 현재 패턴을 중단하고 다음 패턴으로 넘어가야합니다.
-					if( patternMatcherIndex == -1 )
+					if( patternMatcherIndex == -1 || 
+						( lastMatchedIndex != -1 && patternMatcherIndex != lastMatchedIndex+1 ) )
 						noMatched = true;
 					if( noMatched )
 						break;
@@ -179,7 +185,8 @@ public class ResultAnalyzer {
 					if( result == "NoResult" )
 						result = patternResult;
 					else
-						result += "|" + patternResult;
+						//result += "|" + patternResult;
+						result = patternResult;
 					if( numofLemma > lastMatchedIndex )
 					{
 						wordCnt = pattern.getWord().size();
