@@ -32,17 +32,23 @@
 	out.println(ta.Anaylze(order));
 	
 	SpaceDB db = new SpaceDB();
-	db.CreateDB("jdbc:mysql://localhost/space?characterEncoding=UTF-8", "root", "");
+	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
-	out.println(query);
+	System.out.println(query);
+	
+	out.println("<div class='query' style='font-size:10pt; color:black'>");
+	out.println("<p>" + query + "</p>");
 	
 	if( !query.equals("NoResult") ) {
 		db.Query(query);
-		String gf = db.getField(query);
+		ArrayList<String> gf = db.getField(query);
 		System.out.println(gf);
 		while( db.getDB().next() ) {
-			out.println("<p>°á°ú : " + db.getDB().getString(gf) + "</p>");
+			for( int i = 0 ; i < gf.size() ; i++ ) {
+				out.println(gf.get(i) + " : " + db.getDB().getString(gf.get(i)) + "<br>");
+			}
 		}
+		out.println("</div>");
 	}
 
 	/*FileOutputStream fos = new FileOutputStream("WebContent/log.txt");
