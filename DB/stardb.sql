@@ -23,43 +23,43 @@ DROP TABLE IF EXISTS `별`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `별` (
-  `이름` char(64) CHARACTER SET euckr DEFAULT NULL,
-  `타입` char(64) CHARACTER SET euckr DEFAULT NULL,
-  `별자리` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `이름` char(64) DEFAULT NULL,
+  `타입` char(64) DEFAULT NULL,
+  `별자리` char(64) DEFAULT NULL,
   `적경_시` double DEFAULT NULL,
   `적경_분` double DEFAULT NULL,
   `적경_초` double DEFAULT NULL,
   `적위_도` double DEFAULT NULL,
   `적위_분` double DEFAULT NULL,
   `적위_초` double DEFAULT NULL,
-  `실시등급` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `실시등급` char(64) DEFAULT NULL,
   `최소실시등급` double DEFAULT NULL,
   `최대실시등급` double DEFAULT NULL,
-  `절대등급` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `절대등급` char(64) DEFAULT NULL,
   `최소절대등급` double DEFAULT NULL,
   `최대절대등급` double DEFAULT NULL,
-  `형태` char(64) CHARACTER SET euckr DEFAULT NULL,
-  `연주시차` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `형태` char(64) DEFAULT NULL,
+  `연주시차` char(64) DEFAULT NULL,
   `최소연주시차` double DEFAULT NULL,
   `최대연주시차` double DEFAULT NULL,
-  `거리` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `거리` char(64) DEFAULT NULL,
   `최소거리` double DEFAULT NULL,
   `최대거리` double DEFAULT NULL,
-  `질량` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `질량` char(64) DEFAULT NULL,
   `최소질량` double DEFAULT NULL,
   `최대질량` double DEFAULT NULL,
-  `크기` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `크기` char(64) DEFAULT NULL,
   `최소크기` double DEFAULT NULL,
   `최대크기` double DEFAULT NULL,
-  `밝기` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `밝기` char(64) DEFAULT NULL,
   `최소밝기` double DEFAULT NULL,
   `최대밝기` double DEFAULT NULL,
-  `온도` char(64) CHARACTER SET euckr DEFAULT NULL,
+  `온도` char(64) DEFAULT NULL,
   `최소온도` double DEFAULT NULL,
   `최대온도` double DEFAULT NULL,
   `행성수` int(11) DEFAULT NULL,
   `동반성수` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='사실 항성과 행성들임.';
+) ENGINE=InnoDB DEFAULT CHARSET=euckr COMMENT='사실 항성과 행성들임.';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -208,4 +208,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2012-08-07 14:15:38
+-- Dump completed on 2012-08-07 15:44:42
