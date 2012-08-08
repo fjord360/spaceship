@@ -96,8 +96,8 @@ public class ResultAnalyzer {
 		}
 		
 		// 패턴이 제대로 구성됐는지 한 줄씩 출력하면서 검증합니다.
-		//for( int iter = 0; iter < Patterns.size(); iter++ )
-		//	PrintSentence(Patterns.get(iter));
+		for( int iter = 0; iter < Patterns.size(); iter++ )
+			PrintSentence(Patterns.get(iter));
 	}
 	
 	// 본격적으로 sentence로 받아온 형태소 분석결과를 다시 분석해서 쿼리로 만들어 보내줍니다.
@@ -111,7 +111,8 @@ public class ResultAnalyzer {
 		// 디버깅해보려면 현재 boolean값인 noMatched로 걸리는 구간에 중단점을 찍고
 		// 걸리게 되면 그 상황에서 어떤 값에서 판단미스가 났는지 보시면 됩니다.
 		String result = "NoResult";
-		String name ="";
+		String name = "";
+		String value1 = "", value2 = "";
 		boolean noMatched = false;
 		int numofLemma = CountLemma(sentence);
 		
@@ -133,7 +134,7 @@ public class ResultAnalyzer {
 					
 					// 총 세종류의 검사방법이 있습니다.
 					// 첫 번째 방법은 text는 검사하지 않지만 품사를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
-					if( lemma.getText().compareTo("NONAME") == 0 )
+					if( lemma.getText().compareTo("NAME") == 0 )
 					{
 						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
 						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
@@ -148,6 +149,38 @@ public class ResultAnalyzer {
 						// 꼭 문의하십시오!
 						else
 							name = "??";
+					}
+					else if( lemma.getText().compareTo("VALUE1") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex= numofLemma-patternMatcherIndex;
+							value1 = GetLemma( sentence, lemmaIndex ).getText();
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							value1 = "??";
+					}
+					else if( lemma.getText().compareTo("VALUE2") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex= numofLemma-patternMatcherIndex;
+							value2 = GetLemma( sentence, lemmaIndex ).getText();
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							value2 = "??";
 					}
 					// 두 번째 방법은 품사는 검사하지 않지만 text를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 					else if( lemma.getPos() == Pos.X )
@@ -181,7 +214,9 @@ public class ResultAnalyzer {
 				{
 					String patternResult = QueryForms.get(patternCnt);
 					
-					patternResult = patternResult.replaceAll("NONAME", name);
+					patternResult = patternResult.replaceAll("NAME", name);
+					patternResult = patternResult.replaceAll("VALUE1", value1);
+					patternResult = patternResult.replaceAll("VALUE2", value2);
 					if( result == "NoResult" )
 						result = patternResult;
 					else
