@@ -75,7 +75,7 @@ public class SpaceDB {
 		cons_field.add("상징");
 		cons_field.add("적경_시");
 		cons_field.add("적경_분");
-		cons_field.add("적위_시");
+		cons_field.add("적위_도");
 		cons_field.add("적위_분");
 		cons_field.add("남중_월");
 		cons_field.add("남중_일");
@@ -100,7 +100,7 @@ public class SpaceDB {
 				//String name = rs.getString("name");
 			//}
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
+			System.out.println("query message : " + e.getMessage());
 			e.printStackTrace();
 		}
 	}
@@ -117,8 +117,8 @@ public class SpaceDB {
 			
 			// from 앞부분만 본다.
 			String[] from = where[0].split("FROM");
-			table = where[1];
-			table.replaceAll("\\s", "");
+			table = from[1];
+			table = table.replaceAll("\\s", "");
 			if( from.length > 0 ) {
 				
 				// SELECT 뒷부분만 본다.
@@ -147,6 +147,7 @@ public class SpaceDB {
 	
 	// 모든 필드 내용을 리턴
 	public ArrayList<String> getAllField(String table) {
+		System.out.println("table : " + table);
 		if( table.equals("별자리") ) return cons_field;
 		else						return star_field;
 	}

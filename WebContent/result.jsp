@@ -34,7 +34,7 @@
 	SpaceDB db = new SpaceDB();
 	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
-	System.out.println(query);
+	System.out.println("query : " + query);
 	
 	out.println("<div class='query' style='font-size:10pt; color:black'>");
 	out.println("<p>" + query + "</p>");
@@ -42,8 +42,8 @@
 	if( !query.equals("NoResult") ) {
 		db.Query(query);
 		ArrayList<String> gf = db.getField(query);
-		System.out.println(gf);
-		while( db.getDB().next() ) {
+		System.out.println("field : " + gf);
+		while( db.getDB().next()) {
 			for( int i = 0 ; i < gf.size() ; i++ ) {
 				out.println(gf.get(i) + " : " + db.getDB().getString(gf.get(i)) + "<br>");
 			}
