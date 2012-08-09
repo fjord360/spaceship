@@ -234,8 +234,12 @@ SELECT 이름 FROM 별 WHERE 이름 !='NAME' and 적경_시=(SELECT 적경_시 FROM 별 WHER
 
 SELECT 이름 FROM 별 WHERE 적경_시=VALUE1:적경/X_VALUE1/N_시/X_에/X_있/X_는/X_별/X
 
+SELECT 이름, 최대밝기, 최대거리 FROM 별 WHERE 최대밝기>VALUE1 and 최대거리>VALUE2:밝/X_기/X_가/X_VALUE1/N_이상/X_이/X_고/X_거리/X_가/X_VALUE2/N_이상/X_이/X_ㄴ/X_별/X
+
 SELECT 이름 FROM 별 WHERE 적경_시>=VALUE1 and 적경_시<=VALUE2:적경/X_이/X_VALUE1/N_시/X_이상/X_이/X_고/X_VALUE2/N_시/X_이하/X_이/X_ㄴ/X_별/X
 
+// 가크룩스와 적경시가 같은 별 중 가장 밝은 별
+// SELECT 이름 FROM 별 WHERE 최대밝기=( SELECT MAX(SELECT 이름, 최대밝기 FROM 별 WHERE 적경_시=(SELECT 적경_시 FROM 별 WHERE 이름='NAME'))) 
 //아직 ~중에서 ~찾기 이거 못하고 있음
 // NAME의 별 중에서 적경 NUMBER시에 있는 별
 // NAME의 별 중에서 적경 NUMBER시인 별
