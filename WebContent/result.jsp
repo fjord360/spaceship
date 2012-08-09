@@ -29,12 +29,13 @@
 	
 	TextAnalyzer ta = new TextAnalyzer();
 	ta.SetKeyword(keyword);
-	out.println(ta.Anaylze(order));
+	out.println("anaylze : " + ta.Anaylze(order));
 	
 	SpaceDB db = new SpaceDB();
 	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
 	System.out.println("query : " + query);
+	out.println("query : " + query);
 	
 	out.println("<div class='query' style='font-size:10pt; color:black'>");
 	out.println("<p>" + query + "</p>");

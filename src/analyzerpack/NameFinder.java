@@ -186,6 +186,7 @@ public class NameFinder {
 					adhere.get(rep_index-1).type = 1;
 				}
 			}
+			
 			// 추출된 키워드 부분은 대체명사 로 바꾼다.
 			// 별 : 쑹 // 별자리 : 쏭
 			for( int j = 0 ; j < keyword.size() ; j++ ) {
@@ -207,13 +208,41 @@ public class NameFinder {
 			rep_index++;
 		}
 		
+		// 숫자를 추출해서 모두 '쯩'으로 바꾼다.
+		String addnumber = "";
+		for( int i = 0 ; i < adhere.size() ; i++ ) {
+			// 숫자를 캐치.
+			if( Character.getType(adhere.get(i).text.charAt(0)) == 9 ) {
+				addnumber += adhere.get(i).text.charAt(0);
+				adhere.get(i).text = "쯩";
+				
+				// 숫자 앞은 무조건 띄어쓰기
+				if( i != 0 ) {
+					if( adhere.get(i-1).type == 0 ) adhere.get(i-1).type = 1;
+				}
+			}
+			else {
+				// 숫자가 끝나면 그 전까지의 스트링을 숫자 리스트에 넣는다.
+				if( addnumber.length() > 0 ) {
+					keyword.add(new Keyword(addnumber, Pos.I, i));
+					addnumber = "";
+					
+					// 숫자 다음은 무조건 띄어쓰기
+					if( i != 0 ) {
+						if( adhere.get(i-1).type == 0 ) adhere.get(i-1).type = 1;
+					}
+				}
+			}
+		}
+		
 		// 이제 띄어쓰기에 맞춰서 order를 재정렬한다.
 		String newOrder = "";
 		for( int i = 0 ; i < adhere.size() ; i++ ) {
 			// 연속된 "쑹"은 무시. 즉 "쑹쑹쑹"을 "쑹"으로 만든다.
 			if( i != adhere.size()-1 ) {
 				if( !(adhere.get(i).text == "쑹" && adhere.get(i+1).text == "쑹") && 
-					!(adhere.get(i).text == "쏭" && adhere.get(i+1).text == "쏭") ) {
+					!(adhere.get(i).text == "쏭" && adhere.get(i+1).text == "쏭") &&
+					!(adhere.get(i).text == "쯩" && adhere.get(i+1).text == "쯩") ) {
 					newOrder += adhere.get(i).text;
 				}
 			} else {

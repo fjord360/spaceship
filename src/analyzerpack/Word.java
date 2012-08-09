@@ -32,7 +32,6 @@ public class Word {
 	public void addLemma(String text, ArrayList<Keyword> keyword) {
 		// 밝(V),은(e) 같은 형태로 들어오기 때문에 ","를 중심으로 토큰을 나눈다.
 		// 그러면 "밝", "(V)", "은", "(e)"의 형태가 된다.
-		// "쏭", "(N)"
 		StringTokenizer st = new StringTokenizer(text, ",");
 				
 		// 렘마는 렘마 텍스트에, 품사정보는 "()괄호" 제거해서 렘마 품사정보에 넣는다.
@@ -59,14 +58,16 @@ public class Word {
 						if( next.charAt(i+1) == 'X' ) lemmaPos = Pos.X;
 						if( next.charAt(i+1) == 'C' ) lemmaPos = Pos.C;
 						if( next.charAt(i+1) == 'S' ) lemmaPos = Pos.S;
+						if( next.charAt(i+1) == 'I' ) lemmaPos = Pos.I;
 
 						// 나머진 내용
 						lemmaText = next.substring(0, i);
 
-						// 단, 쑹과 쏭에 대해서는 키워드 처리
+						// 단, 대체문자에 대해서는 키워드 처리
 						if( next.charAt(i+1) == 'N' && numKeyword < keyword.size() ) {
 							if( next.substring(0, i).equals("쑹") ||
-								next.substring(0, i).equals("쏭") ) {
+								next.substring(0, i).equals("쏭") ||
+								next.substring(0, i).equals("쯩") ) {
 								lemmaPos = keyword.get(numKeyword).pos;
 								lemmaText = keyword.get(numKeyword).text;
 								numKeyword++;
