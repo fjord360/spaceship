@@ -11,14 +11,16 @@ public class Word {
 	String analysedText;		// 분석된 어절
 	int numKeyword;				// 키워드 번호
 	int numNumberList;			// 숫자리스트 번호
+	int numofIgnore;				// 무시할 word 갯수
 	
 	// 생성
-	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList) {
+	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList, int NumofIgnore) {
 		nativeText = NativeText;
 		analysedText = AnalysedText;
 		lemma = new ArrayList<Lemma>();
 		numKeyword = NumKeyword;
 		numNumberList = NumNumberList;
+		numofIgnore = NumofIgnore;
 		
 		// 어절 클래스는 생성하면 곧바로 분석해서 렘마를 만든다.
 		addLemma(analysedText, keyword, numberList);

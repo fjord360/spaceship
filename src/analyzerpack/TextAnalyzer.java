@@ -81,7 +81,7 @@ public class TextAnalyzer {
 						List<AnalysisOutput> results = analyzer.analyze(tokenText);
 						
 						// 문장에 어절 추가.
-						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList);
+						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList, 0);
 						numKeyword = sentence.GetKeyword();
 						numNumberList = sentence.GetNumberList();
 						

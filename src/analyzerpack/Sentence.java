@@ -31,8 +31,8 @@ public class Sentence {
 	}
 	
 	// 리스트에 어절 추가 (사용자가 입력한 내용, 분석된 내용 모두 받음)
-	public void addWord(String nativeText, String analysedText, int NumKeyword, int NumNumberList) {
-		Word newWord = new Word(nativeText, analysedText, keyword, NumKeyword, numberList, NumNumberList);
+	public void addWord(String nativeText, String analysedText, int NumKeyword, int NumNumberList, int NumofIgnore) {
+		Word newWord = new Word(nativeText, analysedText, keyword, NumKeyword, numberList, NumNumberList, NumofIgnore);
 		numKeyword = newWord.getKeyword();
 		numNumberList = newWord.getNumberList();
 		word.add(newWord);
