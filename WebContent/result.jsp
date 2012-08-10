@@ -27,8 +27,14 @@
 		if( keyword.get(i).pos == Pos.C ) out.println("<p>추출된 키워드 : " + keyword.get(i).text + " (C/" + keyword.get(i).index + ")</p>");
 	}
 	
+	ArrayList<Keyword> numberList = nf.getNumberList();
+	for( int i = 0 ; i < numberList.size() ; i++ ) {
+		if( numberList.get(i).pos == Pos.I ) out.println("<p>추출된 숫자 : " + numberList.get(i).text + " (I/" + numberList.get(i).index + ")</p>" );
+	}
+	
 	TextAnalyzer ta = new TextAnalyzer();
 	ta.SetKeyword(keyword);
+	ta.SetNumberList(numberList);
 	out.println("anaylze : " + ta.Anaylze(order));
 	
 	SpaceDB db = new SpaceDB();

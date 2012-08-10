@@ -9,6 +9,9 @@ import java.util.Set;
 import java.util.Map;
 import java.util.ArrayList;
 
+// 띄어쓰기 클래스 (이름, 타입)
+// type0 -> 이 글자 다음이 띄어쓰기가 아님
+// type1 -> 이 글자 다음이 띄어쓰기임
 class SpaceText {
 	public String text = "";
 	public int type = 0;
@@ -18,28 +21,43 @@ class SpaceText {
 	}
 }
 
+// 이름 후보 클래스 (이름, 품사, 정식이름번호, 일치율)
 class Lineup {
 	public String text = "";
 	public Pos pos;
+	public int original;
 	public float concordance = 0;
-	public Lineup(String Text, Pos POS, float Concordance) {
+	public Lineup(String Text, Pos POS, int Original, float Concordance) {
 		text = Text;
 		pos = POS;
+		original = Original;
 		concordance = Concordance;
+	}
+}
+
+// 이름사전 클래스 (정식이름, 동의어리스트)
+class NameDic {
+	public String name;
+	public ArrayList<String> synonym;
+	public NameDic(String Name, ArrayList<String> Synonym) {
+		name = Name;
+		synonym = Synonym;
 	}
 }
 
 public class NameFinder {
 	
-	Map<String, String> star;
-	Map<String, String> constellation;
+	ArrayList<NameDic> star;
+	ArrayList<NameDic> constellation;
 	ArrayList<Keyword> keyword;
+	ArrayList<Keyword> numberList;
 	
 	// 생성자
 	public NameFinder() {
-		star = new HashMap<String, String>();
-		constellation = new HashMap<String, String>();
+		star = new ArrayList<NameDic>();
+		constellation = new ArrayList<NameDic>();
 		keyword = new ArrayList<Keyword>();
+		numberList = new ArrayList<Keyword>();
 	}
 	
 	// 이름 사전을 불러와서 해쉬맵에 저장
@@ -58,7 +76,23 @@ public class NameFinder {
 			    	}
 			    }
 			    first = false;
-			    constellation.put(line, "");
+			    
+			    // 모든 소문자를 대문자로 변경
+			    line = line.toUpperCase();
+			    
+			    // "="을 기준으로 앞은 정식 이름
+			    String []split = line.split("=");
+			    
+			    // "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
+			    ArrayList<String> syn = new ArrayList<String>();
+			    if( split.length > 1 ) {
+			    	String []synsplit = split[1].split(",");
+			    	for( int i = 0 ; i < synsplit.length ; i++ ) {
+			    		syn.add(synsplit[i]);
+			    	}
+			    }
+			    
+			    constellation.add(new NameDic(split[0], syn));
 			}
 			
 		} catch(Exception e) {
@@ -79,7 +113,23 @@ public class NameFinder {
 			    	}
 			    }
 			    first = false;
-			    star.put(line, "");
+			    
+			    // 모든 소문자를 대문자로 변경
+			    line = line.toUpperCase();
+			    
+			    // "="을 기준으로 앞은 정식 이름
+			    String []split = line.split("=");
+			    
+			    // "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
+			    ArrayList<String> syn = new ArrayList<String>();
+			    if( split.length > 1 ) {
+			    	String []synsplit = split[1].split(",");
+			    	for( int i = 0 ; i < synsplit.length ; i++ ) {
+			    		syn.add(synsplit[i]);
+			    	}
+			    }
+			    
+			    star.add(new NameDic(split[0], syn));
 			}
 			
 		} catch(Exception e) {
@@ -123,24 +173,32 @@ public class NameFinder {
 			// 명령의 n번째 글자로 시작하는 이름이 사전에 있다면 검색 후보에 추가..!
 			// 별 목록에 있는지 확인
 			ArrayList<Lineup> lineup = new ArrayList<Lineup>();
-			Set<String>set = star.keySet();
-			Iterator<String> it = set.iterator();
-			while( it.hasNext() ) {
-				String prefix = it.next();
-				
+			for( int i = 0 ; i < star.size() ; i++ ) {
+				String prefix = star.get(i).name;
 				if( prefix.substring(0, 1).equals(preOrder) ) {
-					lineup.add(new Lineup(prefix, Pos.S, 0.0f));
+					lineup.add(new Lineup(prefix, Pos.S, -1, 0.0f));
+				}
+				
+				for( int j = 0 ; j < star.get(i).synonym.size() ; j++ ) {
+					prefix = star.get(i).synonym.get(j);
+					if( prefix.substring(0, 1).equals(preOrder) ) {
+						lineup.add(new Lineup(prefix, Pos.S, i, 0.0f));
+					}
 				}
 			}
 			
 			// 별자리 목록에 있는지 확인해 사전에 추가
-			set = constellation.keySet();
-			it = set.iterator();
-			while( it.hasNext() ) {
-				String prefix = it.next();
-				
+			for( int i = 0 ; i < constellation.size() ; i++ ) {
+				String prefix = constellation.get(i).name;
 				if( prefix.substring(0, 1).equals(preOrder) ) {
-					lineup.add(new Lineup(prefix, Pos.C, 0.0f));
+					lineup.add(new Lineup(prefix, Pos.C, -1, 0.0f));
+				}
+				
+				for( int j = 0 ; j < constellation.get(i).synonym.size() ; j++ ) {
+					prefix = constellation.get(i).synonym.get(j);
+					if( prefix.substring(0, 1).equals(preOrder) ) {
+						lineup.add(new Lineup(prefix, Pos.C, i, 0.0f));
+					}
 				}
 			}
 			
@@ -172,7 +230,18 @@ public class NameFinder {
 			// 정확도가 100%인 후보만 키워드로 추출.
 			if( lineup.size() > choice && choice >= 0 ) {
 				System.out.println("* 당첨 : " + lineup.get(choice).text + "(" + lineup.get(choice).concordance + ")");
-				keyword.add(new Keyword(lineup.get(choice).text, lineup.get(choice).pos, start_index));
+				
+				// 키워드에는 정식이름으로 넣는다.
+				String formal = lineup.get(choice).text;
+				
+				// 동의어가 채택되었으면 정식이름을 키워드 리스트에 넣는다.
+				if( lineup.get(choice).original != -1 ) {
+					int ori = lineup.get(choice).original;
+					if( lineup.get(choice).pos == Pos.C ) formal = constellation.get(ori).name;
+					if( lineup.get(choice).pos == Pos.S ) formal = star.get(ori).name;
+					System.out.println("original : " + formal);
+				}
+				keyword.add(new Keyword(formal, lineup.get(choice).pos, start_index, lineup.get(choice).text.length()));
 				start_index += (lineup.get(choice).text.length() - 1);
 			}
 			start_index++;
@@ -197,7 +266,7 @@ public class NameFinder {
 						adhere.get(rep_index-1).type = 1;
 					}
 					// 키워드를 대체명사로 바꾸고 키워드 사이의 띄어쓰기는 모두 없엔다. 마지막은 제외.
-					for( int k = 0 ; k < keyword.get(j).text.length() ; k++ ) {
+					for( int k = 0 ; k < keyword.get(j).originalLength ; k++ ) {
 						if( keyword.get(j).pos == Pos.S ) adhere.get(rep_index+k).text = "쑹";
 						if( keyword.get(j).pos == Pos.C ) adhere.get(rep_index+k).text = "쏭";
 						if( k != keyword.get(j).text.length() - 1 ) adhere.get(rep_index+k).type = 0;
@@ -224,7 +293,7 @@ public class NameFinder {
 			else {
 				// 숫자가 끝나면 그 전까지의 스트링을 숫자 리스트에 넣는다.
 				if( addnumber.length() > 0 ) {
-					keyword.add(new Keyword(addnumber, Pos.I, i));
+					numberList.add(new Keyword(addnumber, Pos.I, i, addnumber.length()));
 					addnumber = "";
 					
 					// 숫자 다음은 무조건 띄어쓰기
@@ -297,5 +366,13 @@ public class NameFinder {
 	}
 	public Keyword getKeyword(int index) {
 		return keyword.get(index);
+	}
+	
+	// 숫자리스트 리턴 함수
+	public ArrayList<Keyword> getNumberList() {
+		return numberList;
+	}
+	public Keyword getNumberList(int index) {
+		return numberList.get(index);
 	}
 }

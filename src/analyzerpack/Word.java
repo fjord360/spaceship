@@ -10,16 +10,18 @@ public class Word {
 	String nativeText;			// 사용자가 입력한 어절
 	String analysedText;		// 분석된 어절
 	int numKeyword;				// 키워드 번호
+	int numNumberList;			// 숫자리스트 번호
 	
 	// 생성
-	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword) {
+	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList) {
 		nativeText = NativeText;
 		analysedText = AnalysedText;
 		lemma = new ArrayList<Lemma>();
 		numKeyword = NumKeyword;
+		numNumberList = NumNumberList;
 		
 		// 어절 클래스는 생성하면 곧바로 분석해서 렘마를 만든다.
-		addLemma(analysedText, keyword);
+		addLemma(analysedText, keyword, numberList);
 	}
 	
 	// 렘마 추가
@@ -29,7 +31,7 @@ public class Word {
 	}
 	
 	// 렘마 추가 (텍스트만 가지고 분석해서 추가)
-	public void addLemma(String text, ArrayList<Keyword> keyword) {
+	public void addLemma(String text, ArrayList<Keyword> keyword, ArrayList<Keyword> numberList) {
 		// 밝(V),은(e) 같은 형태로 들어오기 때문에 ","를 중심으로 토큰을 나눈다.
 		// 그러면 "밝", "(V)", "은", "(e)"의 형태가 된다.
 		StringTokenizer st = new StringTokenizer(text, ",");
@@ -63,14 +65,22 @@ public class Word {
 						// 나머진 내용
 						lemmaText = next.substring(0, i);
 
-						// 단, 대체문자에 대해서는 키워드 처리
+						// 대체문자에 대해서는 키워드 처리 (별, 별자리)
 						if( next.charAt(i+1) == 'N' && numKeyword < keyword.size() ) {
 							if( next.substring(0, i).equals("쑹") ||
-								next.substring(0, i).equals("쏭") ||
-								next.substring(0, i).equals("쯩") ) {
+								next.substring(0, i).equals("쏭") ) {
 								lemmaPos = keyword.get(numKeyword).pos;
 								lemmaText = keyword.get(numKeyword).text;
 								numKeyword++;
+							}
+						}
+						
+						// 대체문자에 대해서는 키워드 처리 (숫자)
+						if( next.charAt(i+1) == 'N' && numNumberList < numberList.size() ) {
+							if( next.substring(0, i).equals("쯩") ) {
+								lemmaPos = numberList.get(numNumberList).pos;
+								lemmaText = numberList.get(numNumberList).text;
+								numNumberList++;
 							}
 						}
 					}
@@ -115,5 +125,10 @@ public class Word {
 	// 키워드번호 리턴
 	public int getKeyword() {
 		return numKeyword;
+	}
+	
+	// 숫자리스트번호 리턴
+	public int getNumberList() {
+		return numNumberList;
 	}
 }

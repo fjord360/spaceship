@@ -79,7 +79,7 @@ public class ResultAnalyzer {
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0 );
+					sentence.addWord( nativeText, analysedText, 0, 0 );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				Patterns.add(sentence);

@@ -13,17 +13,26 @@ import java.io.StringReader;
 public class TextAnalyzer {
 	
 	ArrayList<Keyword> keyword;
+	ArrayList<Keyword> numberList;
 	Log log;
 	int numKeyword;
+	int numNumberList;
 	String query;
 
 	public TextAnalyzer() {
 		keyword = new ArrayList<Keyword>();
+		numberList = new ArrayList<Keyword>();
 		log = LogFactory.getLog("org.apache.lucene.analysis.kr");
 	}
 	
+	// 키워드 리스트 세팅
 	public void SetKeyword(ArrayList<Keyword> k) {
 		keyword = k;
+	}
+	
+	// 숫자리스트 세팅
+	public void SetNumberList(ArrayList<Keyword> k) {
+		numberList = k;
 	}
 	
 	// 형태소 분석한 결과의 HTML 코드를 String으로 리턴한다.
@@ -50,6 +59,7 @@ public class TextAnalyzer {
 				// 문장 클래스 생성
 				Sentence sentence = new Sentence(order);
 				sentence.SetKeyword(keyword);
+				sentence.SetNumberList(numberList);
 				
 				// '난 학생이다.'를 입력하면 token에서
 				// '난' / '학생이다'로 나뉜다.
@@ -71,8 +81,9 @@ public class TextAnalyzer {
 						List<AnalysisOutput> results = analyzer.analyze(tokenText);
 						
 						// 문장에 어절 추가.
-						sentence.addWord(tokenText, results.get(0).toString(), numKeyword);
+						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList);
 						numKeyword = sentence.GetKeyword();
+						numNumberList = sentence.GetNumberList();
 						
 						// 각각의 results에 대한 결과값 출력.
 						//for( AnalysisOutput o : results ) {
@@ -226,6 +237,7 @@ public class TextAnalyzer {
 		return html;
 	}
 	
+	// 쿼리 리턴
 	public String getQuery() {
 		return query;
 	}
