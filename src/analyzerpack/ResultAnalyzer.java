@@ -13,6 +13,8 @@ public class ResultAnalyzer {
 	
 	ArrayList<Sentence> Patterns;	// 패턴들을 담습니다.
 	ArrayList<String> QueryForms;	// 패턴에 해당하는 쿼리문을 저장합니다. Patterns에 저장하는 순서가 같습니다.
+	int patternMatcherIndex;
+	int lastMatchedIndex;
 	
 	// 생성자
 	// 패턴을 구성해줍니다. 프로젝트 폴더(krmorph)에 patterns.txt가 있어야합니다.
@@ -62,6 +64,7 @@ public class ResultAnalyzer {
 					String tempWord = tempWords.get(i);
 					StringTokenizer stPlus = new StringTokenizer( tempWord, "+" );
 					int numofPlus = stPlus.countTokens();
+					int numofIgnore = 0;
 					for( int cntPlus = 0; cntPlus < numofPlus; cntPlus++ )
 					{
 						String text, pos;
@@ -75,11 +78,14 @@ public class ResultAnalyzer {
 						if( cntPlus != 0 )
 							analysedText += ",";
 						
+						if( text.charAt(0) == '@' )
+							numofIgnore = Integer.parseInt(text.substring(1));
+						
 						nativeText += text;
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0, 0, 0 );
+					sentence.addWord( nativeText, analysedText, 0, 0, numofIgnore );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				Patterns.add(sentence);
@@ -120,8 +126,8 @@ public class ResultAnalyzer {
 		for( int patternCnt = 0; patternCnt < Patterns.size(); patternCnt++ )
 		{
 			Sentence pattern = Patterns.get(patternCnt);
-			int patternMatcherIndex = -1;
-			int lastMatchedIndex = -1;
+			patternMatcherIndex = -1;
+			lastMatchedIndex = -1;
 			noMatched = false;
 			
 			// 패턴중 가장 뒷부분 lemma부터 검사하는 루틴입니다.
@@ -136,12 +142,12 @@ public class ResultAnalyzer {
 					// 첫 번째 방법은 text는 검사하지 않지만 품사를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 					if( lemma.getText().compareTo("NAME") == 0 )
 					{
-						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
 						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
 						// 그래서 name문자열에 이름을 저장해둡니다.
 						if( patternMatcherIndex > 0 )
 						{
-							int lemmaIndex= numofLemma-patternMatcherIndex;
+							int lemmaIndex = numofLemma-patternMatcherIndex;
 							name = GetLemma( sentence, lemmaIndex ).getText();
 						}
 						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
@@ -152,12 +158,12 @@ public class ResultAnalyzer {
 					}
 					else if( lemma.getText().compareTo("VALUE1") == 0 )
 					{
-						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
 						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
 						// 그래서 name문자열에 이름을 저장해둡니다.
 						if( patternMatcherIndex > 0 )
 						{
-							int lemmaIndex= numofLemma-patternMatcherIndex;
+							int lemmaIndex = numofLemma-patternMatcherIndex;
 							value1 = GetLemma( sentence, lemmaIndex ).getText();
 						}
 						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
@@ -168,7 +174,7 @@ public class ResultAnalyzer {
 					}
 					else if( lemma.getText().compareTo("VALUE2") == 0 )
 					{
-						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getPos());
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
 						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
 						// 그래서 name문자열에 이름을 저장해둡니다.
 						if( patternMatcherIndex > 0 )
@@ -185,12 +191,33 @@ public class ResultAnalyzer {
 					// 두 번째 방법은 품사는 검사하지 않지만 text를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 					else if( lemma.getPos() == Pos.X )
 					{
-						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma.getText());
+						if( lemma.getText().charAt(0) != '@' )
+							patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getText() );
+						else if( word.getNumofIgnore() > 0 )
+						{
+							Word nextWord = pattern.getWord(wordCnt-1);
+							patternMatcherIndex = DetectMatchingWord(sentence, nextWord );
+							if( patternMatcherIndex == -1 )
+							{
+								lastMatchedIndex--;
+								patternMatcherIndex = lastMatchedIndex+1;
+								word.decreaseNumofIgnore();
+								wordCnt++;
+							}
+							else
+							{
+								lastMatchedIndex = patternMatcherIndex-1;
+								word.setNumofIgnore(0);
+							}
+						}
+						else
+							lastMatchedIndex = patternMatcherIndex-1;
+							
 					}
 					// 세 번째 방법은 text와 품사 데이터 모두 일치하는 경우만 허용하는 방법입니다.
 					else
 					{
-						patternMatcherIndex = DetectMatchingLemma(sentence, lastMatchedIndex, lemma);
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma);
 					}
 					// 세 가지 방법중 하나라도 검출해서 -1이 나온다면 현재 이 패턴은 match될 수 없다고 판단한 것입니다.
 					// 현재 패턴을 중단하고 다음 패턴으로 넘어가야합니다.
@@ -259,7 +286,7 @@ public class ResultAnalyzer {
 	}
 	
 	// 첫 번째 lemma matching 검출 합수입니다.
-	private int DetectMatchingLemma( Sentence sentence, int lastMatchedIndex, Pos pos )
+	private int DetectMatchingLemma( Sentence sentence, Pos pos )
 	{
 		int counter = 0;
 		for( int wordCnt = sentence.getWord().size()-1; wordCnt >= 0; wordCnt-- )
@@ -277,7 +304,7 @@ public class ResultAnalyzer {
 	}
 	
 	// 두 번째 lemma matching 검출 합수입니다.
-	private int DetectMatchingLemma( Sentence sentence, int lastMatchedIndex, String text )
+	private int DetectMatchingLemma( Sentence sentence, String text )
 	{
 		int counter = 0;
 		for( int wordCnt = sentence.getWord().size()-1; wordCnt >= 0; wordCnt-- )
@@ -294,8 +321,75 @@ public class ResultAnalyzer {
 		return -1;
 	}
 	
+	// 두 번째 lemma matching 검출 합수입니다.
+	private int DetectMatchingWord( Sentence sentence, Word nextWord )
+	{
+		int counter = 0;
+		for( int wordCnt = sentence.getWord().size()-1; wordCnt >= 0; wordCnt-- )
+		{
+			boolean findMatchedWord = true;
+			Word word = sentence.getWord(wordCnt);
+			if( word.getLemma().size() != nextWord.getLemma().size() )
+			{
+				counter += word.getLemma().size();
+				findMatchedWord = false;
+			}
+			else
+			{
+				for( int lemmaCnt = word.getLemma().size()-1; lemmaCnt >= 0; lemmaCnt-- )
+				{
+					counter++;
+					if( findMatchedWord == false )
+						continue;
+					
+					boolean findMatchedLemma = false;
+					Lemma leftLemma = nextWord.getLemma(lemmaCnt);
+					Lemma rightLemma = word.getLemma(lemmaCnt);
+					if( leftLemma.getText().compareTo("NAME") == 0 )
+					{
+						if( rightLemma.getPos() == Pos.C || rightLemma.getPos() == Pos.S )
+							findMatchedLemma = true;
+					}
+					else if( leftLemma.getText().compareTo("VALUE1") == 0 )
+					{
+						if( rightLemma.getPos() == Pos.I )
+							findMatchedLemma = true;
+					}
+					else if( leftLemma.getText().compareTo("VALUE2") == 0 )
+					{
+						if( rightLemma.getPos() == Pos.I )
+							findMatchedLemma = true;
+					}
+					else if( leftLemma.getPos() == Pos.X )
+					{
+						if( rightLemma.getText().compareTo(leftLemma.getText()) == 0 )
+							findMatchedLemma = true;
+					}
+					else
+					{
+						if( rightLemma.getText().compareTo(leftLemma.getText()) == 0 && rightLemma.getPos() == leftLemma.getPos() )
+							findMatchedLemma = true;
+					}
+					if( findMatchedLemma == false )
+						findMatchedWord = false;
+				}
+			}
+			if( counter > lastMatchedIndex )
+			{
+				if( findMatchedWord )
+					return counter-word.getLemma().size();
+				else
+				{
+					lastMatchedIndex = counter;
+					return -1;
+				}
+			}
+				
+		}
+		return -1;
+	}
 	// 세 번째 lemma matching 검출 합수입니다.
-	private int DetectMatchingLemma( Sentence sentence, int lastMatchedIndex, Lemma paramlemma )
+	private int DetectMatchingLemma( Sentence sentence, Lemma paramlemma )
 	{
 		int counter = 0;
 		for( int wordCnt = sentence.getWord().size()-1; wordCnt >= 0; wordCnt-- )

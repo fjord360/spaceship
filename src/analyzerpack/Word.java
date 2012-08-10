@@ -133,4 +133,22 @@ public class Word {
 	public int getNumberList() {
 		return numNumberList;
 	}
+	
+	// 무시가능한 word갯수 리턴
+	public int getNumofIgnore() {
+		return numofIgnore;
+	}
+	
+	// NumofIgnore 셋
+	public void setNumofIgnore(int NumofIgnore) {
+		numofIgnore = NumofIgnore;
+	}
+	
+	// NumofIgnore 1개 감소
+	public void decreaseNumofIgnore() {
+		if( numofIgnore > 0)
+			numofIgnore--;
+		else
+			System.out.println("잘못된 요청입니다 : decreaseNumofIgnore() ");
+	}
 }
