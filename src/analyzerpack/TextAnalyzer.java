@@ -37,19 +37,11 @@ public class TextAnalyzer {
 	
 	// 형태소 분석한 결과의 HTML 코드를 String으로 리턴한다.
 	public String Anaylze(String order) {
-		String html = "";
+		String printOut = "";
 		try {
 			
 			if( !"".equals(order) ) {
 				log.info(order);
-				long start = System.currentTimeMillis();
-				
-				html += "<p></p><div style='font-size:12pt;color:green'> 형태소분석 : " + order + "</div><p></p>";		
-				
-				// 형태소분석을 하기 전에 db에 있는 명사들을 찾아낸다.
-				NameFinder nf = new NameFinder();
-				nf.CreateMap();
-				order = nf.Find(order);
 				
 				// 형태소분석기 클래스 생성
 				MorphAnalyzer analyzer = new MorphAnalyzer();
@@ -64,8 +56,6 @@ public class TextAnalyzer {
 				// '난 학생이다.'를 입력하면 token에서
 				// '난' / '학생이다'로 나뉜다.
 				while( ( token = tokenizer.next() ) != null ) {
-					
-					html += "<div class='outer'>";
 					
 					// 1. 한글과 영어, 숫자를 나눈다. 즉 토큰을 새로 짠다.
 					// 영어, 숫자는 "7글자"부터 에러
@@ -204,37 +194,27 @@ public class TextAnalyzer {
 						System.out.println(e.getMessage());					
 						e.printStackTrace();
 					}
-					html += "</div>";
 				}
 
-				// 수행시간 계산
-				html += "<p><div>"+(System.currentTimeMillis()-start)+"ms</div></p>";
-				
 				// 출력..
-				String printOut = "";
 				for( int i = 0 ; i < sentence.getWord().size() ; i++ ) {
-					html += "<div class='inner' style='font-size:10pt; color:red'>";
-					
 					for( int j = 0 ; j < sentence.getWord(i).getLemma().size() ; j++ ) {
 						printOut += sentence.getWord(i).getLemma(j).getText() + "/" + sentence.getWord(i).getLemma(j).getPos();
 						if( j != sentence.getWord(i).getLemma().size() - 1 ) printOut += "+";
 					}
 					if( i != sentence.getWord().size()-1 ) printOut += "_";
 				}
-				html += printOut;
 				
 				// 의미분석 결과 (정호) -> 쿼리로 리턴됨.
 				ResultAnalyzer ra = new ResultAnalyzer();
 				query = ra.Analyze(sentence);
-				System.out.println("query : " + query);
-				
-				html += "</div>";
+				//System.out.println("query : " + query);
 			}
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
-		return html;
+		return printOut;
 	}
 	
 	// 쿼리 리턴

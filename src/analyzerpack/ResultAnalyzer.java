@@ -85,7 +85,7 @@ public class ResultAnalyzer {
 				Patterns.add(sentence);
 			}
 			
-			System.out.println("패턴 종류 : " + Patterns.size());
+			//System.out.println("패턴 종류 : " + Patterns.size());
 			br.close();
 			fr.close();
 		}
@@ -96,8 +96,8 @@ public class ResultAnalyzer {
 		}
 		
 		// 패턴이 제대로 구성됐는지 한 줄씩 출력하면서 검증합니다.
-		for( int iter = 0; iter < Patterns.size(); iter++ )
-			PrintSentence(Patterns.get(iter));
+		//for( int iter = 0; iter < Patterns.size(); iter++ )
+			//PrintSentence(Patterns.get(iter));
 	}
 	
 	// 본격적으로 sentence로 받아온 형태소 분석결과를 다시 분석해서 쿼리로 만들어 보내줍니다.
