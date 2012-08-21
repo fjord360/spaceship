@@ -1,0 +1,3 @@
+// :A/P+이/t+ㄴ/e_별/N_중/N_B/P+이/t+ㄴ/e_별/N
+// SELECT 이름 FROM 별 WHERE [ AND ]:[A/P+이/t+고/e]+_B/P+이/t+ㄴ/e_별/N
+SELECT 이름 FROM 별 WHERE [ OR | AND | AND ]:[{A/P+이/t+거나/e}|{A/P+이/t+고/e}|{A/P+이/t+ㄴ/e_별/N_중/N}]+_B/P+이/t+ㄴ/e_별/N

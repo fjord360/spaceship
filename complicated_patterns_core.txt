@@ -1,0 +1,2 @@
+최소온도>=VALUE1:온도/X+가/X_VALUE1/I_도/X_이상/X
+최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X

@@ -81,7 +81,7 @@ public class TextAnalyzer {
 						List<AnalysisOutput> results = analyzer.analyze(tokenText);
 						
 						// 문장에 어절 추가.
-						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList, 0);
+						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList, 0, Repeat.NOMORE);
 						numKeyword = sentence.GetKeyword();
 						numNumberList = sentence.GetNumberList();
 						
@@ -225,7 +225,7 @@ public class TextAnalyzer {
 				
 				// 의미분석 결과 (정호) -> 쿼리로 리턴됨.
 				ResultAnalyzer ra = new ResultAnalyzer();
-				query = ra.Analyze(sentence);
+				query = ra.ExAnalyze_Frame(sentence);
 				System.out.println("query : " + query);
 				
 				html += "</div>";

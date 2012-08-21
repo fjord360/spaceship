@@ -15,5 +15,6 @@ public enum Pos {
 	I, // 숫자
 	
 	S, // 별 Star
-	C  // 별자리 Constellation
+	C,  // 별자리 Constellation
+	P	// 패턴의 경우 P로 표기함.
 }

@@ -3,6 +3,12 @@ package analyzerpack;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+enum Repeat {
+	NOMORE,
+	ONE_OR_MORE,
+	ZERO_OR_MORE,
+};
+
 // 어절 클래스
 public class Word {
 	
@@ -12,15 +18,17 @@ public class Word {
 	int numKeyword;				// 키워드 번호
 	int numNumberList;			// 숫자리스트 번호
 	int numofIgnore;				// 무시할 word 갯수
+	Repeat numofRepeat;
 	
 	// 생성
-	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList, int NumofIgnore) {
+	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList, int NumofIgnore, Repeat NumofRepeat) {
 		nativeText = NativeText;
 		analysedText = AnalysedText;
 		lemma = new ArrayList<Lemma>();
 		numKeyword = NumKeyword;
 		numNumberList = NumNumberList;
 		numofIgnore = NumofIgnore;
+		numofRepeat = NumofRepeat;
 		
 		// 어절 클래스는 생성하면 곧바로 분석해서 렘마를 만든다.
 		addLemma(analysedText, keyword, numberList);
@@ -63,7 +71,8 @@ public class Word {
 						if( next.charAt(i+1) == 'C' ) lemmaPos = Pos.C;
 						if( next.charAt(i+1) == 'S' ) lemmaPos = Pos.S;
 						if( next.charAt(i+1) == 'I' ) lemmaPos = Pos.I;
-
+						if( next.charAt(i+1) == 'P' ) lemmaPos = Pos.P;
+						
 						// 나머진 내용
 						lemmaText = next.substring(0, i);
 
