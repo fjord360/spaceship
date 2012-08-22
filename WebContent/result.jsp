@@ -1,68 +1,81 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <%@page import="analyzerpack.NameFinder" %>
 <%@page import="analyzerpack.Keyword" %>
 <%@page import="analyzerpack.TextAnalyzer" %>
 <%@page import="analyzerpack.ResultAnalyzer" %>
+<%@page import="analyzerpack.AnswerText" %>
 <%@page import="analyzerpack.Pos" %>
 <%@page import="dbpack.SpaceDB" %>
 <%@page import="java.util.ArrayList" %>
+<%@page import="java.io.FileOutputStream" %>
+<%@page import="java.io.OutputStreamWriter" %>
+<%@page import="java.util.Calendar" %>
 <%
 	request.setCharacterEncoding("utf-8");
 	String order = request.getParameter("order");
 %>
-<html>
-<head>
-</head>
-<body>
-<%	
+
+<%
+	long start = System.currentTimeMillis();
+	
+	// 이름/숫자 청킹
 	NameFinder nf = new NameFinder();
 	nf.CreateMap();
-	order = nf.Find(order);
-	out.println("청킹결과 : " + order);
+	String chunkedOrder = nf.Find(order);
 	
+	// 청킹한 이름, 숫자를 리스트에 넣는다.
 	ArrayList<Keyword> keyword = nf.getKeyword();
-	for( int i = 0 ; i < keyword.size() ; i++ ) {
-		if( keyword.get(i).pos == Pos.S ) out.println("<p>추출된 키워드 : " + keyword.get(i).text + " (S/" + keyword.get(i).index + ")</p>");
-		if( keyword.get(i).pos == Pos.C ) out.println("<p>추출된 키워드 : " + keyword.get(i).text + " (C/" + keyword.get(i).index + ")</p>");
-	}
-	
 	ArrayList<Keyword> numberList = nf.getNumberList();
-	for( int i = 0 ; i < numberList.size() ; i++ ) {
-		if( numberList.get(i).pos == Pos.I ) out.println("<p>추출된 숫자 : " + numberList.get(i).text + " (I/" + numberList.get(i).index + ")</p>" );
-	}
 	
+	// 형태소분석
 	TextAnalyzer ta = new TextAnalyzer();
 	ta.SetKeyword(keyword);
 	ta.SetNumberList(numberList);
-	out.println("anaylze : " + ta.Anaylze(order));
+	String analyzedOrder = ta.Anaylze(chunkedOrder);
 	
+	// DB 연결
 	SpaceDB db = new SpaceDB();
 	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
-	System.out.println("query : " + query);
-	out.println("query : " + query);
 	
-	out.println("<div class='query' style='font-size:10pt; color:black'>");
-	out.println("<p>" + query + "</p>");
-	
+	// DB 쿼리
+	ArrayList<String> VALUE = new ArrayList<String>();
+	ArrayList<String> gf = new ArrayList<String>();
 	if( !query.equals("NoResult") ) {
 		db.Query(query);
-		ArrayList<String> gf = db.getField(query);
-		System.out.println("field : " + gf);
-		while( db.getDB().next()) {
+		gf = db.getField(query);
+		while( db.getDB().next() ) {
 			for( int i = 0 ; i < gf.size() ; i++ ) {
-				out.println(gf.get(i) + " : " + db.getDB().getString(gf.get(i)) + "<br>");
+				VALUE.add(db.getDB().getString(gf.get(i)));
 			}
 		}
-		out.println("</div>");
 	}
-
-	/*FileOutputStream fos = new FileOutputStream("WebContent/log.txt");
-	OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");	    
-	osw.write(order);
-	osw.close();*/
-		
+	
+	// 정답 받아옴
+	AnswerText at = new AnswerText();
+	at.CreatAnswerPattern();
+	String answer = at.AnswerFromQuery(query, VALUE, gf.size());
+	out.println(answer);
+	
+	// 현재 날짜
+	Calendar calendar = Calendar.getInstance();
+	String YY = Integer.toString(calendar.get(Calendar.YEAR));
+	String MM = Integer.toString(calendar.get(Calendar.MONTH));
+	String DD = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
+	String H = Integer.toString(calendar.get(Calendar.HOUR_OF_DAY));
+	String M = Integer.toString(calendar.get(Calendar.MINUTE));
+	String S = Integer.toString(calendar.get(Calendar.SECOND));
+	String nowDate = YY + "/" + MM + "/" + DD + " " + H + ":" + M + ":" + S;
+	
+	// 로그 저장
+	FileOutputStream fos = new FileOutputStream("log/log" + YY + MM + DD + ".txt", true);
+	OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
+	osw.write(nowDate + "\n");
+	osw.write("USER_QUERY : " + order + "\n");
+	osw.write("SENTENCE : " + analyzedOrder + "\n");
+	osw.write("QUERY : " + query + "\n");
+	osw.write("ANSWER : " + answer + "\n");
+	osw.write("\n");
+	osw.close();
 %>
-</body>
-</html> 
+ 

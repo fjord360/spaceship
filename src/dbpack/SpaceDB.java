@@ -147,7 +147,7 @@ public class SpaceDB {
 	
 	// 모든 필드 내용을 리턴
 	public ArrayList<String> getAllField(String table) {
-		System.out.println("table : " + table);
+		//System.out.println("table : " + table);
 		if( table.equals("별자리") ) return cons_field;
 		else						return star_field;
 	}

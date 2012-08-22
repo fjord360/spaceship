@@ -102,7 +102,7 @@ public class ResultAnalyzer {
 				SimplePatterns.add(sentence);
 			}
 			
-			System.out.println("패턴 종류 : " + SimplePatterns.size());
+			//System.out.println("패턴 종류 : " + SimplePatterns.size());
 			br.close();
 			fr.close();
 		}
@@ -174,7 +174,7 @@ public class ResultAnalyzer {
 				ComplicatedPatterns_core.add(sentence);
 			}
 			
-			System.out.println("패턴 종류 : " + ComplicatedPatterns_core.size());
+			//System.out.println("패턴 종류 : " + ComplicatedPatterns_core.size());
 			br.close();
 			fr.close();
 		}
@@ -357,7 +357,7 @@ public class ResultAnalyzer {
 				ComplicatedPatterns_frame.add(sentenceList);
 			}
 			
-			System.out.println("패턴 종류 : " + ComplicatedPatterns_frame.size());
+			//System.out.println("패턴 종류 : " + ComplicatedPatterns_frame.size());
 			br.close();
 			fr.close();
 		}
@@ -869,7 +869,7 @@ public class ResultAnalyzer {
 			if( wordCnt != sentence.getWord().size()-1 )
 				result += "_";
 		}
-		System.out.println(result);
+		//System.out.println(result);
 	}
 	
 	// 첫 번째 lemma matching 검출 합수입니다.
@@ -1022,7 +1022,7 @@ public class ResultAnalyzer {
 			}
 		}
 		
-		System.out.println("수상한 lemma가 출력됩니다.");
+		//System.out.println("수상한 lemma가 출력됩니다.");
 		return lemma;
 	}
 }

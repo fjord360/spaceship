@@ -4,93 +4,18 @@
 <head>
 	<title>Spaceship</title>
 	<script language="JavaScript">
-		var xmlHttp;
 		
-		// AJAX XMLHTTP 리퀘스트
-		function createXMLHttpRequest() {
-			if(window.ActiveXObject) {
-				xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
-			} else if(window.XMLHttpRequest) {
-				xmlHttp = new XMLHttpRequest();
-			}
-		}
+	window.open("cockpit.jsp", "cockpit", "width=1024,height=768");
 		
-		// 키를 입력했을 때 처리
-		function onKeyUp() {
-			// 엔터키 누르면 결과 출력
-			if( event.keyCode == 13 ) {
-				request();
-			}
-		}
-		
-		// 결과를 출력하기 위해 result.jsp에 결과값 요청
-		function request() {
-			createXMLHttpRequest();
-			param = orderform.order.value;
-			var url = "result.jsp?order=" + encodeURIComponent(param);
-			xmlHttp.onreadystatechange = result;
-			xmlHttp.open("GET", url, true);
-			xmlHttp.send(null);
-		}
-		
-		// result.jsp로부터 받아온 결과(html)를 'content' div에 출력
-		function result() {
-			if( xmlHttp.readyState == 4 ) {
-				if( xmlHttp.status == 200 ) {
-					temp = xmlHttp.responseText;
-					document.getElementById("content").innerHTML = temp;
-				}
-			}
-		}
-	</script>
-	<script type="text/javascript" src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js"></script>
-	<!-- 
-	<script type="text/javascript">
-	<!--
-	function GetUnity() {
-		if (typeof unityObject != "undefined") {
-			return unityObject.getObjectById("unityPlayer");
-		}
-		return null;
-	}
-	if (typeof unityObject != "undefined") {
-		unityObject.embedUnity("unityPlayer", "WebPlayer.unity3d", 400, 300);
-	}
-	-->
 	</script>
 </head>
 <body>
 
-<!-- 유니티 플레이어 -->
-<!--><table width=1024 align="center">
-<tr>
-<td align="center">
-<div id="unityPlayer">
-	<div class="missing">
-		<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-			<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-		</a>
-	</div>
-</div>
-</td>
-</tr>
-</table>
--->
-
 <!-- 입력 부분 -->
 <form method="post" name="orderform">
 <div style="text-align:center">
-	<!-- 명령을 내리는 텍스트박스. 키를 누를때마다 onKeyUp 함수 호출 -->
-	<input type="text" name="order" size=100 onkeyup="onKeyUp()" />
-	<!-- 텍스트박스가 1개면 엔터키 눌렀을 때 refresh가 되서 숨겨진 텍스트박스를 하나 더 만들었 -->
-	<input type="text" name="hiddentext" size=0 style="display:none" />
 </div>
 </form>
 
-<!-- 여기에 결과값이 출력된다 -->
-<div id="content" style="text-align:center">
-</div>
-
 </body>
-
 </html>

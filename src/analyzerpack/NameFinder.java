@@ -159,16 +159,16 @@ public class NameFinder {
 				}
 			}
 		}
-		for( int i = 0 ; i < adhere.size() ; i++ ) {
-			System.out.println(adhere.get(i).text + "/" + adhere.get(i).type);
-		}
+		//for( int i = 0 ; i < adhere.size() ; i++ ) {
+			//System.out.println(adhere.get(i).text + "/" + adhere.get(i).type);
+		//}
 		
 		int start_index = 0;
 				
 		while( start_index < adhere.size() - 1 ) {
 			// 한 글자씩 검사.
 			String preOrder = adhere.get(start_index).text;
-			System.out.println("검사 : " + start_index + "(" + preOrder + ")");
+			//System.out.println("검사 : " + start_index + "(" + preOrder + ")");
 			
 			// 명령의 n번째 글자로 시작하는 이름이 사전에 있다면 검색 후보에 추가..!
 			// 별 목록에 있는지 확인
@@ -224,12 +224,12 @@ public class NameFinder {
 						max_length = lineup.get(i).text.length();
 					}
 				}
-				System.out.println("앞글자 같은 후보들 : " + lineup.get(i).text + "(" + lineup.get(i).concordance + ")");
+				//System.out.println("앞글자 같은 후보들 : " + lineup.get(i).text + "(" + lineup.get(i).concordance + ")");
 			}
 			
 			// 정확도가 100%인 후보만 키워드로 추출.
 			if( lineup.size() > choice && choice >= 0 ) {
-				System.out.println("* 당첨 : " + lineup.get(choice).text + "(" + lineup.get(choice).concordance + ")");
+				//System.out.println("* 당첨 : " + lineup.get(choice).text + "(" + lineup.get(choice).concordance + ")");
 				
 				// 키워드에는 정식이름으로 넣는다.
 				String formal = lineup.get(choice).text;
@@ -239,7 +239,7 @@ public class NameFinder {
 					int ori = lineup.get(choice).original;
 					if( lineup.get(choice).pos == Pos.C ) formal = constellation.get(ori).name;
 					if( lineup.get(choice).pos == Pos.S ) formal = star.get(ori).name;
-					System.out.println("original : " + formal);
+					//System.out.println("original : " + formal);
 				}
 				keyword.add(new Keyword(formal, lineup.get(choice).pos, start_index, lineup.get(choice).text.length()));
 				start_index += (lineup.get(choice).text.length() - 1);
