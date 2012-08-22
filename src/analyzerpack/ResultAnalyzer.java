@@ -535,6 +535,8 @@ public class ResultAnalyzer {
 		}
 		
 		return result;		
+		//for( int iter = 0; iter < Patterns.size(); iter++ )
+			//PrintSentence(Patterns.get(iter));
 	}
 	
 	// 본격적으로 sentence로 받아온 형태소 분석결과를 다시 분석해서 쿼리로 만들어 보내줍니다.
@@ -663,7 +665,6 @@ public class ResultAnalyzer {
 					// 현재 이 패턴은 정확히 문구안에 있으며 검출에 성공했습니다.
 					if( wordCnt == 0 )
 					{
-						ArrayList<String> Repeaters = new ArrayList<String>();
 						StringTokenizer stSquareBracket = new StringTokenizer( ComplicatedQueryForms_frame.get(patternCnt).get(asSameCnt), "[]" );
 						String patternResult = stSquareBracket.nextToken();
 						
