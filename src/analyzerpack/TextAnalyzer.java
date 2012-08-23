@@ -14,25 +14,25 @@ public class TextAnalyzer {
 	
 	ArrayList<Keyword> keyword;
 	ArrayList<Keyword> numberList;
+	ArrayList<Keyword> special;
 	Log log;
 	int numKeyword;
 	int numNumberList;
+	int numSpecial;
 	String query;
 
 	public TextAnalyzer() {
 		keyword = new ArrayList<Keyword>();
 		numberList = new ArrayList<Keyword>();
+		special = new ArrayList<Keyword>();
 		log = LogFactory.getLog("org.apache.lucene.analysis.kr");
 	}
 	
-	// 키워드 리스트 세팅
-	public void SetKeyword(ArrayList<Keyword> k) {
-		keyword = k;
-	}
-	
-	// 숫자리스트 세팅
-	public void SetNumberList(ArrayList<Keyword> k) {
-		numberList = k;
+	// 청킹 리스트 세팅
+	public void SetChunk(ArrayList<Keyword> Keyword, ArrayList<Keyword> NumberList, ArrayList<Keyword> Special) {
+		keyword = Keyword;
+		numberList = NumberList;
+		special = Special;
 	}
 	
 	// 형태소 분석한 결과의 HTML 코드를 String으로 리턴한다.
@@ -50,8 +50,7 @@ public class TextAnalyzer {
 				
 				// 문장 클래스 생성
 				Sentence sentence = new Sentence(order);
-				sentence.SetKeyword(keyword);
-				sentence.SetNumberList(numberList);
+				sentence.SetChunk(keyword, numberList, special);
 				
 				// '난 학생이다.'를 입력하면 token에서
 				// '난' / '학생이다'로 나뉜다.
@@ -71,7 +70,7 @@ public class TextAnalyzer {
 						List<AnalysisOutput> results = analyzer.analyze(tokenText);
 						
 						// 문장에 어절 추가.
-						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList, 0, Repeat.NOMORE);
+						sentence.addWord(tokenText, results.get(0).toString(), numKeyword, numNumberList, numSpecial, 0, Repeat.NOMORE);
 						numKeyword = sentence.GetKeyword();
 						numNumberList = sentence.GetNumberList();
 						

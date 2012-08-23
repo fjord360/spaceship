@@ -23,20 +23,21 @@
 	nf.CreateMap();
 	String chunkedOrder = nf.Find(order);
 	
-	// 청킹한 이름, 숫자를 리스트에 넣는다.
+	// 청킹한 이름, 숫자, 특수문자를 리스트에 넣는다.
 	ArrayList<Keyword> keyword = nf.getKeyword();
 	ArrayList<Keyword> numberList = nf.getNumberList();
+	ArrayList<Keyword> special = nf.getSpecial();
 	
 	// 형태소분석
 	TextAnalyzer ta = new TextAnalyzer();
-	ta.SetKeyword(keyword);
-	ta.SetNumberList(numberList);
+	ta.SetChunk(keyword, numberList, special);
 	String analyzedOrder = ta.Anaylze(chunkedOrder);
 	
 	// DB 연결
 	SpaceDB db = new SpaceDB();
 	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
 	String query = ta.getQuery();
+	//System.out.println(query);
 	
 	// DB 쿼리
 	ArrayList<String> VALUE = new ArrayList<String>();
@@ -46,6 +47,7 @@
 		gf = db.getField(query);
 		while( db.getDB().next() ) {
 			for( int i = 0 ; i < gf.size() ; i++ ) {
+				//System.out.println(db.getDB().getString(gf.get(i)));
 				VALUE.add(db.getDB().getString(gf.get(i)));
 			}
 		}

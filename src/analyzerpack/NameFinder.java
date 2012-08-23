@@ -47,10 +47,11 @@ class NameDic {
 
 public class NameFinder {
 	
-	ArrayList<NameDic> star;
-	ArrayList<NameDic> constellation;
-	ArrayList<Keyword> keyword;
-	ArrayList<Keyword> numberList;
+	ArrayList<NameDic> star;			// 별 이름사전
+	ArrayList<NameDic> constellation;	// 별자리 이름사전
+	ArrayList<Keyword> keyword;			// 키워드 청킹 리스트
+	ArrayList<Keyword> numberList;		// 숫자 청킹 리스트
+	ArrayList<Keyword> special;			// 특수문자 청킹 리스트
 	
 	// 생성자
 	public NameFinder() {
@@ -58,6 +59,7 @@ public class NameFinder {
 		constellation = new ArrayList<NameDic>();
 		keyword = new ArrayList<Keyword>();
 		numberList = new ArrayList<Keyword>();
+		special = new ArrayList<Keyword>();
 	}
 	
 	// 이름 사전을 불러와서 해쉬맵에 저장
@@ -304,6 +306,33 @@ public class NameFinder {
 			}
 		}
 		
+		// 특수문자를 추출해서 모두 '뚤'으로 바꾼다.
+		String addspecial = "";
+		for( int i = 0 ; i < adhere.size() ; i++ ) {
+			// 특수문자를 캐치. 일단 ','만..
+			if( adhere.get(i).text.charAt(0) == ',' ) {
+				addspecial += adhere.get(i).text.charAt(0);
+				adhere.get(i).text = "뚤";
+				
+				// 특수문자 앞은 무조건 띄어쓰기
+				if( i != 0 ) {
+					if( adhere.get(i-1).type == 0 ) adhere.get(i-1).type = 1;
+				}
+			}
+			else {
+				// 숫자가 끝나면 그 전까지의 스트링을 숫자 리스트에 넣는다.
+				if( addspecial.length() > 0 ) {
+					special.add(new Keyword(addspecial, Pos.A, i, addspecial.length()));
+					addspecial = "";
+					
+					// 숫자 다음은 무조건 띄어쓰기
+					if( i != 0 ) {
+						if( adhere.get(i-1).type == 0 ) adhere.get(i-1).type = 1;
+					}
+				}
+			}
+		}
+		
 		// 이제 띄어쓰기에 맞춰서 order를 재정렬한다.
 		String newOrder = "";
 		for( int i = 0 ; i < adhere.size() ; i++ ) {
@@ -311,7 +340,8 @@ public class NameFinder {
 			if( i != adhere.size()-1 ) {
 				if( !(adhere.get(i).text == "쑹" && adhere.get(i+1).text == "쑹") && 
 					!(adhere.get(i).text == "쏭" && adhere.get(i+1).text == "쏭") &&
-					!(adhere.get(i).text == "쯩" && adhere.get(i+1).text == "쯩") ) {
+					!(adhere.get(i).text == "쯩" && adhere.get(i+1).text == "쯩") &&
+					!(adhere.get(i).text == "뚤" && adhere.get(i+1).text == "뚤")) {
 					newOrder += adhere.get(i).text;
 				}
 			} else {
@@ -374,5 +404,13 @@ public class NameFinder {
 	}
 	public Keyword getNumberList(int index) {
 		return numberList.get(index);
+	}
+	
+	// 특수문자 리턴 함수
+	public ArrayList<Keyword> getSpecial() {
+		return special;
+	}
+	public Keyword getSpecial(int index) {
+		return special.get(index);
 	}
 }

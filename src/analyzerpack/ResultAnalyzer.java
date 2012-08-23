@@ -96,7 +96,7 @@ public class ResultAnalyzer {
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+					sentence.addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				SimplePatterns.add(sentence);
@@ -168,7 +168,7 @@ public class ResultAnalyzer {
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+					sentence.addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				ComplicatedPatterns_core.add(sentence);
@@ -309,7 +309,7 @@ public class ResultAnalyzer {
 									lemmaRepeatIDs.get(tempWordCnt).add(++lemmaRepeatID);
 								}
 								// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-								sentenceList.get(tempWordCnt).addWord( nativeText, analysedText, 0, 0, numofIgnore, numofRepeat );
+								sentenceList.get(tempWordCnt).addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, numofRepeat );
 							}
 						}
 					}
@@ -319,7 +319,6 @@ public class ResultAnalyzer {
 						String nativeText = "", analysedText = "";
 						int numofPlus = stPlus.countTokens();
 						int numofIgnore = 0;
-						
 						
 						for( int cntPlus = 0; cntPlus < numofPlus; cntPlus++ )
 						{
@@ -344,7 +343,7 @@ public class ResultAnalyzer {
 						}
 						// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
 						for( int sentenceCnt = 0;  sentenceCnt < sentenceList.size(); sentenceCnt++ )
-							sentenceList.get(sentenceCnt).addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+							sentenceList.get(sentenceCnt).addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 					}
 				}
 				for( int sentenceCnt = 0;  sentenceCnt < sentenceList.size(); sentenceCnt++ )
