@@ -33,22 +33,25 @@
 	ta.SetChunk(keyword, numberList, special);
 	String analyzedOrder = ta.Anaylze(chunkedOrder);
 	
-	// DB ¿¬°á
-	SpaceDB db = new SpaceDB();
-	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
-	String query = ta.getQuery();
-	//System.out.println(query);
-	
-	// DB Äõ¸®
+	// DB ¿¬°á..!
+	String query = "NoResult";
 	ArrayList<String> VALUE = new ArrayList<String>();
 	ArrayList<String> gf = new ArrayList<String>();
-	if( !query.equals("NoResult") ) {
-		db.Query(query);
-		gf = db.getField(query);
-		while( db.getDB().next() ) {
-			for( int i = 0 ; i < gf.size() ; i++ ) {
-				//System.out.println(db.getDB().getString(gf.get(i)));
-				VALUE.add(db.getDB().getString(gf.get(i)));
+	if( !analyzedOrder.equals("NoResult") ) {
+		SpaceDB db = new SpaceDB();
+		db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
+		query = ta.getQuery();
+		//System.out.println(query);
+	
+		// DB Äõ¸®
+		if( !query.equals("NoResult") ) {
+			db.Query(query);
+			gf = db.getField(query);
+			while( db.getDB().next() ) {
+				for( int i = 0 ; i < gf.size() ; i++ ) {
+					//System.out.println(db.getDB().getString(gf.get(i)));
+					VALUE.add(db.getDB().getString(gf.get(i)));
+				}
 			}
 		}
 	}

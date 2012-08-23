@@ -76,32 +76,39 @@ public class AnswerText {
 		NUM = Integer.toString(num);
 		VALUE = value;
 		
-		// 필드값 추출
-		String fromsplit[] = query.split("FROM");
-		String split[] = fromsplit[0].split("SELECT");
-		if( split.length > 1 ) {
-			split[1] = split[1].trim();
-			FIELD.add(split[1]);
+		// 매칭된 패턴이 없을 경우
+		if( query.equals("NoResult") ) {
+			Answer = RandomPattern("몰라요");
 		}
-		
-		// 답이 이름일 경우
-		if( FIELD.equals("이름") ) {
-			Answer = RandomPattern("다중검색");
-			Answer += ("@" + VALUE + "@");
-		}
-		
-		// 답이 값일 경우
+		// 쿼리 형태일 경우
 		else {
-			// NAME 추출
-			String[] querySplit = query.split("WHERE 이름='");
-			if( querySplit.length > 1 ) {
-				String[] nameSplit = querySplit[1].split("'");
-				NAME.add(nameSplit[0]);
+			// 필드값 추출
+			String fromsplit[] = query.split("FROM");
+			String split[] = fromsplit[0].split("SELECT");
+			if( split.length > 1 ) {
+				split[1] = split[1].trim();
+				FIELD.add(split[1]);
 			}
+		
+			// 답이 이름일 경우
+			if( FIELD.equals("이름") ) {
+				Answer = RandomPattern("다중검색");
+				Answer += ("@" + VALUE + "@");
+			}
+		
+			// 답이 값일 경우
+			else {
+				// NAME 추출
+				String[] querySplit = query.split("WHERE 이름='");
+				if( querySplit.length > 1 ) {
+					String[] nameSplit = querySplit[1].split("'");
+					NAME.add(nameSplit[0]);
+				}
 			
-			// 필드정보 패턴이 정답
-			Answer = RandomPattern("필드정보");
-			VALUE = value;
+				// 필드정보 패턴이 정답
+				Answer = RandomPattern("필드정보");
+				VALUE = value;
+			}
 		}
 		
 		// 태그 추출
