@@ -1,2 +1,13 @@
 최소온도>=VALUE1:온도/X+가/X_VALUE1/I_도/X_이상/X
 최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X
+최소거리>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
+최소연주시차>=VALUE1:연주시차/X+가/X_VALUE1/I_이상/X
+최소실시등급>=VALUE1:실시등급/X+이/X_VALUE1/I_이상/X
+최소절대등급>=VALUE1:절대등급/X+이/X_VALUE1/I_이상/X
+최소질량>=VALUE1:질량/X+이/X_VALUE1/I_이상/X
+최소크기>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
+최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X
+최소온도>=VALUE1:온도/X+가/X_VALUE1/I_이상/X
+행성수>=VALUE1:행성수/X+가/X_VALUE1/I_이상/X
+동반성수>=VALUE1:동반성수/X+가/X_VALUE1/I_이상/X
+최소공전주기>=VALUE1:공전주기/X+가/X_VALUE1/I_이상/X

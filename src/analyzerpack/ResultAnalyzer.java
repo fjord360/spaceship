@@ -19,7 +19,8 @@ public class ResultAnalyzer {
 	ArrayList<Sentence> ComplicatedPatterns_core;	// 
 	ArrayList<String> ComplicatedQueryForms_core;	// 
 	ArrayList<ArrayList<Sentence>> ComplicatedPatterns_frame;	// 
-	ArrayList<ArrayList<String>> ComplicatedQueryForms_frame;	// 
+	ArrayList<ArrayList<String>> ComplicatedQueryForms_frame_front;	// 
+	ArrayList<String> ComplicatedQueryForms_frame_end;	//
 	int patternMatcherIndex;
 	int lastMatchedIndex;
 	
@@ -32,7 +33,8 @@ public class ResultAnalyzer {
 		ComplicatedPatterns_core = new ArrayList<Sentence>();
 		ComplicatedQueryForms_core = new ArrayList<String>();
 		ComplicatedPatterns_frame = new ArrayList<ArrayList<Sentence>>();
-		ComplicatedQueryForms_frame = new ArrayList<ArrayList<String>>();
+		ComplicatedQueryForms_frame_front = new ArrayList<ArrayList<String>>();
+		ComplicatedQueryForms_frame_end = new ArrayList<String>();
 		OrganizePattern();
 	}
 	
@@ -201,32 +203,42 @@ public class ResultAnalyzer {
 				ArrayList<String> queryformList = new ArrayList<String>();
 				ArrayList<Sentence> sentenceList = new ArrayList<Sentence>();
 				//Sentence sentence = new Sentence("");
-				String queryform;
+				String queryform, frontQuery, endQuery;
 				// 먼저 쿼리를 수집합니다. :를 기준으로 수집합니다.
 				StringTokenizer stColon = new StringTokenizer( pattern, ":");
 				queryform = stColon.nextToken();
+				StringTokenizer stTide = new StringTokenizer( queryform, "~" );
+				frontQuery = stTide.nextToken();
+				endQuery = stTide.nextToken();
 				pattern = pattern.substring(queryform.length()+1);
+				ComplicatedQueryForms_frame_end.add(endQuery);
 				
-				StringTokenizer stBar = new StringTokenizer( queryform, "|" );
+				StringTokenizer stBar = new StringTokenizer( frontQuery, "|" );
 				int numofDivision = stBar.countTokens();
 				for( int divisionCnt = 0; divisionCnt < numofDivision; divisionCnt++ )
 				{
 					Sentence sentence = new Sentence("");
 					sentenceList.add(sentence);
 				}
-				int startIdx = queryform.indexOf('[');
-				int endIdx = queryform.indexOf(']');
-				String subcontents = queryform.substring(startIdx+1, endIdx);
-				stBar = new StringTokenizer( subcontents, "|" );
-				
-				while( stBar.countTokens() != 0 )
+				int startIdx = frontQuery.indexOf('[');
+				int endIdx = frontQuery.indexOf(']');
+				if( startIdx != -1 && endIdx != -1)
 				{
-					String temp = queryform.substring( 0, startIdx+1 ) + queryform.substring( endIdx );
-					endIdx = temp.indexOf(']');
-					String queryform_divided = temp.substring( 0, startIdx+1 ) + stBar.nextToken() + temp.substring( endIdx );
-					queryformList.add(queryform_divided);
+					String subcontents = frontQuery.substring(startIdx+1, endIdx);
+					stBar = new StringTokenizer( subcontents, "|" );
+					
+					while( stBar.countTokens() != 0 )
+					{
+						String temp = frontQuery.substring( 0, startIdx+1 ) + frontQuery.substring( endIdx );
+						endIdx = temp.indexOf(']');
+						String queryform_divided = temp.substring( 0, startIdx+1 ) + stBar.nextToken() + temp.substring( endIdx );
+						queryformList.add(queryform_divided);
+					}
 				}
-				ComplicatedQueryForms_frame.add(queryformList);
+				else
+					queryformList.add(frontQuery);
+					
+				ComplicatedQueryForms_frame_front.add(queryformList);
 				
 				ArrayList<String> tempWordList = new ArrayList<String>();
 				StringTokenizer stUnderbar = new StringTokenizer( pattern, "_");
@@ -320,7 +332,7 @@ public class ResultAnalyzer {
 						int numofPlus = stPlus.countTokens();
 						int numofIgnore = 0;
 						
-						
+						lemmaRepeatIDs.add(new ArrayList<Integer>());
 						for( int cntPlus = 0; cntPlus < numofPlus; cntPlus++ )
 						{
 							String text, pos;
@@ -663,21 +675,31 @@ public class ResultAnalyzer {
 					}
 					// 패턴 검출이 완전히 완료됐습니다.
 					// 현재 이 패턴은 정확히 문구안에 있으며 검출에 성공했습니다.
-					if( wordCnt == 0 )
+					if( wordCnt == 0 ||
+						( wordCnt != 0 && pattern.getWord(wordCnt-1).getNumofRepeat() == Repeat.ZERO_OR_MORE && lastMatchedIndex == numofLemma) )
 					{
-						StringTokenizer stSquareBracket = new StringTokenizer( ComplicatedQueryForms_frame.get(patternCnt).get(asSameCnt), "[]" );
+						StringTokenizer stSquareBracket = new StringTokenizer( ComplicatedQueryForms_frame_front.get(patternCnt).get(asSameCnt), "[]" );
 						String patternResult = stSquareBracket.nextToken();
 						
-						// 쿼리 교체
-						for( int i = CoreList.size()-1; i >= 0; i-- )
+						if( CoreList.size() != 1 )
 						{
-							stSquareBracket = new StringTokenizer( ComplicatedQueryForms_frame.get(patternCnt).get(CoreListAssister.get(i)), "[]" );
-							stSquareBracket.nextToken();
-							String Repeater = stSquareBracket.nextToken();
-							patternResult += CoreList.get(i);
-							if( i != 0 )
-								patternResult += Repeater;
+						// 쿼리 교체
+							for( int i = CoreList.size()-1; i >= 0; i-- )
+							{
+								stSquareBracket = new StringTokenizer( ComplicatedQueryForms_frame_front.get(patternCnt).get(CoreListAssister.get(i)), "[]" );
+								String Repeater;
+								stSquareBracket.nextToken();
+								Repeater = stSquareBracket.nextToken();
+								patternResult += CoreList.get(i);
+								if( i != 0 )
+									patternResult += Repeater;
+							}
 						}
+						else if( CoreList.size() == 1 )
+							patternResult += CoreList.get(0);
+						
+						patternResult += ComplicatedQueryForms_frame_end.get(patternCnt);
+						
 						if( result == "NoResult" )
 							result = patternResult;
 						else
@@ -912,6 +934,11 @@ public class ResultAnalyzer {
 	private int DetectMatchingWord( Sentence sentence, Word nextWord )
 	{
 		int counter = 0;
+		boolean havePattern = false;
+		for( int i = 0; i < nextWord.getLemma().size(); i++ )
+			if( nextWord.getLemma(i).getPos() == Pos.P )
+				havePattern = true;
+		
 		for( int wordCnt = sentence.getWord().size()-1; wordCnt >= 0; wordCnt-- )
 		{
 			boolean findMatchedWord = true;
@@ -951,6 +978,10 @@ public class ResultAnalyzer {
 					{
 						if( rightLemma.getText().compareTo(leftLemma.getText()) == 0 )
 							findMatchedLemma = true;
+					}
+					else if( leftLemma.getPos() == Pos.P )
+					{
+						findMatchedLemma = true;
 					}
 					else
 					{

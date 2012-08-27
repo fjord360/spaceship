@@ -160,4 +160,9 @@ public class Word {
 		else
 			System.out.println("잘못된 요청입니다 : decreaseNumofIgnore() ");
 	}
+	
+	// numofRepeat 값 가져오기
+	public Repeat getNumofRepeat() {
+		return numofRepeat;
+	}
 }
