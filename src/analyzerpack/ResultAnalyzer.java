@@ -98,13 +98,13 @@ public class ResultAnalyzer {
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+					sentence.addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				SimplePatterns.add(sentence);
 			}
 			
-			System.out.println("패턴 종류 : " + SimplePatterns.size());
+			//System.out.println("패턴 종류 : " + SimplePatterns.size());
 			br.close();
 			fr.close();
 		}
@@ -170,13 +170,13 @@ public class ResultAnalyzer {
 						analysedText += text + "(" + pos + ")";
 					}
 					// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-					sentence.addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+					sentence.addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 				}
 				// 다 돌고나온 sentence는 하나의 패턴이 됩니다. 패턴 수집합니다.
 				ComplicatedPatterns_core.add(sentence);
 			}
 			
-			System.out.println("패턴 종류 : " + ComplicatedPatterns_core.size());
+			//System.out.println("패턴 종류 : " + ComplicatedPatterns_core.size());
 			br.close();
 			fr.close();
 		}
@@ -321,7 +321,7 @@ public class ResultAnalyzer {
 									lemmaRepeatIDs.get(tempWordCnt).add(++lemmaRepeatID);
 								}
 								// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
-								sentenceList.get(tempWordCnt).addWord( nativeText, analysedText, 0, 0, numofIgnore, numofRepeat );
+								sentenceList.get(tempWordCnt).addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, numofRepeat );
 							}
 						}
 					}
@@ -333,6 +333,7 @@ public class ResultAnalyzer {
 						int numofIgnore = 0;
 						
 						lemmaRepeatIDs.add(new ArrayList<Integer>());
+
 						for( int cntPlus = 0; cntPlus < numofPlus; cntPlus++ )
 						{
 							String text, pos;
@@ -356,7 +357,7 @@ public class ResultAnalyzer {
 						}
 						// lemma가 완성되는 순간이죠. word단위의 처리가 끝났습니다.
 						for( int sentenceCnt = 0;  sentenceCnt < sentenceList.size(); sentenceCnt++ )
-							sentenceList.get(sentenceCnt).addWord( nativeText, analysedText, 0, 0, numofIgnore, Repeat.NOMORE );
+							sentenceList.get(sentenceCnt).addWord( nativeText, analysedText, 0, 0, 0, numofIgnore, Repeat.NOMORE );
 					}
 				}
 				for( int sentenceCnt = 0;  sentenceCnt < sentenceList.size(); sentenceCnt++ )
@@ -369,7 +370,7 @@ public class ResultAnalyzer {
 				ComplicatedPatterns_frame.add(sentenceList);
 			}
 			
-			System.out.println("패턴 종류 : " + ComplicatedPatterns_frame.size());
+			//System.out.println("패턴 종류 : " + ComplicatedPatterns_frame.size());
 			br.close();
 			fr.close();
 		}
@@ -891,7 +892,7 @@ public class ResultAnalyzer {
 			if( wordCnt != sentence.getWord().size()-1 )
 				result += "_";
 		}
-		System.out.println(result);
+		//System.out.println(result);
 	}
 	
 	// 첫 번째 lemma matching 검출 합수입니다.
@@ -1053,7 +1054,7 @@ public class ResultAnalyzer {
 			}
 		}
 		
-		System.out.println("수상한 lemma가 출력됩니다.");
+		//System.out.println("수상한 lemma가 출력됩니다.");
 		return lemma;
 	}
 }

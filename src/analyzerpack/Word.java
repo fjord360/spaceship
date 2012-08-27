@@ -17,21 +17,23 @@ public class Word {
 	String analysedText;		// 분석된 어절
 	int numKeyword;				// 키워드 번호
 	int numNumberList;			// 숫자리스트 번호
+	int numSpecial;				// 특수문자 번호
 	int numofIgnore;				// 무시할 word 갯수
 	Repeat numofRepeat;
 	
 	// 생성
-	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList, int NumofIgnore, Repeat NumofRepeat) {
+	public Word(String NativeText, String AnalysedText, ArrayList<Keyword> keyword, int NumKeyword, ArrayList<Keyword> numberList, int NumNumberList, ArrayList<Keyword> special, int NumSpecial, int NumofIgnore, Repeat NumofRepeat) {
 		nativeText = NativeText;
 		analysedText = AnalysedText;
 		lemma = new ArrayList<Lemma>();
 		numKeyword = NumKeyword;
 		numNumberList = NumNumberList;
+		numSpecial = NumSpecial;
 		numofIgnore = NumofIgnore;
 		numofRepeat = NumofRepeat;
 		
 		// 어절 클래스는 생성하면 곧바로 분석해서 렘마를 만든다.
-		addLemma(analysedText, keyword, numberList);
+		addLemma(analysedText, keyword, numberList, special);
 	}
 	
 	// 렘마 추가
@@ -41,7 +43,7 @@ public class Word {
 	}
 	
 	// 렘마 추가 (텍스트만 가지고 분석해서 추가)
-	public void addLemma(String text, ArrayList<Keyword> keyword, ArrayList<Keyword> numberList) {
+	public void addLemma(String text, ArrayList<Keyword> keyword, ArrayList<Keyword> numberList, ArrayList<Keyword> special) {
 		// 밝(V),은(e) 같은 형태로 들어오기 때문에 ","를 중심으로 토큰을 나눈다.
 		// 그러면 "밝", "(V)", "은", "(e)"의 형태가 된다.
 		StringTokenizer st = new StringTokenizer(text, ",");
@@ -71,6 +73,7 @@ public class Word {
 						if( next.charAt(i+1) == 'C' ) lemmaPos = Pos.C;
 						if( next.charAt(i+1) == 'S' ) lemmaPos = Pos.S;
 						if( next.charAt(i+1) == 'I' ) lemmaPos = Pos.I;
+						if( next.charAt(i+1) == 'A' ) lemmaPos = Pos.A;
 						if( next.charAt(i+1) == 'P' ) lemmaPos = Pos.P;
 						
 						// 나머진 내용
@@ -92,6 +95,15 @@ public class Word {
 								lemmaPos = numberList.get(numNumberList).pos;
 								lemmaText = numberList.get(numNumberList).text;
 								numNumberList++;
+							}
+						}
+						
+						// 대체문자에 대해서는 키워드 처리 (특수문자)
+						if( next.charAt(i+1) == 'N' && numSpecial < special.size() ) {
+							if( next.substring(0, i).equals("뚤") ) {
+								lemmaPos = special.get(numSpecial).pos;
+								lemmaText = special.get(numSpecial).text;
+								numSpecial++;
 							}
 						}
 					}
@@ -141,6 +153,11 @@ public class Word {
 	// 숫자리스트번호 리턴
 	public int getNumberList() {
 		return numNumberList;
+	}
+	
+	// 특수문자리스트번호 리턴
+	public int getSpeical() {
+		return numSpecial;
 	}
 	
 	// 무시가능한 word갯수 리턴
