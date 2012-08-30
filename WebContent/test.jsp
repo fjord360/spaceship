@@ -27,7 +27,7 @@
 		function request() {
 			createXMLHttpRequest();
 			param = orderform.order.value;
-			var url = "result.jsp?order=" + encodeURIComponent(param);
+			var url = "result_test.jsp?order=" + encodeURIComponent(param);
 			xmlHttp.onreadystatechange = result;
 			xmlHttp.open("GET", url, true);
 			xmlHttp.send(null);

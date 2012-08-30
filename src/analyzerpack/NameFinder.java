@@ -35,13 +35,25 @@ class Lineup {
 	}
 }
 
-// 이름사전 클래스 (정식이름, 동의어리스트)
+// 이름사전 클래스 (띄어쓰기제거한 이름, 정식 이름, 동의어리스트)
 class NameDic {
-	public String name;
+	public String attachedName;
+	public String originalName;
 	public ArrayList<String> synonym;
-	public NameDic(String Name, ArrayList<String> Synonym) {
-		name = Name;
+	public NameDic(String AttachedName, String OriginalName, ArrayList<String> Synonym) {
+		attachedName = AttachedName;
+		originalName = OriginalName;
 		synonym = Synonym;
+	}
+}
+
+// 숫자명사 클래스
+class NumNoun {
+	public String name;
+	public String num;
+	public NumNoun(String Name, String Num) {
+		name = Name;
+		num = Num;
 	}
 }
 
@@ -81,20 +93,31 @@ public class NameFinder {
 			    
 			    // 모든 소문자를 대문자로 변경
 			    line = line.toUpperCase();
+			    String nameEntity = line;
+			    ArrayList<String> syn = new ArrayList<String>();
 			    
 			    // "="을 기준으로 앞은 정식 이름
-			    String []split = line.split("=");
-			    
-			    // "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
-			    ArrayList<String> syn = new ArrayList<String>();
-			    if( split.length > 1 ) {
-			    	String []synsplit = split[1].split(",");
-			    	for( int i = 0 ; i < synsplit.length ; i++ ) {
-			    		syn.add(synsplit[i]);
+			    if( line.indexOf("=") >= 0 ) {
+			    	String []split = line.split("=");
+			    	nameEntity = split[0];
+			    	
+			    	// "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
+			    	if( split[1].length() > 0 ) {
+			    		String []synsplit = split[1].split(",");
+			    		for( int i = 0 ; i < synsplit.length ; i++ ) {
+			    			syn.add(synsplit[i]);
+			    		}
 			    	}
 			    }
 			    
-			    constellation.add(new NameDic(split[0], syn));
+			    // "@"를 기준으로 앞에가 띄어쓰기 제거한 이름, 뒤에가 정식이름
+		    	if( nameEntity.indexOf("@") >= 0 ) {
+		    		String []nameSplit = line.split("@");
+		    		constellation.add(new NameDic(nameSplit[0], nameSplit[1], syn));
+		    	}
+		    	else {
+		    		constellation.add(new NameDic(nameEntity, nameEntity, syn));
+		    	}
 			}
 			
 		} catch(Exception e) {
@@ -118,20 +141,31 @@ public class NameFinder {
 			    
 			    // 모든 소문자를 대문자로 변경
 			    line = line.toUpperCase();
+			    String nameEntity = line;
+			    ArrayList<String> syn = new ArrayList<String>();
 			    
 			    // "="을 기준으로 앞은 정식 이름
-			    String []split = line.split("=");
-			    
-			    // "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
-			    ArrayList<String> syn = new ArrayList<String>();
-			    if( split.length > 1 ) {
-			    	String []synsplit = split[1].split(",");
-			    	for( int i = 0 ; i < synsplit.length ; i++ ) {
-			    		syn.add(synsplit[i]);
+			    if( line.indexOf("=") >= 0 ) {
+			    	String []split = line.split("=");
+			    	nameEntity = split[0];
+			    	
+			    	// "=" 뒤는 동의어. ","를 기준으로 잘라서 동의어 리스트에 넣음.
+			    	if( split[1].length() > 0 ) {
+			    		String []synsplit = split[1].split(",");
+			    		for( int i = 0 ; i < synsplit.length ; i++ ) {
+			    			syn.add(synsplit[i]);
+			    		}
 			    	}
 			    }
 			    
-			    star.add(new NameDic(split[0], syn));
+			    // "@"를 기준으로 앞에가 띄어쓰기 제거한 이름, 뒤에가 정식이름
+		    	if( nameEntity.indexOf("@") >= 0 ) {
+		    		String []nameSplit = line.split("@");
+		    		star.add(new NameDic(nameSplit[0], nameSplit[1], syn));
+		    	}
+		    	else {
+		    		star.add(new NameDic(nameEntity, nameEntity, syn));
+		    	}
 			}
 			
 		} catch(Exception e) {
@@ -144,6 +178,30 @@ public class NameFinder {
 		
 		// 소문자는 모두 대문자로 변경
 		order = order.toUpperCase();
+		
+		// 숫자명사 입력
+		ArrayList<NumNoun> numNoun = new ArrayList<NumNoun>();
+		numNoun.add(new NumNoun("첫", "1"));
+		numNoun.add(new NumNoun("한", "1"));
+		numNoun.add(new NumNoun("두", "2"));
+		numNoun.add(new NumNoun("세", "3"));
+		numNoun.add(new NumNoun("네", "4"));
+		numNoun.add(new NumNoun("다섯", "5"));
+		numNoun.add(new NumNoun("여섯", "6"));
+		numNoun.add(new NumNoun("일곱", "7"));
+		numNoun.add(new NumNoun("여덟", "8"));
+		numNoun.add(new NumNoun("아홉", "9"));
+		numNoun.add(new NumNoun("열", "10"));
+		numNoun.add(new NumNoun("이십", "20"));
+		numNoun.add(new NumNoun("스무", "20"));
+		numNoun.add(new NumNoun("쉰", "50"));
+		numNoun.add(new NumNoun("오십", "50"));
+		numNoun.add(new NumNoun("백", "100"));
+		
+		// 숫자명사 청킹
+		order = NumNounChunk(order, "번째", numNoun);
+		order = NumNounChunk(order, "개", numNoun);
+		order = NumNounChunk(order, "번", numNoun);
 		
 		// 띄어쓰기 정보를 미리 저장해둔다.
 		ArrayList<SpaceText> adhere = new ArrayList<SpaceText>();
@@ -161,12 +219,9 @@ public class NameFinder {
 				}
 			}
 		}
-		//for( int i = 0 ; i < adhere.size() ; i++ ) {
-			//System.out.println(adhere.get(i).text + "/" + adhere.get(i).type);
-		//}
 		
 		int start_index = 0;
-				
+		
 		while( start_index < adhere.size() - 1 ) {
 			// 한 글자씩 검사.
 			String preOrder = adhere.get(start_index).text;
@@ -176,9 +231,9 @@ public class NameFinder {
 			// 별 목록에 있는지 확인
 			ArrayList<Lineup> lineup = new ArrayList<Lineup>();
 			for( int i = 0 ; i < star.size() ; i++ ) {
-				String prefix = star.get(i).name;
+				String prefix = star.get(i).attachedName;
 				if( prefix.substring(0, 1).equals(preOrder) ) {
-					lineup.add(new Lineup(prefix, Pos.S, -1, 0.0f));
+					lineup.add(new Lineup(prefix, Pos.S, i, 0.0f));
 				}
 				
 				for( int j = 0 ; j < star.get(i).synonym.size() ; j++ ) {
@@ -191,9 +246,9 @@ public class NameFinder {
 			
 			// 별자리 목록에 있는지 확인해 사전에 추가
 			for( int i = 0 ; i < constellation.size() ; i++ ) {
-				String prefix = constellation.get(i).name;
+				String prefix = constellation.get(i).attachedName;
 				if( prefix.substring(0, 1).equals(preOrder) ) {
-					lineup.add(new Lineup(prefix, Pos.C, -1, 0.0f));
+					lineup.add(new Lineup(prefix, Pos.C, i, 0.0f));
 				}
 				
 				for( int j = 0 ; j < constellation.get(i).synonym.size() ; j++ ) {
@@ -234,15 +289,11 @@ public class NameFinder {
 				//System.out.println("* 당첨 : " + lineup.get(choice).text + "(" + lineup.get(choice).concordance + ")");
 				
 				// 키워드에는 정식이름으로 넣는다.
-				String formal = lineup.get(choice).text;
+				int ori = lineup.get(choice).original;
+				String formal = "";
+				if( lineup.get(choice).pos == Pos.C ) formal = constellation.get(ori).originalName;
+				else formal = star.get(ori).originalName;
 				
-				// 동의어가 채택되었으면 정식이름을 키워드 리스트에 넣는다.
-				if( lineup.get(choice).original != -1 ) {
-					int ori = lineup.get(choice).original;
-					if( lineup.get(choice).pos == Pos.C ) formal = constellation.get(ori).name;
-					if( lineup.get(choice).pos == Pos.S ) formal = star.get(ori).name;
-					//System.out.println("original : " + formal);
-				}
 				keyword.add(new Keyword(formal, lineup.get(choice).pos, start_index, lineup.get(choice).text.length()));
 				start_index += (lineup.get(choice).text.length() - 1);
 			}
@@ -355,6 +406,45 @@ public class NameFinder {
 		}
 		
 		return newOrder;
+	}
+	
+	// 숫자 명사 청킹
+	String NumNounChunk(String order, String keyword, ArrayList<NumNoun> numNoun) {
+		String chunkOrder = order;
+		
+		int chkey = chunkOrder.indexOf(keyword, 0);
+		while( chkey > 0 ) {
+			boolean success = false;
+			int gap = 1;
+			for( int i = 0 ; i < numNoun.size() ; i++ ) {
+				int nounlength = numNoun.get(i).name.length();
+
+				if( chkey - nounlength >= 0 ) {
+					for( int j = 1 ; j < numNoun.get(i).name.length() + 1 ; j++ ) {
+						if( chunkOrder.charAt(chkey-j) == numNoun.get(i).name.charAt(nounlength-1) ) {
+							success = true;
+						}
+						else {
+							success = false;
+						}
+						if( chkey - (nounlength+1) >= 0 ) {
+							if( chunkOrder.charAt(chkey-j-1) == numNoun.get(i).name.charAt(nounlength-1) ) {
+								success = true;
+							}
+						}
+						nounlength--;
+					}
+					// 청킹 성공
+					if( success ) {
+						chunkOrder = chunkOrder.replaceFirst(numNoun.get(i).name, numNoun.get(i).num);
+						gap += (numNoun.get(i).num.length() - numNoun.get(i).name.length());
+					}
+				}
+			}
+			chkey = chunkOrder.indexOf(keyword, chkey+gap);
+		}
+		
+		return chunkOrder;
 	}
 	
 	// 두 문자열의 일치율 계산하는 함수

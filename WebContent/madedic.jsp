@@ -9,7 +9,7 @@
 <body>
 <%
 
-String URL = "jdbc:mysql://localhost/space";
+String URL = "jdbc:mysql://localhost/stardb?characterEncoding=UTF-8";
 String USER = "root";
 String PASS = "";
 
@@ -23,15 +23,15 @@ try {
 	Class.forName("org.gjt.mm.mysql.Driver");
 	conn = DriverManager.getConnection(URL, USER, PASS);
 	stmt = conn.createStatement();
-	rs = stmt.executeQuery("select * from constellation");
+	rs = stmt.executeQuery("select * from º°");
 	
-	FileOutputStream fos = new FileOutputStream("WebContent/Dictionary/constellation_dic.txt");
+	FileOutputStream fos = new FileOutputStream("WebContent/Dictionary/star_dic.txt");
 	OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
 	
 	while( rs.next() ) {
-		String name = rs.getString("name");
-		name = name.replaceAll("\\s", "");
-		osw.write(name + "\n");
+		String name = rs.getString("ÀÌ¸§");
+		String attachedName = name.replaceAll("\\s", "");
+		osw.write(attachedName + "@" + name + "\n");
 	}
 	
 	osw.close();
