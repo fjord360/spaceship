@@ -203,13 +203,14 @@ public class ResultAnalyzer {
 				ArrayList<String> queryformList = new ArrayList<String>();
 				ArrayList<Sentence> sentenceList = new ArrayList<Sentence>();
 				//Sentence sentence = new Sentence("");
-				String queryform, frontQuery, endQuery;
+				String queryform, frontQuery, endQuery = "";
 				// 먼저 쿼리를 수집합니다. :를 기준으로 수집합니다.
 				StringTokenizer stColon = new StringTokenizer( pattern, ":");
 				queryform = stColon.nextToken();
 				StringTokenizer stTide = new StringTokenizer( queryform, "~" );
 				frontQuery = stTide.nextToken();
-				endQuery = stTide.nextToken();
+				if( stTide.countTokens() != 0 )
+					endQuery = stTide.nextToken();
 				pattern = pattern.substring(queryform.length()+1);
 				ComplicatedQueryForms_frame_end.add(endQuery);
 				
@@ -276,10 +277,18 @@ public class ResultAnalyzer {
 						
 						ArrayList<String> tempWords = new ArrayList<String>();
 						StringTokenizer stBrace = new StringTokenizer( tempWord, "|" );
-						while( stBrace.countTokens() != 0 )
+						if( stBrace.countTokens() != 1 )
 						{
-							String tempWord_divided = stBrace.nextToken();
-							tempWords.add( tempWord_divided.substring(1, tempWord_divided.length()-1) );
+							while( stBrace.countTokens() != 0 )
+							{
+								String tempWord_divided = stBrace.nextToken();
+								tempWords.add( tempWord_divided.substring(1, tempWord_divided.length()-1) );
+								lemmaRepeatIDs.add(new ArrayList<Integer>());
+							}
+						}
+						else
+						{
+							tempWords.add( stBrace.nextToken() );
 							lemmaRepeatIDs.add(new ArrayList<Integer>());
 						}
 						
@@ -407,6 +416,12 @@ public class ResultAnalyzer {
 		int numofLemma = CountLemma(sentence);
 		int initPatternMatcherIndex = patternMatcherIndex;
 		int initLastMatchedIndex = lastMatchedIndex;
+		
+		//if( initLastMatchedIndex == -1 )
+		//	initLastMatchedIndex = 0;
+		int stepIndex = patternMatcherIndex;
+		if( stepIndex == -1 )
+			stepIndex = 0;
 		// 첫 번째 패턴부터 순서대로 검사합니다.
 		for( int patternCnt = 0; patternCnt < ComplicatedPatterns_core.size(); patternCnt++ )
 		{
@@ -497,7 +512,6 @@ public class ResultAnalyzer {
 						}
 						else
 							lastMatchedIndex = patternMatcherIndex-1;
-							
 					}
 					// 세 번째 방법은 text와 품사 데이터 모두 일치하는 경우만 허용하는 방법입니다.
 					else
@@ -509,6 +523,16 @@ public class ResultAnalyzer {
 					if( patternMatcherIndex == -1 || 
 						( lastMatchedIndex != -1 && patternMatcherIndex != lastMatchedIndex+1 ) )
 						noMatched = true;
+					if( patternMatcherIndex == stepIndex+1 )
+						stepIndex = patternMatcherIndex;
+					else
+					{
+						if( initPatternMatcherIndex == -1 )
+							stepIndex = 0;
+						else
+							stepIndex = initPatternMatcherIndex;
+						noMatched = true;
+					}
 					if( noMatched )
 						break;
 					// 만약 패턴 match에 성공했다면 가장 최근에 매치된 index값을 알기 위해 저장해둡니다.
@@ -570,9 +594,12 @@ public class ResultAnalyzer {
 			ArrayList<Sentence> asSamePatternList = ComplicatedPatterns_frame.get(patternCnt);
 			ArrayList<String> CoreList = new ArrayList<String>();
 			ArrayList<Integer> CoreListAssister = new ArrayList<Integer>();
+			int preventSameCoreIndexer = -1;
 			int repeatingPoint_word = 0;
 			int repeatingPoint_lemma = 0;
 			int repeatingPoint_lemmaIndex = 0;
+			int repeatingPoint_lastMatchedIndex = 0;
+			int repeatCounter = 0;
 			patternMatcherIndex = -1;
 			lastMatchedIndex = -1;
 			noMatched = false;
@@ -605,10 +632,31 @@ public class ResultAnalyzer {
 								patternMatcherIndex = -1;
 							else
 							{
+								if( patternMatcherIndex == preventSameCoreIndexer )
+								{
+									CoreList.remove( CoreList.size()-1 );
+									CoreListAssister.remove( CoreListAssister.size()-1 );
+								}
 								CoreList.add(coreData);
 								CoreListAssister.add(asSameCnt);
 								lastMatchedIndex = patternMatcherIndex-1;
+								preventSameCoreIndexer = patternMatcherIndex;
 							}
+						}
+						else if( lemma.getText().compareTo("NAME") == 0 )
+						{
+							patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+							// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+							// 그래서 name문자열에 이름을 저장해둡니다.
+							if( patternMatcherIndex > 0 )
+							{
+								name = GetLemma( sentence, numofLemma-patternMatcherIndex ).getText();
+							}
+							// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+							// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+							// 꼭 문의하십시오!
+							else
+								name = "??";
 						}
 						// 두 번째 방법은 품사는 검사하지 않지만 text를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 						else if( lemma.getPos() == Pos.X )
@@ -649,13 +697,27 @@ public class ResultAnalyzer {
 							repeatingPoint_lemma = lemmaCnt;
 							repeatingPoint_lemmaIndex = lemmaIndex;
 						}
+						else if( lemma.getRepeatID() != 0 && patternMatcherIndex == -1 &&
+								 lemmaIndex != CountLemma(pattern)-1 && GetLemma( pattern, lemmaIndex+1).getRepeatID() != 0 )
+						{
+							if( word.getNumofRepeat() == Repeat.ZERO_OR_MORE || repeatCounter != 0 )
+							{
+								lemmaIndex = findAfterLemma(pattern)+1; // 다시 뒤에 인덱스로 돌리기
+								wordCnt = GetWordCnt( pattern, lemmaIndex );
+								lemmaCnt = GetLemmaCnt( pattern, lemmaIndex );
+								patternMatcherIndex = repeatingPoint_lastMatchedIndex;
+								lastMatchedIndex = patternMatcherIndex-1;
+							}
+						}
 						else if( lemma.getRepeatID() == 1 && patternMatcherIndex != numofLemma )
 						{
 							lastMatchedIndex = patternMatcherIndex;
 							wordCnt = pattern.getWord().size()-repeatingPoint_word;
 							lemmaCnt = repeatingPoint_lemma;
 							lemmaIndex = repeatingPoint_lemmaIndex;
+							repeatingPoint_lastMatchedIndex = lastMatchedIndex;
 							asSameCnt = -1;
+							repeatCounter++;
 							repeated = true;
 						}
 						
@@ -700,7 +762,7 @@ public class ResultAnalyzer {
 							patternResult += CoreList.get(0);
 						
 						patternResult += ComplicatedQueryForms_frame_end.get(patternCnt);
-						
+						patternResult = patternResult.replaceAll("NAME", name);
 						if( result == "NoResult" )
 							result = patternResult;
 						else
@@ -1056,5 +1118,54 @@ public class ResultAnalyzer {
 		
 		//System.out.println("수상한 lemma가 출력됩니다.");
 		return lemma;
+	}
+	
+	private int findAfterLemma( Sentence sentence )
+	{
+		int counter = -1;
+		for( int wordCnt = 0; wordCnt < sentence.getWord().size(); wordCnt++ )
+		{
+			Word word = sentence.getWord(wordCnt);
+			for( int lemmaCnt = 0; lemmaCnt < word.getLemma().size(); lemmaCnt++ )
+			{
+				Lemma lemma = word.getLemma(lemmaCnt);
+				if( lemma.getRepeatID() == 1 )
+					return counter;
+				counter++;
+			}
+		}
+		return -1;
+	}
+	
+	private int GetWordCnt( Sentence sentence, int lemmaIndex )
+	{
+		int counter = 0;
+		for( int wordCnt = 0; wordCnt < sentence.getWord().size(); wordCnt++ )
+		{
+			Word word = sentence.getWord(wordCnt);
+			for( int lemmaCnt = 0; lemmaCnt < word.getLemma().size(); lemmaCnt++ )
+			{
+				if( counter == lemmaIndex )
+					return wordCnt;
+				counter++;
+			}
+		}
+		return -1;
+	}
+	
+	private int GetLemmaCnt( Sentence sentence, int lemmaIndex )
+	{
+		int counter = 0;
+		for( int wordCnt = 0; wordCnt < sentence.getWord().size(); wordCnt++ )
+		{
+			Word word = sentence.getWord(wordCnt);
+			for( int lemmaCnt = 0; lemmaCnt < word.getLemma().size(); lemmaCnt++ )
+			{
+				if( counter == lemmaIndex )
+					return lemmaCnt;
+				counter++;
+			}
+		}
+		return -1;
 	}
 }
