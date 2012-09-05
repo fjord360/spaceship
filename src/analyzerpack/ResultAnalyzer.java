@@ -411,7 +411,7 @@ public class ResultAnalyzer {
 		// 걸리게 되면 그 상황에서 어떤 값에서 판단미스가 났는지 보시면 됩니다.
 		String result = "NoResult";
 		String name = "";
-		String value1 = "", value2 = "";
+		String value1 = "", value2 = "", valueTH1 = "", valueTH2 = "";
 		boolean noMatched = false;
 		int numofLemma = CountLemma(sentence);
 		int initPatternMatcherIndex = patternMatcherIndex;
@@ -456,6 +456,10 @@ public class ResultAnalyzer {
 						else
 							name = "??";
 					}
+					else if( lemma.getPos() == Pos.j )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+					}
 					else if( lemma.getText().compareTo("VALUE1") == 0 )
 					{
 						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
@@ -487,6 +491,40 @@ public class ResultAnalyzer {
 						// 꼭 문의하십시오!
 						else
 							value2 = "??";
+					}
+					else if( lemma.getText().compareTo("VALUETH1") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex = numofLemma-patternMatcherIndex;
+							valueTH1 = GetLemma( sentence, lemmaIndex ).getText();
+							valueTH1 = Integer.toString(Integer.parseInt(valueTH1) - 1);
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							valueTH1 = "??";
+					}
+					else if( lemma.getText().compareTo("VALUETH2") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex= numofLemma-patternMatcherIndex;
+							valueTH2 = GetLemma( sentence, lemmaIndex ).getText();
+							valueTH2 = Integer.toString(Integer.parseInt(valueTH2) - 1);
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							valueTH2 = "??";
 					}
 					// 두 번째 방법은 품사는 검사하지 않지만 text를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 					else if( lemma.getPos() == Pos.X )
@@ -553,6 +591,8 @@ public class ResultAnalyzer {
 					patternResult = patternResult.replaceAll("NAME", name);
 					patternResult = patternResult.replaceAll("VALUE1", value1);
 					patternResult = patternResult.replaceAll("VALUE2", value2);
+					patternResult = patternResult.replaceAll("VALUETH1", value1);
+					patternResult = patternResult.replaceAll("VALUETH2", value2);
 					if( result == "NoResult" )
 						result = patternResult;
 					else
@@ -642,6 +682,10 @@ public class ResultAnalyzer {
 								lastMatchedIndex = patternMatcherIndex-1;
 								preventSameCoreIndexer = patternMatcherIndex;
 							}
+						}
+						else if( lemma.getPos() == Pos.j )
+						{
+							patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
 						}
 						else if( lemma.getText().compareTo("NAME") == 0 )
 						{
@@ -790,7 +834,7 @@ public class ResultAnalyzer {
 		// 걸리게 되면 그 상황에서 어떤 값에서 판단미스가 났는지 보시면 됩니다.
 		String result = "NoResult";
 		String name = "";
-		String value1 = "", value2 = "";
+		String value1 = "", value2 = "", valueTH1 = "", valueTH2 = "";
 		boolean noMatched = false;
 		int numofLemma = CountLemma(sentence);
 		
@@ -828,6 +872,10 @@ public class ResultAnalyzer {
 						else
 							name = "??";
 					}
+					else if( lemma.getPos() == Pos.j )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+					}
 					else if( lemma.getText().compareTo("VALUE1") == 0 )
 					{
 						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
@@ -859,6 +907,40 @@ public class ResultAnalyzer {
 						// 꼭 문의하십시오!
 						else
 							value2 = "??";
+					}
+					else if( lemma.getText().compareTo("VALUETH1") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex = numofLemma-patternMatcherIndex;
+							valueTH1 = GetLemma( sentence, lemmaIndex ).getText();
+							valueTH1 = Integer.toString(Integer.parseInt(valueTH1) - 1);
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							valueTH1 = "??";
+					}
+					else if( lemma.getText().compareTo("VALUETH2") == 0 )
+					{
+						patternMatcherIndex = DetectMatchingLemma(sentence, lemma.getPos());
+						// 패턴이 0이상 나온거면 sentence의 해당 index번째 lemma에서 별자리나 별이름이 검출된 것입니다.
+						// 그래서 name문자열에 이름을 저장해둡니다.
+						if( patternMatcherIndex > 0 )
+						{
+							int lemmaIndex= numofLemma-patternMatcherIndex;
+							valueTH2 = GetLemma( sentence, lemmaIndex ).getText();
+							valueTH2 = Integer.toString(Integer.parseInt(valueTH2) - 1);
+						}
+						// 이 때 무조건 인덱스가 0이상이 나와야 정상인데, else에 걸렸다면 결과값으로 -1이 반환된 것입니다.
+						// 이는 데이터를 못찾은 것이므로 프로그램 짠 김정호에게 문제가 있습니다.
+						// 꼭 문의하십시오!
+						else
+							valueTH2 = "??";
 					}
 					// 두 번째 방법은 품사는 검사하지 않지만 text를 기준으로 Matching해주는 함수를 사용하는 방법입니다.
 					else if( lemma.getPos() == Pos.X )
@@ -916,6 +998,8 @@ public class ResultAnalyzer {
 					patternResult = patternResult.replaceAll("NAME", name);
 					patternResult = patternResult.replaceAll("VALUE1", value1);
 					patternResult = patternResult.replaceAll("VALUE2", value2);
+					patternResult = patternResult.replaceAll("VALUETH1", valueTH1);
+					patternResult = patternResult.replaceAll("VALUETH2", valueTH2);
 					if( result == "NoResult" )
 						result = patternResult;
 					else
