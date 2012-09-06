@@ -20,12 +20,14 @@ public class TextAnalyzer {
 	int numNumberList;
 	int numSpecial;
 	String query;
+	String ErrorCode;
 
 	public TextAnalyzer() {
 		keyword = new ArrayList<Keyword>();
 		numberList = new ArrayList<Keyword>();
 		special = new ArrayList<Keyword>();
 		log = LogFactory.getLog("org.apache.lucene.analysis.kr");
+		ErrorCode = "";
 	}
 	
 	// 청킹 리스트 세팅
@@ -38,7 +40,7 @@ public class TextAnalyzer {
 	// 형태소 분석한 결과의 HTML 코드를 String으로 리턴한다.
 	public String Anaylze(String order) {
 		String printOut = "";
-			
+		
 		if( !"".equals(order) ) {
 			log.info(order);
 			
@@ -52,6 +54,7 @@ public class TextAnalyzer {
 				tokenizer = new KoreanTokenizer(new StringReader(order));
 			} catch(Exception e) {
 				order = "NoResult";
+				ErrorCode = e.getMessage();
 			}
 				
 			// 문장 클래스 생성
@@ -81,6 +84,7 @@ public class TextAnalyzer {
 				}
 			} catch (Exception e) {		
 				printOut = "NoResult";
+				ErrorCode = e.getMessage();
 			}
 
 			// 출력..
@@ -103,5 +107,10 @@ public class TextAnalyzer {
 	// 쿼리 리턴
 	public String getQuery() {
 		return query;
+	}
+	
+	// 에러코드 리턴
+	public String getErrorCode() {
+		return ErrorCode;
 	}
 }

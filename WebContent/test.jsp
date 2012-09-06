@@ -38,6 +38,7 @@
 			if( xmlHttp.readyState == 4 ) {
 				if( xmlHttp.status == 200 ) {
 					temp = xmlHttp.responseText;
+
 					document.getElementById("content").innerHTML = temp;
 				}
 			}

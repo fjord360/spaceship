@@ -1,10 +1,8 @@
-<%@page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="analyzerpack.TextAnalyzer" %>
 <%@page import="analyzerpack.NameFinder" %>
 <%@page import="analyzerpack.Keyword" %>
-<%@page import="analyzerpack.TextAnalyzer" %>
-<%@page import="analyzerpack.ResultAnalyzer" %>
 <%@page import="analyzerpack.AnswerText" %>
-<%@page import="analyzerpack.Pos" %>
 <%@page import="dbpack.SpaceDB" %>
 <%@page import="spacepack.Buildmap" %>
 <%@page import="java.io.FileOutputStream" %>
@@ -12,17 +10,20 @@
 <%@page import="java.util.ArrayList" %>
 <%@page import="java.util.Enumeration" %>
 <%@page import="java.util.Calendar" %>
+<%@page import="java.sql.*" %>
 <%
 	request.setCharacterEncoding("utf-8");
+	//String order = new String(request.getParameter("order").getBytes("ISO-8859-1"), "UTF-8");
 	String order = request.getParameter("order");
 	
-	// IP Ã¼Å©
+	// IP ì²´í¬
 	String USER_IP = request.getRemoteAddr();
 	String answer = "";
 	String query = "NoResult";
 	String analyzedOrder = order;
 	ArrayList<String> VALUE = new ArrayList<String>();
 	ArrayList<String> gf = new ArrayList<String>();
+	boolean isStart = false;
 	//long start = System.currentTimeMillis();
 	
 	if( order.indexOf("@INFORMATION=") >= 0 ) {
@@ -32,92 +33,174 @@
 		String infoname = infosplit[2];
 		
 		SpaceDB db = new SpaceDB();
-		db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
+		db.CreateDB("jdbc:mysql://localhost/spaceteam?characterEncoding=EUCKR", "spaceteam", "tlstmddms1");
+		//db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=EUCKR", "root", "");
 		
-		// ÀÌ¸§ Á¤º¸
+		// ì´ë¦„ ì •ë³´
+		if( infoname.equals("START_TALK") ) {
+			infoname = "ì§€êµ¬";
+			isStart = true;
+		}
 		VALUE.add(infoname);
 		String frompos = "";
-		if( infotable.equals("C") ) frompos = "º°ÀÚ¸®";
-		if( infotable.equals("S") ) frompos = "º°";
-		
-		// Àü¼ÛÇØÁÙ Á¤º¸µéÀ» DB¿¡¼­ °¡Á®¿Í¼­ ´Ù½Ã Àü¼Û
-		// Áú¼­ ¾ø´Â º¹ÀâÇÔÀº È¥¶õÀ» ¾ß±âÇÏ°í, º¹ÀâÇÔÀÌ ¾ø´Â Áú¼­´Â Áö·çÇÔÀ» À¯¹ßÇÑ´Ù. -·çµ¹ÇÁ ¾Æ¸¥ÇÏÀÓ
-		ArrayList<String> infofield = new ArrayList<String>();
-		infofield.add("Å¸ÀÔ");
-		infofield.add("ÇüÅÂ");
-		infofield.add("Àû°æ_½Ã");
-		infofield.add("Àû°æ_ºĞ");
-		infofield.add("Àû°æ_ÃÊ");
-		infofield.add("ÀûÀ§_µµ");
-		infofield.add("ÀûÀ§_ºĞ");
-		infofield.add("ÀûÀ§_ÃÊ");
-		infofield.add("°Å¸®");
-		infofield.add("Àı´ëµî±Ş");
-		infofield.add("Å©±â");
-		infofield.add("Áú·®");
-		infofield.add("¿Âµµ");
-		query = "SELECT ";
-		for( int i = 0 ; i < infofield.size() ; i++ ) {
-			query += infofield.get(i);
-			if( i != infofield.size()-1 ) query += ",";
+		if( infotable.equals("C") ) {
+			frompos = "ë³„ìë¦¬";
 		}
-		query += " FROM " + frompos + " WHERE ÀÌ¸§='" + infoname + "'";
-		db.Query(query);
-		gf = db.getField(query);
-		answer = infoname + frompos + "·Î ÀÌµ¿ÇÕ´Ï´Ù.@" + infoname;
-		String answer_info = "";
-		Buildmap bm = new Buildmap();
-		String type = "";
-		String spec = "";
-		double mass = 0.0f;
-		double kelvin = 0.0f;
+		if( infotable.equals("S") ) {
+			frompos = "ë³„";
 		
-		while( db.getDB().next() ) {
-			for( int i = 0 ; i < gf.size() ; i++ ) {
-				String dbval = db.getDB().getString(gf.get(i));
-				if( infofield.get(i).equals("Áú·®") ) mass = bm.ParseValueAverage(dbval);
-				if( infofield.get(i).equals("¿Âµµ") ) kelvin = bm.ParseValueAverage(dbval);
-				if( infofield.get(i).equals("Å¸ÀÔ") ) type = dbval;
-				if( infofield.get(i).equals("ÇüÅÂ") ) spec = dbval;
-				answer_info += ("@" + infofield.get(i) + " : " + dbval);
+			// ë³„ì— ëŒ€í•œ ì •ë³´ë¥¼ ìš”ì²­í–ˆìœ¼ë¯€ë¡œ í•´ë‹¹ ë³„ì˜ ì •ë³´ë¥¼ DBì—ì„œ ê²€ìƒ‰
+			ArrayList<String> infofield = new ArrayList<String>();
+			infofield.add("ì´ë¦„");
+			infofield.add("íƒ€ì…");
+			infofield.add("í˜•íƒœ");
+			infofield.add("ì ê²½_ì‹œ");
+			infofield.add("ì ê²½_ë¶„");
+			infofield.add("ì ê²½_ì´ˆ");
+			infofield.add("ì ìœ„_ë„");
+			infofield.add("ì ìœ„_ë¶„");
+			infofield.add("ì ìœ„_ì´ˆ");
+			infofield.add("ê±°ë¦¬");
+			infofield.add("ì ˆëŒ€ë“±ê¸‰");
+			infofield.add("í¬ê¸°");
+			infofield.add("ì§ˆëŸ‰");
+			infofield.add("ì˜¨ë„");
+			infofield.add("ì–´ë¯¸í•­ì„±");
+			infofield.add("ê¶¤ë„ê±°ë¦¬");
+			infofield.add("ê³µì „ì£¼ê¸°");
+			infofield.add("í…ìŠ¤ì³");
+			infofield.add("ê³ ë¦¬");
+			query = "SELECT ";
+			for( int i = 0 ; i < infofield.size() ; i++ ) {
+				query += infofield.get(i);
+				if( i != infofield.size()-1 ) query += ",";
+			}
+			query += " FROM " + frompos + " WHERE ì´ë¦„='" + infoname + "'";
+			db.Query(query);
+			gf = db.getField(query);
+			if( isStart ) answer = "ì•ˆë…•í•˜ì„¸ìš”. ì €ëŠ” JOURNEYì—ìš”. ìš°ì£¼ì— ëŒ€í•´ ë¬´ì—‡ì´ë“  ë¬¼ì–´ë³´ì„¸ìš”.";
+			else answer = infoname + "ë¡œ ì´ë™í•©ë‹ˆë‹¤.";
+			
+			// ì‚¬ìš©ìê°€ ìš”ì²­í•œ ê¸°ì¤€ë³„ ë¨¼ì € ë¶ˆëŸ¬ì˜´
+			Buildmap bm = new Buildmap();
+			bm.addStar(infoname);
+			while( db.getDB().next() ) {
+				for( int i = 0 ; i < gf.size() ; i++ ) {
+					String dbval = db.getDB().getString(gf.get(i));
+					bm.addInfo(0, infofield.get(i), dbval);
+				}
+			}
+			
+			// ì£¼ë³€ë³„ì´ ìˆëŠ”ì§€ DBì—ì„œ ê²€ìƒ‰
+			String near_query = "";
+			int numNearStar = 0;
+			int nearFirst = 0;
+			if( bm.star.get(0).getType().equals("star") ) {
+				near_query = "SELECT ";
+				for( int i = 0 ; i < infofield.size() ; i++ ) {
+					near_query += infofield.get(i);
+					if( i != infofield.size()-1 ) near_query += ",";
+				}
+				near_query += " FROM ë³„ WHERE ((ì ê²½_ì‹œ*100)+(ì ê²½_ë¶„))>=" + (bm.star.get(0).getAscCoord()-100.0f) + " AND ";
+				near_query += "((ì ê²½_ì‹œ*100)+(ì ê²½_ë¶„))<=" + (bm.star.get(0).getAscCoord()+100.0f) + " AND ";
+				near_query += "((ì ìœ„_ë„*100)+(ì ìœ„_ë¶„))>=" + (bm.star.get(0).getDecCoord()-100.0f) + " AND ";
+				near_query += "((ì ìœ„_ë„*100)+(ì ìœ„_ë¶„))<=" + (bm.star.get(0).getDecCoord()+100.0f) + " AND ";
+				near_query += "ê±°ë¦¬>=" + (bm.star.get(0).getDistance()-10.0f) + " AND ";
+				near_query += "ê±°ë¦¬<=" + (bm.star.get(0).getDistance()+10.0f) + " AND ";
+				near_query += "íƒ€ì…='star' AND ";
+				near_query += "ì´ë¦„ NOT IN('" + infoname + "')";
+				db.Query(near_query);
+				gf = db.getField(near_query);
+		
+				// ê²€ìƒ‰ëœ ë°ì´í„°ê°€ ì£¼ë³€ ë³„ë“¤ì´ë‹ˆ ì´ ë³„ë“¤ì˜ ì •ë³´ë„ ì–»ì–´ì˜´
+				numNearStar = 0;
+				while( db.getDB().next() ) {
+					numNearStar++;
+					for( int i = 0 ; i < gf.size() ; i++ ) {
+						String dbval = db.getDB().getString(gf.get(i));
+						out.println(dbval);
+						if( gf.get(i).equals("ì´ë¦„") ) {
+							bm.addStar(dbval);
+						}
+						else {
+							bm.addInfo(numNearStar, infofield.get(i), dbval);
+						}
+					}
+				}
+			}
+			
+			// ë³„ì— ëŒ€í•œ í–‰ì„±ì´ ìˆëŠ”ì§€ DBì—ì„œ ê²€ìƒ‰
+			near_query = "SELECT ";
+			for( int i = 0 ; i < infofield.size() ; i++ ) {
+				near_query += infofield.get(i);
+				if( i != infofield.size()-1 ) near_query += ",";
+			}
+			
+			// ê¸°ì¤€ë³„ì´ í•­ì„±ì´ë©´ ì´ ë³„ì„ ì–´ë¯¸í•­ì„±ìœ¼ë¡œ í•˜ëŠ” í–‰ì„±ì„ ì°¾ìŒ
+			near_query += " FROM ë³„ WHERE (ì´ë¦„='" + bm.star.get(0).getMotherStr() + "' OR ";
+			near_query += "ì–´ë¯¸í•­ì„±='" + infoname + "' OR ";
+			near_query += "ì–´ë¯¸í•­ì„±='" + bm.star.get(0).getMotherStr() + "') AND ";
+			near_query += "ì´ë¦„ NOT IN('" + infoname + "') order by íƒ€ì… desc";
+			//out.println(near_query);
+			db.Query(near_query);
+			gf = db.getField(near_query);
+		
+			// ì°¾ì€ ë³„ë“¤ì˜ ì •ë³´ë„ ì–»ì–´ì˜´
+			while( db.getDB().next() ) {
+				numNearStar++;
+				for( int i = 0 ; i < gf.size() ; i++ ) {
+					String dbval = db.getDB().getString(gf.get(i));
+					if( gf.get(i).equals("ì´ë¦„") ) {
+						bm.addStar(dbval);
+					}
+					else {
+						bm.addInfo(numNearStar, infofield.get(i), dbval);
+					}
+				}
+			}
+			
+			// ì‚¬ìš©ìê°€ ì…ë ¥í•œ ê¸°ì¤€ë³„ê³¼ ì£¼ë³€ë³„ ì •ë³´ë¥¼ ì „ì†¡..
+			answer += "@" + Integer.toString(numNearStar+1);
+			for( int i = 0 ; i < numNearStar+1 ; i++ ) {
+				answer += bm.getStarInfo(0, i);
 			}
 		}
-		if( type.equals("star") ) answer += ("@º°ÇüÅÂ=" + bm.BuildStar(spec));
-		else answer += ("@º°ÇüÅÂ=" + bm.BuildPlanet(mass, kelvin));
-		
-		answer += answer_info;
 	}	
 	else {
-		// ÀÌ¸§/¼ıÀÚ Ã»Å·
+		// ì´ë¦„/ìˆ«ì ì²­í‚¹
 		NameFinder nf = new NameFinder();
 		nf.CreateMap();
 		String chunkedOrder = nf.Find(order);
+		//out.println("<p>" + chunkedOrder + "</p>");
 		
-		// Ã»Å·ÇÑ ÀÌ¸§, ¼ıÀÚ, Æ¯¼ö¹®ÀÚ¸¦ ¸®½ºÆ®¿¡ ³Ö´Â´Ù.
+		// ì²­í‚¹í•œ ì´ë¦„, ìˆ«ì, íŠ¹ìˆ˜ë¬¸ìë¥¼ ë¦¬ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
 		ArrayList<Keyword> keyword = nf.getKeyword();
 		ArrayList<Keyword> numberList = nf.getNumberList();
 		ArrayList<Keyword> special = nf.getSpecial();
 		
-		// ÇüÅÂ¼ÒºĞ¼®
+		// í˜•íƒœì†Œë¶„ì„
 		TextAnalyzer ta = new TextAnalyzer();
 		ta.SetChunk(keyword, numberList, special);
 		analyzedOrder = ta.Anaylze(chunkedOrder);
-		System.out.println(analyzedOrder);
+		//out.println("<p>" + analyzedOrder + "</p>");
 		
-		// DB ¿¬°á..!
+		// DB ì—°ê²°..!
 		if( !analyzedOrder.equals("NoResult") ) {
 			SpaceDB db = new SpaceDB();
-			db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=UTF-8", "root", "");
+			db.CreateDB("jdbc:mysql://localhost/spaceteam?characterEncoding=EUCKR", "spaceteam", "tlstmddms1");
+			//db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=EUCKR", "root", "");
 			query = ta.getQuery();
-			System.out.println(query);
+			//out.println("<p>" + query + "</p>");
 		
-			// DB Äõ¸®
+			// DB ì¿¼ë¦¬
 			if( !query.equals("NoResult") ) {
 				db.Query(query);
 				gf = db.getField(query);
+				//out.println(db.getDB().isFirst());
 				while( db.getDB().next() ) {
 					for( int i = 0 ; i < gf.size() ; i++ ) {
 						String dbValue = db.getDB().getString(gf.get(i));
+						//out.println("<p>" + dbValue + "</p>");
 						if( dbValue == null ) VALUE.add("-12345");
 						else 				  VALUE.add(dbValue);
 					}
@@ -125,37 +208,12 @@
 			}
 		}
 		
-		// Á¤´ä ¹Ş¾Æ¿È
-		if( answer.length() <= 0 ) {
-			AnswerText at = new AnswerText();
-			at.CreatAnswerPattern();
-			answer = at.AnswerFromQuery(order, query, VALUE);
-		}
+		// ì •ë‹µ ë°›ì•„ì˜´
+		AnswerText at = new AnswerText();
+		at.CreatAnswerPattern();
+		answer = at.AnswerFromQuery(order, query, VALUE);
 	}
-	// Á¤´ä Ãâ·Â
+	// ì •ë‹µ ì¶œë ¥
 	out.println(answer);
-	System.out.println(answer);
-	
-	// ÇöÀç ³¯Â¥
-	Calendar calendar = Calendar.getInstance();
-	String YY = Integer.toString(calendar.get(Calendar.YEAR));
-	String MM = Integer.toString(calendar.get(Calendar.MONTH));
-	String DD = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
-	String H = Integer.toString(calendar.get(Calendar.HOUR_OF_DAY));
-	String M = Integer.toString(calendar.get(Calendar.MINUTE));
-	String S = Integer.toString(calendar.get(Calendar.SECOND));
-	String nowDate = YY + "/" + MM + "/" + DD + " " + H + ":" + M + ":" + S;
-	
-	// ·Î±× ÀúÀå
-	FileOutputStream fos = new FileOutputStream("log/log" + YY + MM + DD + ".txt", true);
-	OutputStreamWriter osw = new OutputStreamWriter(fos, "UTF-8");
-	osw.write(nowDate + "\n");
-	osw.write("IP : " + USER_IP + "\n");
-	osw.write("USER_QUERY : " + order + "\n");
-	osw.write("SENTENCE : " + analyzedOrder + "\n");
-	osw.write("QUERY : " + query + "\n");
-	osw.write("ANSWER : " + answer + "\n");
-	osw.write("\n");
-	osw.close();
+
 %>
- 
