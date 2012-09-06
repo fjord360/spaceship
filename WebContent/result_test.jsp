@@ -16,6 +16,8 @@
 	request.setCharacterEncoding("utf-8");
 	String order = request.getParameter("order");
 	
+	out.println(order);
+	
 	// IP 체크
 	String USER_IP = request.getRemoteAddr();
 	String answer = "";
@@ -27,7 +29,7 @@
 	
 	if( order.indexOf("@INFORMATION=") >= 0 ) {
 		
-		String infosplit[] = order.split("=");
+		/*String infosplit[] = order.split("=");
 		String infotable = infosplit[1];
 		String infoname = infosplit[2];
 		
@@ -87,7 +89,7 @@
 		if( type.equals("star") ) answer += ("@별형태=" + bm.BuildStar(spec));
 		else answer += ("@별형태=" + bm.BuildPlanet(mass, kelvin));
 		
-		answer += answer_info;
+		answer += answer_info;*/
 	}	
 	else {
 		// 이름/숫자 청킹

@@ -5,17 +5,19 @@ import java.util.ArrayList;
 
 public class SpaceDB {
 	
-	Connection conn;
-	Statement stmt;
-	ResultSet rs;
+	Connection conn = null;
+	Statement stmt = null;
+	ResultSet rs = null;
 	
 	ArrayList<String> star_field;
 	ArrayList<String> cons_field;
+	String ErrorCode = "";
 	
 	public SpaceDB() {
 		conn = null;
 		stmt = null;
 		rs = null;
+		ErrorCode = "";
 	}
 	
 	// MySQL 드라이버 생성
@@ -25,8 +27,7 @@ public class SpaceDB {
 			conn = DriverManager.getConnection(URL, USER, PASS);
 			stmt = conn.createStatement();
 		} catch(Exception e) {
-			System.out.println(e.getMessage());
-			e.printStackTrace();
+			ErrorCode = e.getMessage();
 		}
 		
 		star_field = new ArrayList<String>();
@@ -100,8 +101,7 @@ public class SpaceDB {
 				//String name = rs.getString("name");
 			//}
 		} catch(Exception e) {
-			System.out.println("query message : " + e.getMessage());
-			e.printStackTrace();
+			ErrorCode = e.getMessage();
 		}
 	}
 	
@@ -155,5 +155,10 @@ public class SpaceDB {
 	// ResultSet을 리턴
 	public ResultSet getDB() {
 		return rs;
+	}
+	
+	// Error Code를 리턴
+	public String getErrorCode() {
+		return ErrorCode;
 	}
 }

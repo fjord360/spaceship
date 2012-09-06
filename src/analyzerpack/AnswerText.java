@@ -29,7 +29,7 @@ public class AnswerText {
 	
 	public void CreatAnswerPattern() {
 		try {
-			String file = "WebContent/Dictionary/answer.txt";
+			String file = "www/Dictionary/answer.txt";
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 		
 			boolean first = true;
