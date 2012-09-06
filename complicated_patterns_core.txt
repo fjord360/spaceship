@@ -11,3 +11,4 @@
 행성수>=VALUE1:행성수/X+가/X_VALUE1/I_이상/X
 동반성수>=VALUE1:동반성수/X+가/X_VALUE1/I_이상/X
 최소공전주기>=VALUE1:공전주기/X+가/X_VALUE1/I_이상/X
+크기:크/X+기/X
