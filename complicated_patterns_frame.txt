@@ -1,6 +1,6 @@
 // :A/P+이/t+ㄴ/e_별/N_중/N_B/P+이/t+ㄴ/e_별/N
 // SELECT 이름 FROM 별 WHERE [ AND ]:[A/P+이/t+고/e]+_B/P+이/t+ㄴ/e_별/N
-SELECT 이름 FROM 별 WHERE :NAME/S+의/X_A/P
+// SELECT 이름 FROM 별 WHERE :NAME/S+의/X_A/P
 SELECT 이름 FROM 별 WHERE [ OR | AND | AND ]~ :[{A/P+이/t+거나/e}|{A/P+이/t+고/e}|{A/P+이/t+ㄴ/e_별/N_중/N}]*_B/P+이/t+ㄴ/e_별/N
 SELECT 이름 FROM 별 WHERE [ OR | AND ]~ order by 최대밝기 limit 1:[{A/P+이/t+거나/e}|{A/P+이/t+고/e}]*_A/P+이/t+ㄴ/e_별/N_중/N_가장/Z_밝/V+은/e_별/N
 SELECT 이름 FROM 별 WHERE [ OR | AND ]~ order by 최대밝기 limit 1:[{A/P+이/t+거나/e}|{A/P+이/t+고/e}]*_A/P+이/t+ㄴ/e_@4/X_가장/Z_밝/V+은/e_별/N

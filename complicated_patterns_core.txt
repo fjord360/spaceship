@@ -1,14 +1,208 @@
-최소온도>=VALUE1:온도/X+가/X_VALUE1/I_도/X_이상/X
-최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X
-최소거리>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
-최소연주시차>=VALUE1:연주시차/X+가/X_VALUE1/I_이상/X
+
+// 별자리 - 필드먼저
+
+// 넓이
+
+// 넓이순위
+
+// 별의수
+
+// 별밝기
+
+// 회귀년
+
+
+
+// 별 - 필드
+
+// 궤도거리
+
+// 최소실시등급
 최소실시등급>=VALUE1:실시등급/X+이/X_VALUE1/I_이상/X
+최소실시등급>=VALUE1:실시등급/X_@2/X_VALUE1/I_이상/X
+// 최대실시등급
+최대실시등급<=VALUE1:실시등급/X+이/X_VALUE1/I_이하/X
+최대실시등급<=VALUE1:실시등급/X_@2/X_VALUE1/I_이하/X
+// 최소절대등급
 최소절대등급>=VALUE1:절대등급/X+이/X_VALUE1/I_이상/X
+최소절대등급>=VALUE1:절대등급/X_@2/X_VALUE1/I_이상/X
+// 최대절대등급
+최대절대등급<=VALUE1:절대등급/X+이/X_VALUE1/I_이하/X
+최대절대등급<=VALUE1:절대등급/X_@2/X_VALUE1/I_이하/X
+// 최소연주시차
+최소연주시차>=VALUE1:연주시차/X+가/X_VALUE1/I_이상/X
+최소연주시차>=VALUE1:연주시차/X_@2/X_VALUE1/I_이상/X
+// 최대연주시차
+최대연주시차<=VALUE1:연주시차/X+가/X_VALUE1/I_이하/X
+최대연주시차<=VALUE1:연주시차/X_@2/X_VALUE1/I_이하/X
+// 최소거리
+최소거리>=VALUE1:거리/X+가/X_VALUE1/I_이상/X
+최소거리>=VALUE1:거/V+리/e_@2/X_VALUE1/I_이상/X
+// 최대거리
+최대거리<=VALUE1:거리/X+가/X_VALUE1/I_이하/X
+최대거리<=VALUE1:거/V+리/e_@2/X_VALUE1/I_이하/X
+// 최소질량
 최소질량>=VALUE1:질량/X+이/X_VALUE1/I_이상/X
+최소질량>=VALUE1:질량/X_@2/X_VALUE1/I_이상/X
+// 최대질량
+최대질량<=VALUE1:질량/X+이/X_VALUE1/I_이하/X
+최대질량<=VALUE1:질량/X_@2/X_VALUE1/I_이하/X
+// 최소크기
 최소크기>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
+최소크기>=VALUE1:크/V+기/e_@2/X_VALUE1/I_이상/X
+// 최대크기
+최대크기<=VALUE1:크/X+기/X+가/X_VALUE1/I_이하/X
+최대크기<=VALUE1:크/V+기/e_@2/X_VALUE1/I_이하/X
+// 최소밝기
 최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X
+최소밝기>=VALUE1:밝/V+기/e_@2/X_VALUE1/I_이상/X
+// 최대밝기
+최대밝기<=VALUE1:밝/X+기/X+가/X_VALUE1/I_이하/X
+최대밝기<=VALUE1:밝/V+기/e_@2/X_VALUE1/I_이하/X
+// 최소온도
+최소온도>=VALUE1:온도/X+가/X_VALUE1/I_도/X_이상/X
 최소온도>=VALUE1:온도/X+가/X_VALUE1/I_이상/X
+최소온도>=VALUE1:온/Z+도/j_@2/X_VALUE1/I_도/X_이상/X
+최소온도>=VALUE1:온/Z+도/j_@2/X_VALUE1/I_이상/X
+// 최대온도
+최대온도<=VALUE1:온도/X+가/X_VALUE1/I_도/X_이하/X
+최대온도<=VALUE1:온도/X+가/X_VALUE1/I_이하/X
+최대온도<=VALUE1:온/Z+도/j_@2/X_VALUE1/I_도/X_이하/X
+최대온도<=VALUE1:온/Z+도/j_@2/X_VALUE1/I_이하/X
+// 행성수
 행성수>=VALUE1:행성수/X+가/X_VALUE1/I_이상/X
+행성수>=VALUE1:행성수/X_@2/X_VALUE1/I_이상/X
+행성수<=VALUE1:행성수/X+가/X_VALUE1/I_이하/X
+행성수<=VALUE1:행성수/X_@2/X_VALUE1/I_이하/X
+// 동반성수
 동반성수>=VALUE1:동반성수/X+가/X_VALUE1/I_이상/X
-최소공전주기>=VALUE1:공전주기/X+가/X_VALUE1/I_이상/X
-크기:크/X+기/X
+동반성수>=VALUE1:동반성수/_@2/X_VALUE1/I_이상/X
+동반성수<=VALUE1:동반성수/X+가/X_VALUE1/I_이하/X
+동반성수<=VALUE1:동반성수/_@2/X_VALUE1/I_이하/X
+// 최소공전주기
+최소공전주기>=VALUE1:공전주기/N+가/X_VALUE1/I_이상/X
+최소공전주기>=VALUE1:공전주기/N_@2/X_VALUE1/I_이상/X
+// 최대공전주기
+최대공전주기<=VALUE1:공전주기/N+가/X_VALUE1/I_이하/X
+최대공전주기<=VALUE1:공전주기/N_@2/X_VALUE1/I_이하/X
+// 최소이심률
+최소이심률>=VALUE1:이심률/N+이/X_VALUE1/I_이상/X
+최소이심률>=VALUE1:이심률/N_@2/X_VALUE1/I_이상/X
+// 최대이심률
+최대이심률<=VALUE1:이심률/N+이/X_VALUE1/I_이하/X
+최대이심률<=VALUE1:이심률/N_@2/X_VALUE1/I_이하/X
+// 최소궤도경사각
+최소궤도경사각>=VALUE1:궤도경사각/N+이/X_VALUE1/I_이상/X
+최소궤도경사각>=VALUE1:궤도경사각/N_@2/X_VALUE1/I_이상/X
+// 최대궤도경사각
+최대궤도경사각<=VALUE1:궤도경사각/N+이/X_VALUE1/I_이하/X
+최대궤도경사각<=VALUE1:궤도경사각/N_@2/X_VALUE1/I_이하/X
+// 최소각거리
+최소각거리>=VALUE1:각거리/N+가/X_VALUE1/I_이상/X
+최소각거리>=VALUE1:각거리/N_@2/X_VALUE1/I_이상/X
+// 최대각거리
+최대각거리<=VALUE1:각거리/N+가/X_VALUE1/I_이하/X
+최대각거리<=VALUE1:각거리/N_@2/X_VALUE1/I_이하/X
+// 최소근일점
+최소근일점>=VALUE1:근일점/N+이/X_VALUE1/I_이상/X
+최소근일점>=VALUE1:근일점/N_@2/X_VALUE1/I_이상/X
+// 최대근일점
+최대근일점<=VALUE1:근일점/N+이/X_VALUE1/I_이하/X
+최대근일점<=VALUE1:근일점/N_@2/X_VALUE1/I_이하/X
+// 최소원일점
+최소원일점>=VALUE1:원일점/N+이/X_VALUE1/I_이상/X
+최소원일점>=VALUE1:원일점/N_@2/X_VALUE1/I_이상/X
+// 최대원일점
+최대원일점<=VALUE1:원일점/N+이/X_VALUE1/I_이하/X
+최대원일점<=VALUE1:원일점/N_@2/X_VALUE1/I_이하/X
+// 공전속도
+공전속도>=VALUE1:공전속도/N+가/X_VALUE1/I_이상/X
+공전속도>=VALUE1:공전속/N+도/j_@2/X_VALUE1/I_이상/X
+공전속도<=VALUE1:공전속도/N+가/X_VALUE1/I_이하/X
+공전속도<=VALUE1:공전속/N+도/j_@2/X_VALUE1/I_이하/X
+// 상대속도
+상대속도>=VALUE1:상대속도/N+가/X_VALUE1/I_이상/X
+상대속도>=VALUE1:상대속/N+도/j_@2/X_VALUE1/I_이상/X
+상대속도<=VALUE1:상대속도/N+가/X_VALUE1/I_이하/X
+상대속도<=VALUE1:상대속/N+도/j_@2/X_VALUE1/I_이하/X
+// 둘레
+둘레>=VALUE1:둘레/N+가/X_VALUE1/I_이상/X
+둘레>=VALUE1:두/V+ㄹ레/e_@2/X_VALUE1/I_이상/X
+둘레<=VALUE1:둘레/N+가/X_VALUE1/I_이하/X
+둘레<=VALUE1:두/V+ㄹ레/e_@2/X_VALUE1/I_이하/X
+// 지름
+지름>=VALUE1:지르/V+ㅁ/n+이/X_VALUE1/I_이상/X
+지름>=VALUE1:지르/V+ㅁ/n_@2/X_VALUE1/I_이상/X
+지름<=VALUE1:지르/V+ㅁ/n+이/X_VALUE1/I_이하/X
+지름<=VALUE1:지르/V+ㅁ/n_@2/X_VALUE1/I_이하/X
+// 편평도
+편평도>=VALUE1:편평도/N+가/X_VALUE1/I_이상/X
+편평도>=VALUE1:편평/N+도/j_@2/X_VALUE1/I_이상/X
+편평도<=VALUE1:편평도/N+가/X_VALUE1/I_이하/X
+편평도<=VALUE1:편평/N+도/j_@2/X_VALUE1/I_이하/X
+// 표면적
+표면적>=VALUE1:표면적/N+이/X_VALUE1/I_이상/X
+표면적>=VALUE1:표면적/N_@2/X_VALUE1/I_이상/X
+표면적<=VALUE1:표면적/N+이/X_VALUE1/I_이하/X
+표면적<=VALUE1:표면적/N_@2/X_VALUE1/I_이하/X
+// 부피
+부피>=VALUE1:부피/N+가/X_VALUE1/I_이상/X
+부피>=VALUE1:부피/N_@2/X_VALUE1/I_이상/X
+부피<=VALUE1:부피/N+가/X_VALUE1/I_이하/X
+부피<=VALUE1:부피/N_@2/X_VALUE1/I_이하/X
+// 밀도
+밀도>=VALUE1:밀도/N+가/X_VALUE1/I_이상/X
+밀도>=VALUE1:밀/N+도/j_@2/X_이상/X
+밀도<=VALUE1:밀도/N+가/X_VALUE1/I_이하/X
+밀도<=VALUE1:밀/N+도/j_@2/X_이하/X
+// 중력가속도
+중력가속도>=VALUE1:중력가속도/N+가/X_VALUE1/I_이상/X
+중력가속도>=VALUE1:중력가속/N+도/j_@2/X_VALUE1/I_이상/X
+중력가속도<=VALUE1:중력가속도/N+가/X_VALUE1/I_이하/X
+중력가속도<=VALUE1:중력가속/N+도/j_@2/X_VALUE1/I_이하/X
+// 탈출속도
+탈출속도>=VALUE1:탈출속도/N+가/X_VALUE1/I_이상/X
+탈출속도>=VALUE1:탈출속/N+도/j_@2/X_VALUE1/I_이상/X
+탈출속도<=VALUE1:탈출속도/N+가/X_VALUE1/I_이하/X
+탈출속도<=VALUE1:탈출속/N+도/j_@2/X_VALUE1/I_이하/X
+// 코로나온도
+코로나온도>=VALUE1:코로나온도/N+가/X_VALUE1/I_이상/X
+코로나온도>=VALUE1:코로나온도/N_@2/X_VALUE1/I_이상/X
+코로나온도<=VALUE1:코로나온도/N+가/X_VALUE1/I_이하/X
+코로나온도<=VALUE1:코로나온도/N_@2/X_VALUE1/I_이하/X
+// 핵온도
+핵온도>=VALUE1:핵온도/N+가/X_VALUE1/I_이상/X
+핵온도>=VALUE1:핵온/N+도/j_@2/X_VALUE1/I_이상/X
+핵온도<=VALUE1:핵온도/N+가/X_VALUE1/I_이하/X
+핵온도<=VALUE1:핵온/N+도/j_@2/X_VALUE1/I_이하/X
+// 광도
+광도>=VALUE1:광도/N+가/X_VALUE1/I_이상/X
+광도>=VALUE1:광/N+도/j_@2/X_VALUE1/I_이상/X
+광도<=VALUE1:광도/N+가/X_VALUE1/I_이하/X
+광도<=VALUE1:광/N+도/j_@2/X_VALUE1/I_이하/X
+// 황도경사
+황도경사>=VALUE1:황도경사/N+가/X_VALUE1/I_이상/X
+황도경사>=VALUE1:황도경사/N_@2/X_VALUE1/I_이상/X
+황도경사<=VALUE1:황도경사/N+가/X_VALUE1/I_이하/X
+황도경사<=VALUE1:황도경사/N_@2/X_VALUE1/I_이하/X
+// 자전주기
+자전주기>=VALUE1:자전주기/N+가/X_VALUE1/I_이상/X
+자전주기>=VALUE1:자전주기/N_@2/X_VALUE1/I_이상/X
+자전주기<=VALUE1:자전주기/N+가/X_VALUE1/I_이하/X
+자전주기<=VALUE1:자전주기/N_@2/X_VALUE1/I_이하/X
+// 자전속도
+자전속도>=VALUE1:자전속도/N+가/X_VALUE1/I_이상/X
+자전속도>=VALUE1:자전속/N+도/j_@2/X_VALUE1/I_이상/X
+자전속도<=VALUE1:자전속도/N+가/X_VALUE1/I_이하/X
+자전속도<=VALUE1:자전속/N+도/j_@2/X_VALUE1/I_이하/X
+// 위성수
+위성수>=VALUE1:위성수/N+가/X_VALUE1/I_이상/X
+위성수>=VALUE1:위성수/N_@2/X_VALUE1/I_이상/X
+위성수<=VALUE1:위성수/N+가/X_VALUE1/I_이하/X
+위성수<=VALUE1:위성수/N_@2/X_VALUE1/I_이하/X
+
+
+
+
+
+// 크기:크/X+기/X
