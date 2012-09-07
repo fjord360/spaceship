@@ -78,7 +78,7 @@ public class NameFinder {
 	public void CreateMap() {
 		
 		try {
-			String file = "www/Dictionary/constellation_dic.txt";
+			String file = "WebContent/Dictionary/constellation_dic.txt";
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 			
 			boolean first = true;
@@ -126,7 +126,7 @@ public class NameFinder {
 		}
 		
 		try {
-			String file = "www/Dictionary/star_dic.txt";
+			String file = "WebContent/Dictionary/star_dic.txt";
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 			
 			boolean first = true;

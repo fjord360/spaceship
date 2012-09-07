@@ -1,144 +1,46 @@
-
-<%@page import="org.apache.commons.logging.Log"%><%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@page import="analyzerpack.TextAnalyzer" %>
+<%@page import="analyzerpack.NameFinder" %>
+<%@page import="analyzerpack.Keyword" %>
+<%@page import="analyzerpack.AnswerText" %>
+<%@page import="dbpack.SpaceDB" %>
+<%@page import="spacepack.Buildmap" %>
+<%@page import="java.io.FileOutputStream" %>
+<%@page import="java.io.OutputStreamWriter" %>
+<%@page import="java.util.ArrayList" %>
+<%@page import="java.util.Enumeration" %>
+<%@page import="java.util.Calendar" %>
+<%@page import="java.sql.*" %>
 <%
-	request.setCharacterEncoding("EUC-KR");
-	Log log = LogFactory.getLog("org.apache.lucene.analysis.kr");
-    String question = request.getParameter("input");
-    if(question==null) question = "";    
-%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+	//request.setCharacterEncoding("utf-8");
+	String order = new String(request.getParameter("order").getBytes("ISO-8859-1"), "UTF-8");
+	//String order = request.getParameter("order");
+	
+	// IP ì²´í¬
+	String USER_IP = request.getRemoteAddr();
+	String answer = "";
+	String query = "NoResult";
+	String analyzedOrder = order;
+	ArrayList<String> VALUE = new ArrayList<String>();
+	ArrayList<String> gf = new ArrayList<String>();
+	//long start = System.currentTimeMillis();
+	boolean isStart = false;
 
-<%@page import="org.apache.commons.logging.LogFactory"%>
-
-<%@page import="org.apache.lucene.analysis.kr.morph.MorphAnalyzer"%>
-<%@page import="org.apache.lucene.analysis.kr.KoreanTokenizer"%>
-<%@page import="java.io.StringReader"%>
-<%@page import="org.apache.lucene.analysis.Token"%>
-<%@page import="org.apache.lucene.analysis.kr.morph.AnalysisOutput"%>
-<%@page import="java.util.List"%><HTML>
- <HEAD>
-  <TITLE>ÀÚ¹Ù ÇÑ±ÛÇüÅÂ¼ÒºĞ¼®±â µ¥¸ğ</TITLE>
-	<STYLE type="text/css">
-	<!--
-	td {  font-size: 10pt}
-	select {  font-size: 10pt}
-	textarea {  font-size: 10pt}
-	.benhur1 {  font-size: 12pt}
-	a:visited {  text-decoration: none; color: #000000}
-	a:link {  text-decoration: none; color: #000000}
-	a:hover {  color: #000000; text-decoration: underline}
-
-.outer {
-	color:#666666;
-	background-color:#ffffff;
-	font-family: µ¸¿ò, Arial, Tahoma;
-	border-bottom: #4a93dd 1px solid;
-}
-.title {
-	color:#666666;
-	background-color:#ffffff;
-	font-family: µ¸¿ò, Arial, Tahoma;
-	FONT-SIZE: 12px;
-	height: 18px; margin-bottom:0px;
-	padding: 2px 0 2px 10px;
-}
-.inner {
-	color:#666666;
-	background-color:#ffffff;
-	font-family: µ¸¿ò, Arial, Tahoma;
-	FONT-SIZE: 12px;
-	height: 18px; margin-bottom:0px;
-	padding: 2px 0 2px 10px;
-	margin: 0 0 0 50px;
-}
-	-->
-	</STYLE>
- </HEAD>
-
- <BODY>
-<table width="800" align="center">
-  <tr>
-  <td>
-	<a href="index.jsp" class="menu">ÇüÅÂ¼ÒºĞ¼®</a>  | <a href="cnouns.jsp" class="menu">º¹ÇÕ¸í»ç ºĞÇØ</a>  | <a href="space.jsp" class="menu">ÀÚµ¿¶ç¿ö¾²±â</a> | <a href="keyword.jsp" class="menu">»öÀÎ¾îÃßÃâ</a>
-	<hr/>
-  </td>
-  </tr>
-  </table>
- <form method="post" name="morph">
-  <table width="800" align="center">
-  <tr>
-  <td>
-		<div style="font-size:18pt;text-align:center">ÇÑ±Û ÇüÅÂ¼ÒºĞ¼® µ¥¸ğ</div>
-		<div style="font-size:10pt;text-align:center;color:blue">º» ½Ã½ºÅÛÀº ¼ø¼ö ÀÚ¹Ù·Î °³¹ßµÇ¾îÁø ÇÑ±ÛÇüÅÂ¼ÒºĞ¼®±âÀÔ´Ï´Ù.</div>
-
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <div style="text-align:center">
-  <textarea name="input" rows="7" cols="100"></textarea>
-  <div>
-  <div style="text-align:right;margin-right:35px">
-  	<input type="submit" name="action" value="½ÇÇàÇÏ±â">
-  </div>
-  </td>
-  </tr>
-  <tr>
-  <td style="background-color:#BBBBEF">
-  <div style="font-weight:bold;margin-top:20px;">ÀÔ·Â : </div>
-  <div style="padding-left:40px;margin-top:5px"><%=question %></div>
-  </td>
-  </tr>
-  <tr>
-  <td>
-  <div style="font-weight:bold;margin-top:20px">Ãâ·Â : </div>
-  <hr>
-<%
-try {
-	if(!"".equals(question)) {
-		log.info(question);
-		long start = System.currentTimeMillis();
-		MorphAnalyzer analyzer = new MorphAnalyzer();
-		KoreanTokenizer tokenizer = new KoreanTokenizer(new StringReader(question));
-		Token token = null;
-		while((token=tokenizer.next())!=null) {
-			if(!token.type().equals("<KOREAN>")) continue;
+	// ì´ë¦„/ìˆ«ì ì²­í‚¹
+	NameFinder nf = new NameFinder();
+	nf.CreateMap();
+	String chunkedOrder = nf.Find(order);
+	out.println(chunkedOrder);
+	
+	// ì²­í‚¹í•œ ì´ë¦„, ìˆ«ì, íŠ¹ìˆ˜ë¬¸ìë¥¼ ë¦¬ìŠ¤íŠ¸ì— ë„£ëŠ”ë‹¤.
+	ArrayList<Keyword> keyword = nf.getKeyword();
+	ArrayList<Keyword> numberList = nf.getNumberList();
+	ArrayList<Keyword> special = nf.getSpecial();
 			
-			out.println("<div class='outer'>");
-			try {
-				analyzer.setExactCompound(false);
-				List<AnalysisOutput> results = analyzer.analyze(token.termText());
-				out.println("<div class='title'>");				
-				out.println(token.termText());
-				out.println("</div>");				
-				for(AnalysisOutput o : results) {
-					out.println("<div class='inner'>");				
-					out.println(o.toString()+"->");
-					for(int i=0;i<o.getCNounList().size();i++){
-						out.println(o.getCNounList().get(i).getWord()+"/");
-					}
-					out.println("<"+o.getScore()+">");					
-					out.println("</div>");		
-				}
-			} catch (Exception e) {
-				out.println("<div class='title'>");					
-				out.println(e.getMessage());
-				out.println("</div>");					
-				e.printStackTrace();
-			}
-			out.println("</div>");	
-		}
-		out.println("<div>"+(System.currentTimeMillis()-start)+"ms</div>");
-	}
-} catch(Exception e) {
-	out.println(e.getMessage());
-	e.printStackTrace();
-}
-%>	
-  </td>
-  </tr>
-  </table>
-</form>  
- </BODY>
-</HTML>
+	// í˜•íƒœì†Œë¶„ì„
+	TextAnalyzer ta = new TextAnalyzer();
+	ta.SetChunk(keyword, numberList, special);
+	analyzedOrder = ta.Anaylze(chunkedOrder);
+	//out.println("<p>" + analyzedOrder + "</p>");
+	
+%>

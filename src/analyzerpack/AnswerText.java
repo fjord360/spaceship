@@ -29,7 +29,7 @@ public class AnswerText {
 	
 	public void CreatAnswerPattern() {
 		try {
-			String file = "www/Dictionary/answer.txt";
+			String file = "WebContent/Dictionary/answer.txt";
 			BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
 		
 			boolean first = true;
@@ -74,76 +74,69 @@ public class AnswerText {
 	// 쿼리를 대화형 정답 텍스트로 변환..
 	public String AnswerFromQuery(String order, String query, ArrayList<String> value) {
 		String Answer = "";
-		VALUE = value;
-		NUM = Integer.toString(VALUE.size());
 		FROM = "";
-		
-		if( query.equals("NoResult") ) {
-			// 처음 시작할 때
-			if( order.indexOf("@START_TALK") >= 0 ) {
-				Answer = RandomPattern("시작");
-			}
-			else if( order.indexOf("@INFORMATION_") >= 0 ) {
-				String[] inforsplit = order.split("=");
-				if( inforsplit.length > 1 ) {
-					inforsplit[1].trim();
-					//inforsplit[1]
-				}
-				//Answer = 
-			}
-			// 매칭된 패턴이 없을 경우
-			else {
-				Answer = RandomPattern("몰라요");
-			}
+		NUM = "";
+		if( value != null ) {
+			VALUE = value;
+			NUM = Integer.toString(VALUE.size());
+		}
+			
+		if( query.charAt(0) == '@' ) {
+			Answer = RandomPattern(query.substring(1, query.length()));
 		}
 		// 쿼리 형태일 경우
 		else {
 			// 필드값 추출
-			String fromsplit[] = query.split("FROM");
+			if( query.indexOf("FROM") >= 0 ) {
+				String fromsplit[] = query.split("FROM");
 			
-			// FROM을 통해 가져오는 테이블 이름 확인
-			if( fromsplit.length > 2 ) {
-				if( fromsplit[1].indexOf("별자리") >= 0 ) FROM = "C";
-				else {
-					if( fromsplit[1].indexOf("별") >= 0 ) FROM = "S";
-				}
-			}
-			
-			// SELECT와 FROM 사이
-			String split[] = fromsplit[0].split("SELECT");
-			if( split.length > 1 ) {
-				split[1] = split[1].trim();
-				FIELD.add(split[1]);
-			}
-		
-			// 답이 이름일 경우
-			if( FIELD.get(0).equals("이름") ) {
-				Answer = RandomPattern("다중검색");
-				for( int i = 0 ; i < VALUE.size() ; i++ ) {
-					Answer += ("@" + FROM + ":" + VALUE.get(i));
-				}
-			}
-		
-			// 답이 값일 경우
-			else {
-				// NAME 추출
-				String[] querySplit = query.split("WHERE 이름='");
-				if( querySplit.length > 1 ) {
-					String[] nameSplit = querySplit[1].split("'");
-					NAME.add(nameSplit[0]);
-				}
-				
-				// 필드정보 패턴이 정답
-				Answer = RandomPattern("필드정보");
-				
-				// 값에 -12345가 들어가 있으면..
-				if( value.size() > 0 ) {
-					if( value.get(0).equals("-12345") ) {
-						Answer = RandomPattern("필드몰라요");
+				// FROM을 통해 가져오는 테이블 이름 확인
+				if( fromsplit.length > 2 ) {
+					if( fromsplit[1].indexOf("별자리") >= 0 ) FROM = "C";
+					else {
+						if( fromsplit[1].indexOf("별") >= 0 ) FROM = "S";
 					}
 				}
+			
+				// SELECT와 FROM 사이
+				String split[] = fromsplit[0].split("SELECT");
+				if( split.length > 1 ) {
+					split[1] = split[1].trim();
+					FIELD.add(split[1]);
+				}
+		
+				// 답이 이름일 경우
+				if( FIELD.get(0).equals("이름") ) {
+					Answer = RandomPattern("다중검색");
+					for( int i = 0 ; i < VALUE.size() ; i++ ) {
+						Answer += ("@" + FROM + ":" + VALUE.get(i));
+					}
+				}
+		
+				// 답이 값일 경우
+				else {
+					// NAME 추출
+					String[] querySplit = query.split("WHERE 이름='");
+					if( querySplit.length > 1 ) {
+						String[] nameSplit = querySplit[1].split("'");
+						NAME.add(nameSplit[0]);
+					}
 				
-				VALUE = value;
+					// 필드정보 패턴이 정답
+					Answer = RandomPattern("필드정보");
+				
+					// 값에 -12345가 들어가 있으면..
+					if( value.size() > 0 ) {
+						if( value.get(0).equals("-12345") ) {
+							Answer = RandomPattern("필드몰라요");
+						}
+					}
+				
+					VALUE = value;
+				}
+			}
+			else {
+				Answer = RandomPattern("몰라요");
 			}
 		}
 		

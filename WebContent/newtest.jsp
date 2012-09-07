@@ -12,14 +12,15 @@
 <%@page import="java.util.Calendar" %>
 <%@page import="java.sql.*" %>
 <%
-	//request.setCharacterEncoding("utf-8");
-	String order = new String(request.getParameter("order").getBytes("ISO-8859-1"), "UTF-8");
-	//String order = request.getParameter("order");
+	request.setCharacterEncoding("utf-8");
+	//String order = new String(request.getParameter("order").getBytes("ISO-8859-1"), "UTF-8");
+	String order = request.getParameter("order");
 	
 	// IP 체크
 	String USER_IP = request.getRemoteAddr();
 	String answer = "";
 	String query = "NoResult";
+	String chunkedOrder = "";
 	String analyzedOrder = order;
 	ArrayList<String> VALUE = new ArrayList<String>();
 	ArrayList<String> gf = new ArrayList<String>();
@@ -27,39 +28,65 @@
 	boolean isStart = false;
 
 	// 이름/숫자 청킹
-	NameFinder nf = new NameFinder();
-	nf.CreateMap();
-	String chunkedOrder = nf.Find(order);
-	//out.println("<p>" + chunkedOrder + "</p>");
-		
-	// 청킹한 이름, 숫자, 특수문자를 리스트에 넣는다.
-	ArrayList<Keyword> keyword = nf.getKeyword();
-	ArrayList<Keyword> numberList = nf.getNumberList();
-	ArrayList<Keyword> special = nf.getSpecial();
-		
-	// 형태소분석
-	TextAnalyzer ta = new TextAnalyzer();
-	ta.SetChunk(keyword, numberList, special);
-	analyzedOrder = ta.Anaylze(chunkedOrder);
-	//out.println("<p>" + analyzedOrder + "</p>");
+	if( order.charAt(0) != '@' ) {
+		NameFinder nf = new NameFinder();
+		nf.CreateMap();
+		chunkedOrder = nf.Find(order);
+		//out.println("<p>" + chunkedOrder + "</p>");
 	
-	// DB 연결..!
-	if( !analyzedOrder.equals("NoResult") ) {
-		SpaceDB db = new SpaceDB();
-		db.CreateDB("jdbc:mysql://localhost/spaceteam?characterEncoding=EUCKR", "spaceteam", "tlstmddms1");
-		//db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=EUCKR", "root", "");
-		query = ta.getQuery();
-		out.println(query);
+		// 청킹한 이름, 숫자, 특수문자를 리스트에 넣는다.
+		ArrayList<Keyword> keyword = nf.getKeyword();
+		ArrayList<Keyword> numberList = nf.getNumberList();
+		ArrayList<Keyword> special = nf.getSpecial();
 		
-		if( query.indexOf("@INFORMATION") >= 0 ) {
+		// 형태소분석
+		TextAnalyzer ta = new TextAnalyzer();
+		ta.SetChunk(keyword, numberList, special);
+		out.println("<p>" + "chunkedOrder : " + chunkedOrder + "</p>");
+		analyzedOrder = ta.Anaylze(chunkedOrder);
+		out.println("<p>" + "analyzedOrder : " + analyzedOrder + "</p>");
+		query = ta.getQuery();
+	}
+	else {
+		query = "NoResult";
+	}
+		
+	SpaceDB db = new SpaceDB();
+	//db.CreateDB("jdbc:mysql://localhost/spaceteam?characterEncoding=EUCKR", "spaceteam", "tlstmddms1");
+	db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=EUCKR", "root", "root");
+	
+	// 비쿼리
+	if( query.charAt(0) == '@' ) order = query;
+	out.println("<p>" + "query : " + query + "</p>");
+	
+	// 정답 패턴 생
+	AnswerText at = new AnswerText();
+	at.CreatAnswerPattern();
+	
+	// 쿼리형태의 답이 나왔을 때
+	if( !query.equals("NoResult") && query.charAt(0) != '@' ) {
+		db.Query(query);
+		gf = db.getField(query);
+		while( db.getDB().next() ) {
+			for( int i = 0 ; i < gf.size() ; i++ ) {
+				String dbValue = db.getDB().getString(gf.get(i));
+				if( dbValue == null ) VALUE.add("-12345");
+				else 				  VALUE.add(dbValue);
+			}
+		}
+			
+		// 정답 받아옴
+		answer = at.AnswerFromQuery(order, query, VALUE);
+	}
+	// 쿼리형태의 답이 아닐 
+	else {
+		if( order.indexOf("@INFORMATION") >= 0 ) {
 			String infosplit[] = order.split("=");
 			String infotable = infosplit[1];
 			String infoname = infosplit[2];
 			if( infoname.indexOf("'") >= 0 ) infoname.replaceAll("'", "");
 			
-			db = new SpaceDB();
-			db.CreateDB("jdbc:mysql://localhost/spaceteam?characterEncoding=EUCKR", "spaceteam", "tlstmddms1");
-			//db.CreateDB("jdbc:mysql://localhost/stardb?characterEncoding=EUCKR", "root", "");
+			out.println(infoname);
 			
 			// 이름 정보
 			if( infoname.equals("START_TALK") ) {
@@ -70,6 +97,8 @@
 			String frompos = "";
 			if( infotable.equals("C") ) {
 				frompos = "별자리";
+				
+				
 			}
 			if( infotable.equals("S") ) {
 				frompos = "별";
@@ -104,7 +133,7 @@
 				db.Query(query);
 				gf = db.getField(query);
 				if( isStart ) answer = "안녕하세요. 저는 JOURNEY에요. 우주에 대해 무엇이든 물어보세요.";
-				else answer = infoname + "로 이동합니다.";
+				else answer = infoname + "에 대한 정보입니다.";
 				
 				// 사용자가 요청한 기준별 먼저 불러옴
 				Buildmap bm = new Buildmap();
@@ -143,7 +172,7 @@
 						numNearStar++;
 						for( int i = 0 ; i < gf.size() ; i++ ) {
 							String dbval = db.getDB().getString(gf.get(i));
-							out.println(dbval);
+							//out.println(dbval);
 							if( gf.get(i).equals("이름") ) {
 								bm.addStar(dbval);
 							}
@@ -192,26 +221,11 @@
 			}
 		}
 		else {
-			// DB 쿼리
-			if( !query.equals("NoResult") ) {
-				db.Query(query);
-				gf = db.getField(query);
-				while( db.getDB().next() ) {
-					for( int i = 0 ; i < gf.size() ; i++ ) {
-						String dbValue = db.getDB().getString(gf.get(i));
-						out.println(dbValue);
-						//out.println("<p>" + dbValue + "</p>");
-						//if( dbValue == null ) VALUE.add("-12345");
-						//else 				  VALUE.add(dbValue);
-					}
-				}
-			}
-			// 정답 받아옴
-			/*AnswerText at = new AnswerText();
-			at.CreatAnswerPattern();
-			answer = at.AnswerFromQuery(order, query, VALUE);*/
+			// 아무것도 아님
+			answer = at.AnswerFromQuery(order, query, VALUE);
 		}
 	}
-			
+	
+	out.println("<p>" + "answer : " + answer);
 	
 %>
