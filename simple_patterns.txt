@@ -1011,7 +1011,7 @@ SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤도경사각/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤/X+도/X_경사각/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤도/X+의/X_경사각/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤도기울기/X
-SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤도/X_기울/X+기/X
+SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_궤/N+도/j_기울/X+기/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_기울/X+기/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_기울어지/X+ㄴ/X_정/X+도/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_깁/X+ㄴ/X_정/X+도/X
@@ -1022,7 +1022,7 @@ SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤도경사각/X
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤/X+도/X_경사각/X          
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤도/X+의/X_경사각/X        
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤도기울기/X                
-SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤도/X_기울/X+기/X          
+SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_궤/N+도/j_기울/X+기/X          
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_기울/X+기/X                 
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_기울어지/X+ㄴ/X_정/X+도/X   
 SELECT 궤도경사각 FROM 별 WHERE 이름='NAME':NAME/S+X/j_깁/X+ㄴ/X_정/X+도/X         
@@ -1143,24 +1143,24 @@ SELECT 최대원일점 FROM 별 WHERE 이름='NAME':NAME/S+X/j_원일점/X_최대값/X
 SELECT 행성 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_행성/X
 SELECT 행성 FROM 별 WHERE 이름='NAME':NAME/S+X/j_행성/X
 // 공전속도
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속도/X
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속/N+도/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X_속/X+도/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X+하/X+는/X_속/X+도/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_얼마/X+나/X_빨/X+리/X_공전/X+하/X+나/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_얼마/X+나/X_빨/X+리/X_공전/X+하/X+나요/X
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속도/X+는/X_얼마/X+나/X
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속도/X_얼마/X+나/X
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속/N+도/X+는/X_얼마/X+나/X
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전속/N+도/X_얼마/X+나/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X_속도/X+는/X_얼마/X+나/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X_속/X+도/X_얼마/X+나/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X+하/X+는/X_속도/X+는/X_얼마/X+나/X
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_공전/X+하/X+는/X_속/X+도/X_얼마/X+나/X
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속도/X                               
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속/N+도/X                               
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전/X_속/X+도/X                         
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전/X+하/X+는/X_속/X+도/X               
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_얼마/X+나/X_빨/X+리/X_공전/X+하/X+나/X   
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_얼마/X+나/X_빨/X+리/X_공전/X+하/X+나요/X 
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속도/X+는/X_얼마/X+나/X              
-SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속도/X_얼마/X+나/X                   
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속/N+도/X+는/X_얼마/X+나/X              
+SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전속/N+도/X_얼마/X+나/X                   
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전/X_속도/X+는/X_얼마/X+나/X           
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전/X_속/X+도/X_얼마/X+나/X                
 SELECT 공전속도 FROM 별 WHERE 이름='NAME':NAME/S+X/j_공전/X+하/X+는/X_속도/X+는/X_얼마/X+나/X 
@@ -1387,119 +1387,302 @@ SELECT 위성수 FROM 별 WHERE 이름='NAME':NAME/S+X/j_얼마/X+나/X_위성/X_있/X+나요/
 // 2-3. 필드 중 최고나 최대, 최소, 최저 값을 찾는 대표적 패턴
 // 궤도거리
 // 최소실시등급
-SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345):가장/X_실시등급/X_이/X_낮/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345):실시등급/X_이/X_가장/X_닞/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345):가장/X_겉보기등급/X_이/X_낮/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345):겉보기등급/X_이/X_가장/X_닞/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):가장/X_실시등급/X_이/X_낮/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):실시등급/X_이/X_가장/X_닞/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):가장/X_겉보기등급/X_이/X_낮/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):겉보기등급/X_이/X_가장/X_닞/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):가장/X_실시등급/X_이/X_낮/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):실시등급/X_이/X_가장/X_닞/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):가장/X_겉보기등급/X_이/X_낮/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최소실시등급=(SELECT MIN(최소실시등급) FROM 별 WHERE 최소실시등급!=-12345 and 타입='star'):겉보기등급/X_이/X_가장/X_닞/X+은/X_항성/N
 // 최대실시등급
-SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345):가장/X_실시등급/X_이/X_높/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345):실시등급/X_이/X_가장/X_높/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345):가장/X_겉보기등급/X_이/X_높/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345):겉보기등급/X_이/X_가장/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_실시등급/X_이/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):실시등급/X_이/X_가장/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_겉보기등급/X_이/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):겉보기등급/X_이/X_가장/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_실시등급/X_이/X_높/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):실시등급/X_이/X_가장/X_높/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_겉보기등급/X_이/X_높/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대실시등급=(SELECT MAX(최대실시등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):겉보기등급/X_이/X_가장/X_높/X+은/X_항성/N
 // 최소절대등급
-SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345):가장/X_절대등급/X_이/X_낮/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345):절대등급/X_이/X_가장/X_닞/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345 and 타입='star'):가장/X_절대등급/X_이/X_낮/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345 and 타입='star'):절대등급/X_이/X_가장/X_닞/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345 and 타입='star'):가장/X_절대등급/X_이/X_낮/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최소절대등급=(SELECT MIN(최소절대등급) FROM 별 WHERE 최소절대등급!=-12345 and 타입='star'):절대등급/X_이/X_가장/X_닞/X+은/X_항성/N
 // 최대절대등급
-SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345):가장/X_절대등급/X_이/X_높/X+은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345):절대등급/X_이/X_가장/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_절대등급/X_이/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):절대등급/X_이/X_가장/X_높/X+은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):가장/X_절대등급/X_이/X_높/X+은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대절대등급=(SELECT MAX(최대절대등급) FROM 별 WHERE 최대절대등급!=-12345 and 타입='star'):절대등급/X_이/X_가장/X_높/X+은/X_항성/N
 // 최소연주시차
-SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345):가장/X_연주시차/X_가/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345):연주시차/X_가/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345 and 타입='star'):가장/X_연주시차/X_가/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345 and 타입='star'):연주시차/X_가/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345 and 타입='star'):가장/X_연주시차/X_가/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소연주시차=(SELECT MIN(최소연주시차) FROM 별 WHERE 최소연주시차!=-12345 and 타입='star'):연주시차/X_가/X_가장/X_작/X_은/X_항성/X
 // 최대연주시차
-SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345):가장/X_연주시차/X_가/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345):연주시차/X_가/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345 and 타입='star'):가장/X_연주시차/X_가/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345 and 타입='star'):연주시차/X_가/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345 and 타입='star'):가장/X_연주시차/X_가/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345 and 타입='star'):연주시차/X_가/X_가장/X_크/X_ㄴ/X_항성/X
 // 여기 가장 먼별 처리 어떻게될지 좀 봐야됨.
 // 최소거리
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345):가장/X_거리/X_가/X_가깝/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345):거리/X_가/X_가장/X_가깝/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345):가장/X_ 가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_항성/X
 // 최대거리
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_거리/X_가/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):거리/X_가/X_가장/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_멀리/X_있/X_었/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_멀/X_리/X_있/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_가까이/X_있/X_었/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345):가장/X_가까이/X_있/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_항성/X
 // 최소질량
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345):가장/X_가볍/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345):질량/X_이/X_가장/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345):가장/X_질량/X_이/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_가볍/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):질량/X_이/X_가장/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_질량/X_이/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_행성/X
 // 최대질량
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345):가장/X_무거운/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345):질량/X_이/X_가장/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345):가장/X_질량/X_이/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무거운/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무거운/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_무거운/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):질량/X_이/X_가장/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_질량/X_이/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_행성/X
 // 최소크기
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345):가장/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345):가장/X_크/X_기/X_가/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345):크/X_기/X_가/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):가장/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_작/X_은/X_행성/X
 // 최대크기
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345):가장/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):가장/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_행성/X
 // 최소밝기
-SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345):가장/X_어둡/X+ㄴ/X_별/N
-SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345):가장/X_밝/X_기/X_가/X_어둡/X+ㄴ/X_별/N
+SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_어둡/X+ㄴ/X_별/N
+SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_밝/X_기/X_가/X_어둡/X+ㄴ/X_별/N
+SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_어둡/X+ㄴ/X_항성/N
+SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_밝/X_기/X_가/X_어둡/X+ㄴ/X_항성/N
 // 최대밝기
-SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345):가장/X_밝/X_은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345):가장/X_밝/X_기/X_가/X_밝/X_은/X_별/N
-SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345):가장/X_눈부시/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_밝/X_은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_밝/X_기/X_가/X_밝/X_은/X_별/N
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_눈부시/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_밝/X_은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_밝/X_기/X_가/X_밝/X_은/X_항성/N
+SELECT 이름 FROM 별 WHERE 최대밝기=(SELECT MAX(최대밝기) FROM 별 WHERE 최대밝기!=-12345 and 타입='star'):가장/X_눈부시/X_ㄴ/X_항성/X
 // 최소온도
-SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345):가장/X_차갑/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345):가장/X_온도/X_가/X_낮/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345):온도/X_가/X_가장/X_낮/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):가장/X_차갑/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):가장/X_온도/X_가/X_낮/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):온도/X_가/X_가장/X_낮/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):가장/X_차갑/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):가장/X_온도/X_가/X_낮/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='star'):온도/X_가/X_가장/X_낮/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='planet'):가장/X_차갑/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='planet'):가장/X_온도/X_가/X_낮/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소온도=(SELECT MIN(최소온도) FROM 별 WHERE 최소온도!=-12345 and 타입='planet'):온도/X_가/X_가장/X_낮/X_은/X_행성/X
 // 최대온도
-SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345):가장/X_뜨거운/X_별/X
-SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345):가장/X_온도/X_가/X_높/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345):온도/X_가/X_가장/X_높/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):가장/X_뜨거운/X_별/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):가장/X_온도/X_가/X_높/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):온도/X_가/X_가장/X_높/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):가장/X_뜨거운/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):가장/X_온도/X_가/X_높/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='star'):온도/X_가/X_가장/X_높/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='planet'):가장/X_뜨거운/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='planet'):가장/X_온도/X_가/X_높/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대온도=(SELECT MAX(최대온도) FROM 별 WHERE 최대온도!=-12345 and 타입='planet'):온도/X_가/X_가장/X_높/X_은/X_행성/X
 // 행성수
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성/X_이/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성/X_수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성/X_이/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):가장/X_행성/X_수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):행성/X_이/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):행성수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345):행성/X_수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):행성/X_이/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):행성수/X_가/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345):행성/X_수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_이/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_이/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_이/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_이/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_이/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_이/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):가장/X_행성/X_수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_이/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MAX(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_이/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성수/X_가/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 행성수=(SELECT MIN(행성수) FROM 별 WHERE 행성수!=-12345 and 타입='star'):행성/X_수/X_가/X_가장/X_적/X_은/X_항성/X
 // 동반성수
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성/X_이/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성/X_수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성/X_이/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_동반성/X_수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성/X_이/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성/X_수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성/X_이/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성수/X_가/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):동반성/X_수/X_가/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별/X_이/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별/X_수/X_가/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별/X_이/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):가장/X_짝/X_별/X_수/X_가/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별/X_이/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별/X_수/X_가/X_가장/X_많/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별/X_이/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별수/X_가/X_가장/X_적/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345):짝/X_별/X_수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_이/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_이/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_이/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_이/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_이/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_수/X_가/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_이/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_수/X_가/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_이/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_수/X_가/X_가장/X_많/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_이/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_수/X_가/X_가장/X_적/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_이/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_이/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_동반성/X_수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_이/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_이/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성수/X_가/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):동반성/X_수/X_가/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_이/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_수/X_가/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_이/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):가장/X_짝/X_별/X_수/X_가/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_이/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MAX(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_수/X_가/X_가장/X_많/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_이/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별수/X_가/X_가장/X_적/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!=-12345 and 타입='star'):짝/X_별/X_수/X_가/X_가장/X_적/X_은/X_항성/X
 // 최소공전주기
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N+가/X_짧/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N+가/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):공전주기/N+가/X_가장/X_짧/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):공전주기/N+가/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N_@2/X_짧/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):공전주기/N_@2/X_가장/X_짧/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소공전주기=(SELECT MIN(최소공전주기) FROM 별 WHERE 최소공전주기!=-12345 and 타입='planet'):공전주기/N_@2/X_가장/X_작/V+은/X_행성/X
 // 최대공전주기
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N+가/X_기/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N+가/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):공전주기/N+가/X_가장/X_기/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):공전주기/N+가/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N_@2/X_기/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):가장/X_공전주기/N_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):공전주기/N_@2/X_가장/X_기/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대공전주기=(SELECT MAX(최대공전주기) FROM 별 WHERE 최대공전주기!=-12345 and 타입='planet'):공전주기/N_@2/X_가장/X_크/V+ㄴ/X_행성/X
 // 최소이심률
 // 최대이심률
 // 최소궤도경사각
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도경사각이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤/N+도/j_경사각/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도각/N+이/j_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_경사각/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_각/N+이/j_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_경사각/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_각/N+이/j_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도경사각이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤/N+도/j_경사각/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도각/N+이/j_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_경사각/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_각/N+이/j_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):경사각/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):각/N+이/j_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도경사각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤/N+도/j_경사각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_경사각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_경사각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):가장/X_각/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도경사각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤/N+도/j_경사각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_경사각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):경사각/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소궤도경사각=(SELECT MIN(최소궤도경사각) FROM 별 WHERE 최소궤도경사각!=-12345 and 타입='planet'):각/X_@2/X_가장/X_작/V+은/X_행성/X
 // 최대궤도경사각
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도경사각이/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤/N+도/j_경사각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_경사각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_경사각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_각/N+이/j_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도경사각이/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤/N+도/j_경사각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_경사각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):경사각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):각/N+이/j_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도경사각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤/N+도/j_경사각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_경사각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_궤도/N+와의/j_각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_경사각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):가장/X_각/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도경사각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤/N+도/j_경사각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_경사각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):궤도/N+와의/j_각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):경사각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대궤도경사각=(SELECT MAX(최대궤도경사각) FROM 별 WHERE 최대궤도경사각!=-12345 and 타입='planet'):각/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
 // 최소각거리
 // 최대각거리
 // 최소근일점
@@ -1507,14 +1690,137 @@ SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!
 // 최소원일점
 // 최대원일점
 // 공전속도
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MIN(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):가장/X_공전속/N+도/X+가/X_느리/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MIN(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):공전속/N+도/X+가/X_가장/X_느리/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MIN(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):가장/X_공전속/N+도/X_@2/X_느리/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MIN(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):공전속/N+도/X_@2/X_가장/X_느리/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MAX(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):가장/X_공전속/N+도/X+가/X_빠르/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MAX(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):공전속/N+도/X+가/X_가장/X_빠르/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MAX(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):가장/X_공전속/N+도/X_@2/X_빠르/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 공전속도=(SELECT MAX(공전속도) FROM 별 WHERE 공전속도!=-12345 and 타입='planet'):공전속/N+도/X_@2/X_가장/X_빠르/V+ㄴ/X_행성/X
 // 상대속도
 // 둘레
 // 지름
 // 편평도
 // 표면적
 // 부피
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/N+가/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/N+가/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/N+가/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/N+가/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/N+가/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/N+가/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/N+가/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/N+가/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MIN(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/N+가/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/N+가/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/N+가/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/N+가/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):가장/X_부피/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='star'):부피/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/N+가/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/N+가/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/X_@2/X_크/V+ㄴ/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/N+가/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/N+가/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):가장/X_부피/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 부피=(SELECT MAX(부피) FROM 별 WHERE 부피!=-12345 and 타입='planet'):부피/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
 // 밀도
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):가장/X_밀도/N+가/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):밀도/N+가/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):가장/X_밀/N+도/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):밀/N+도/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):가장/X_밀도/N+가/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):밀도/N+가/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):가장/X_밀/N+도/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MIN(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):밀/N+도/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):가장/X_밀도/N+가/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):밀도/N+가/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):가장/X_밀/N+도/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='star'):밀/N+도/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):가장/X_밀도/N+가/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):밀도/N+가/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):가장/X_밀/N+도/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 밀도=(SELECT MAX(밀도) FROM 별 WHERE 밀도!=-12345 and 타입='planet'):밀/N+도/X_@2/X_크/V+ㄴ/X_행성/X
 // 중력가속도
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력가속도/N+가/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N+이/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력값/N+이/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N_값/N+이/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력가속도/N+가/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N+이/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력값/N+이/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N_값/N+이/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력가속/N+도/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력값/X_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N_값/N_@2/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력가속/N+도/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력값/X_@2/X_가장/X_작/V+은/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N_값/N_@2/X_가장/X_작/V+은/X_별/X
+
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력가속도/N+가/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력값/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N_값/N+이/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력가속도/N+가/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력값/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N_값/N+이/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력가속/N+도/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력값/X_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N_값/N_@2/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력가속/N+도/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력값/X_@2/X_가장/X_작/V+은/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MIN(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N_값/N_@2/X_가장/X_작/V+은/X_행성/X
+
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력가속도/N+가/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N+이/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력값/N+이/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N_값/N+이/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력가속도/N+가/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N+이/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력값/N+이/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N_값/N+이/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력가속/N+도/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력값/X_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):가장/X_중력/N_값/N_@2/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력가속/N+도/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력값/X_@2/X_가장/X_크/V+ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='star'):중력/N_값/N_@2/X_가장/X_크/V+ㄴ/X_별/X
+
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력가속도/N+가/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N+이/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력값/N+이/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N_값/N+이/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력가속도/N+가/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N+이/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력값/N+이/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N_값/N+이/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력가속/N+도/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력값/X_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):가장/X_중력/N_값/N_@2/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력가속/N+도/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력값/X_@2/X_가장/X_크/V+ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 중력가속도=(SELECT MAX(중력가속도) FROM 별 WHERE 중력가속도!=-12345 and 타입='planet'):중력/N_값/N_@2/X_가장/X_크/V+ㄴ/X_행성/X
 // 탈출속도
 // 코로나온도
 // 핵온도
@@ -1523,6 +1829,35 @@ SELECT 이름 FROM 별 WHERE 동반성수=(SELECT MIN(동반성수) FROM 별 WHERE 동반성수!
 // 자전주기
 // 자전속도
 // 위성수
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_이/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성수/X_가/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_수/X_가/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_이/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성수/X_가/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_수/X_가/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_이/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성수/X_가/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_수/X_가/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_이/X_가장/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성수/X_가/X_가장/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_수/X_가/X_가장/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_@2/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성수/X_@2/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_수/X_@2/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_@2/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성수/X_@2/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):가장/X_위성/X_수/X_@2/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_@2/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성수/X_@2/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MAX(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_수/X_@2/X_가장/X_많/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_@2/X_가장/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성수/X_@2/X_가장/X_적/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 위성수=(SELECT MIN(위성수) FROM 별 WHERE 위성수!=-12345 and 타입='planet'):위성/X_수/X_@2/X_가장/X_적/X_은/X_행성/X
+
+
+
+
+
 
 // 쿼리 아닌 패턴들
 @너의이름:널/X+ㄴ/X_이르/X+ㅁ/X
