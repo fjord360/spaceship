@@ -80,7 +80,7 @@ public class AnswerText {
 			VALUE = value;
 			NUM = Integer.toString(VALUE.size());
 		}
-			
+		
 		if( query.charAt(0) == '@' ) {
 			Answer = RandomPattern(query.substring(1, query.length()));
 		}

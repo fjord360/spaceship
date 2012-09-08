@@ -70,7 +70,7 @@
 				else 				  VALUE.add(dbValue);
 			}
 		}
-			
+		
 		// 정답 받아옴
 		AnswerText at = new AnswerText();
 		at.CreatAnswerPattern();
@@ -93,9 +93,38 @@
 			}
 			VALUE.add(infoname);
 			String frompos = "";
+			
+			// 별자리에 대한 정보
 			if( infotable.equals("C") ) {
 				frompos = "별자리";
+				
+				// 별자리에 대한 정보를 요청했으므로 해당 별자리의 정보를 DB에서 검색
+				ArrayList<String> infofield = new ArrayList<String>();
+				infofield.add("이름");
+				infofield.add("적경_시");
+				infofield.add("적경_분");
+				infofield.add("적위_도");
+				infofield.add("적위_분");
+				//infofield.add("유래");
+				
+				query = "SELECT ";
+				for( int i = 0 ; i < infofield.size() ; i++ ) {
+					query += infofield.get(i);
+					if( i != infofield.size()-1 ) query += ",";
+				}
+				query += " FROM " + frompos + " WHERE 이름='" + infoname + "'";
+				db.Query(query);
+				gf = db.getField(query);
+				answer = infoname + "에 대한 정보입니다.$";
+				
+				// 사용자가 입력한 기준별과 주변별 정보를 전송..
+				//answer += "@" + Integer.toString(numNearStar+1);
+				//for( int i = 0 ; i < numNearStar+1 ; i++ ) {
+					//answer += bm.getStarInfo(0, i);
+				//}
 			}
+			
+			// 별에 대한 정보
 			if( infotable.equals("S") ) {
 				frompos = "별";
 			

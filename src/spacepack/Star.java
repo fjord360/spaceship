@@ -1,9 +1,12 @@
 package spacepack;
 
+import java.util.ArrayList;
+
 public class Star {
 	private String name;			// 이름
 	private String type;			// 타입
 	private String form;			// 형태
+	private String constellation;	// 별자리
 	private String[] ascension;		// 적경
 	private String[] declination;	// 적위
 	private String distance;		// 거리
@@ -11,18 +14,22 @@ public class Star {
 	private String size;			// 크기
 	private String mass;			// 질량
 	private String kelvin;			// 온도
+	private String apperant;		// 겉보기등급
+	private String absolute;		// 절대등급
 	private String mother;			// 어미항성
 	private String semimajor;		// 궤도거리
 	private String period;			// 공전주기
 	private String inclination;		// 경사각
 	private String texture;			// 텍스쳐파일
 	private String disk;			// 고리
+	private ArrayList<String> connect;	// 별자리 연결
 	
 	// 생성자
 	public Star(String Name) {
 		name = Name;
 		type = "";
 		form = "";
+		constellation = "";
 		ascension = new String[3];
 		ascension[0] = "0";
 		ascension[1] = "0";
@@ -36,6 +43,8 @@ public class Star {
 		size = "0";
 		mass = "0";
 		kelvin = "0";
+		apperant = "0";
+		absolute = "0";
 		mother = "";
 		semimajor = "0";
 		period = "0";
@@ -66,6 +75,14 @@ public class Star {
 	}
 	public String getForm() {
 		return form;
+	}
+	
+	// 별자리 설정, 리턴
+	public void setConstellation(String Constellation) {
+		constellation = Constellation;
+	}
+	public String GetConstellation() {
+		return constellation;
 	}
 	
 	// 적경 설정, 리턴
@@ -198,6 +215,38 @@ public class Star {
 		return (String.format("%.1f", value));
 	}
 	
+	// 겉보기등급 설정, 리턴
+	public void setApperant(String Apperant) {
+		apperant = Apperant;
+	}
+	public double getApperant() {
+		if( apperant == null ) return 0.0f;
+		else return ParseValue(apperant);
+	}
+	public String getApperantStr() {
+		double value = ParseValue(apperant);
+		if( value <= 0.0f ) return "0.0";
+		String apvalue = (String.format("%.1f", value));
+		if( apvalue.charAt(0) != '-' ) return "+" + apvalue;
+		else return apvalue;
+	}
+	
+	// 절대등급 설정, 리턴
+	public void setAbsolute(String Absoulte) {
+		absolute = Absoulte;
+	}
+	public double getAbsolute() {
+		if( absolute == null ) return 0.0f;
+		else return ParseValue(absolute);
+	}
+	public String getAbsoluteStr() {
+		double value = ParseValue(absolute);
+		if( value <= 0.0f ) return "0.0";
+		String apvalue = (String.format("%.1f", value));
+		if( apvalue.charAt(0) != '-' ) return "+" + apvalue;
+		else return apvalue;
+	}
+	
 	// 어미항성 설정, 리턴
 	public void setMother(String Mother) {
 		mother = Mother;
@@ -275,6 +324,17 @@ public class Star {
 	public String getDisk() {
 		if( disk == null ) return "0";
 		else return disk;
+	}
+	
+	// 연결 설정 리턴
+	public void addConnect(String Connect) {
+		connect.add(Connect);
+	}
+	public ArrayList<String> getConnect() {
+		return connect;
+	}
+	public String getConnect(int index) {
+		return connect.get(index);
 	}
 	
 	// 적위, 적경을 좌표형태로 리턴

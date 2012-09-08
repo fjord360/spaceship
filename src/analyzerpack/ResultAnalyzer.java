@@ -128,6 +128,8 @@ public class ResultAnalyzer {
 				if( pattern.compareTo("") == 0 || pattern.substring(0, 2).compareTo("//") == 0 )
 					continue;
 				
+				//System.out.println( pattern );
+				
 				Sentence sentence = new Sentence("");
 				String queryform;
 				// 먼저 쿼리를 수집합니다. :를 기준으로 수집합니다.
