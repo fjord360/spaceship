@@ -463,31 +463,31 @@ SELECT 거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_얼/X+마/X_가/X+어야/X
 SELECT 거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거리/X+가/X_얼마/X+나/X
 SELECT 거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_얼마/X+나/X
 // 최소거리
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소거리/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_거/X+리/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소치/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최솟값/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소값/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소거리/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_거/X+리/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소치/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최솟값/X
-SELECT 최소거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소값/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소거리/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_거/X+리/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소치/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최솟값/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최소값/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소거리/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_거/X+리/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소치/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최솟값/X
+SELECT 최소거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최소값/X
 // 최대거리
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대거리/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_거/X+리/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대치/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최댓값/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대값/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대거리/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_거/X+리/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대치/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최댓값/X
-SELECT 최대거리 FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대값/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대거리/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_거/X+리/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대치/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최댓값/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_거/X+리/X_최대값/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대거리/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_거/X+리/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대치/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최댓값/X
+SELECT 최대거리_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_거/X+리/X_최대값/X
 // 질량
 SELECT 질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X
 SELECT 질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무거운/X_정/X+도/X
@@ -522,55 +522,55 @@ SELECT 질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X+가/X_얼마/X+나/X
 SELECT 질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_얼마/X+나/X
 SELECT 질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_얼마/X+나/X
 // 최소질량
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소질량/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_질량/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소치/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최솟값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소질량/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_질량/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소치/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최솟값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소무게/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_무게/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소치/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최솟값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소무게/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_무게/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소치/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최솟값/X
-SELECT 최소질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소질량/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_질량/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소치/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최솟값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최소값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소질량/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_질량/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소치/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최솟값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최소값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소무게/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_무게/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소치/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최솟값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최소값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소무게/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_무게/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소치/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최솟값/X
+SELECT 최소질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최소값/X
 // 최대질량
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대질량/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_질량/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대치/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최댓값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대질량/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_질량/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대치/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최댓값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대무게/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_무게/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대치/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최댓값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대무게/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_무게/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대치/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최댓값/X
-SELECT 최대질량 FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대질량/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_질량/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대치/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최댓값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_질량/X_최대값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대질량/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_질량/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대치/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최댓값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_질량/X_최대값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대무게/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_무게/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대치/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최댓값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S_@2/X_무게/X_최대값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대무게/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_무게/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대치/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최댓값/X
+SELECT 최대질량_KG FROM 별 WHERE 이름='NAME':NAME/S+X/j_무게/X_최대값/X
 // 크기
 SELECT 크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X_기/X
 SELECT 크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X_ㄴ/X_정/X_도/X
@@ -601,79 +601,79 @@ SELECT 크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_얼마/X+나/X
 SELECT 크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_얼마/X+나/X
 SELECT 크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_얼마/X+나/X
 // 최소크기
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소크기/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_크/X+기/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소크기/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_크/X+기/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소반경/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_반경/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소반경/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_반경/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소반지름/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_반지름/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소반지름/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_반지름/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소치/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최솟값/X
-SELECT 최소크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소크기/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_크/X+기/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기 최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소크기/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_크/X+기/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소반경/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_반경/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소반경/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_반경/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소반지름/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최소/X_반지름/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최소값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소반지름/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최소/X_반지름/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소치/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최솟값/X
+SELECT 최소크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최소값/X
 // 최대크기
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대크기/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_크/X+기/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대크기/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_크/X+기/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대반경/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_반경/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대반경/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_반경/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대반지름/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_반지름/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대반지름/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_반지름/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대치/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최댓값/X
-SELECT 최대크기 FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대크기/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_크/X+기/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_크/X+기/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대크기/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_크/X+기/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_크/X+기/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대반경/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_반경/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반경/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대반경/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_반경/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반경/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대반지름/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_최대/X_반지름/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S_@2/X_반지름/X_최대값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대반지름/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_최대/X_반지름/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대치/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최댓값/X
+SELECT 최대크기_KM FROM 별 WHERE 이름='NAME':NAME/S+X/j_반지름/X_최대값/X
 // 밝기
 SELECT 밝기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_밝/X+기/X
 SELECT 밝기 FROM 별 WHERE 이름='NAME':NAME/S_@2/X_밝/X+은/X+정/X+도/X
@@ -1426,79 +1426,79 @@ SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE �
 SELECT 이름 FROM 별 WHERE 최대연주시차=(SELECT MAX(최대연주시차) FROM 별 WHERE 최대연주시차!=-12345 and 타입='star'):연주시차/X_가/X_가장/X_크/X_ㄴ/X_항성/X
 // 여기 가장 먼별 처리 어떻게될지 좀 봐야됨.
 // 최소거리
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소거리=(SELECT MIN(최소거리) FROM 별 WHERE 최소거리!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):가장/X_거리/X_가/X_가깝/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):거리/X_가/X_가장/X_가깝/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소거리_KM=(SELECT MIN(최소거리_KM) FROM 별 WHERE 최소거리_KM!=-12345 and 타입='star'):가장/X_가깝/X_ㄴ/X_항성/X
 // 최대거리
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_먼/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_먼/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대거리=(SELECT MAX(최대거리) FROM 별 WHERE 최대거리!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_먼/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_거리/X_가/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):거리/X_가/X_가장/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_먼/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_멀리/X_있/X_었/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_멀/X_리/X_있/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_가까이/X_있/X_었/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대거리_KM=(SELECT MAX(최대거리_KM) FROM 별 WHERE 최대거리_KM!=-12345 and 타입='star'):가장/X_가까이/X_있/X_는/X_항성/X
 // 최소질량
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_가볍/X_ㄴ/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):질량/X_이/X_가장/X_작/X_은/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_질량/X_이/X_작/X_은/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소질량=(SELECT MIN(최소질량) FROM 별 WHERE 최소질량!=-12345 and 타입='planet'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_가볍/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):질량/X_이/X_가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_질량/X_이/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='star'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='planet'):가장/X_가볍/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='planet'):질량/X_이/X_가장/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='planet'):가장/X_질량/X_이/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='planet'):가장/X_무게/X_가/X_적/X_게/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소질량_KG=(SELECT MIN(최소질량_KG) FROM 별 WHERE 최소질량_KG!=-12345 and 타입='planet'):무게/X_가/X_가장/X_적/X_게/X_나가/X_는/X_행성/X
 // 최대질량
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무거운/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_별/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무거운/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_무거운/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):질량/X_이/X_가장/X_크/X_ㄴ/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_질량/X_이/X_크/X_ㄴ/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대질량=(SELECT MAX(최대질량) FROM 별 WHERE 최대질량!=-12345 and 타입='planet'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_무거운/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_별/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_무거운/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):질량/X_이/X_가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_질량/X_이/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='star'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='planet'):가장/X_무거운/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='planet'):질량/X_이/X_가장/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='planet'):가장/X_질량/X_이/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='planet'):가장/X_무게/X_가/X_많/X_이/X_나가/X_는/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대질량_KG=(SELECT MAX(최대질량_KG) FROM 별 WHERE 최대질량_KG!=-12345 and 타입='planet'):무게/X_가/X_가장/X_많/X_이/X_나가/X_는/X_행성/X
 // 최소크기
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_별/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_작/X_은/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_항성/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):가장/X_작/X_은/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_작/X_은/X_행성/X
-SELECT 이름 FROM 별 WHERE 최소크기=(SELECT MIN(최소크기) FROM 별 WHERE 최소크기!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_별/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_작/X_은/X_항성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='planet'):가장/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_작/X_은/X_행성/X
+SELECT 이름 FROM 별 WHERE 최소크기_KM=(SELECT MIN(최소크기_KM) FROM 별 WHERE 최소크기_KM!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_작/X_은/X_행성/X
 // 최대크기
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_별/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_항성/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):가장/X_크/X_ㄴ/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_행성/X
-SELECT 이름 FROM 별 WHERE 최대크기=(SELECT MAX(최대크기) FROM 별 WHERE 최대크기!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_별/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='star'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_항성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='planet'):가장/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='planet'):가장/X_크/X_기/X_가/X_크/X_ㄴ/X_행성/X
+SELECT 이름 FROM 별 WHERE 최대크기_KM=(SELECT MAX(최대크기_KM) FROM 별 WHERE 최대크기_KM!=-12345 and 타입='planet'):크/X_기/X_가/X_가장/X_크/X_ㄴ/X_행성/X
 // 최소밝기
 SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_어둡/X+ㄴ/X_별/N
 SELECT 이름 FROM 별 WHERE 최소밝기=(SELECT MIN(최소밝기) FROM 별 WHERE 최소밝기!=-12345 and 타입='star'):가장/X_밝/X_기/X_가/X_어둡/X+ㄴ/X_별/N

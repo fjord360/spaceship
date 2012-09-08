@@ -36,23 +36,25 @@
 최대연주시차<=VALUE1:연주시차/X+가/X_VALUE1/I_이하/X
 최대연주시차<=VALUE1:연주시차/X_@2/X_VALUE1/I_이하/X
 // 최소거리
-최소거리>=VALUE1:거리/X+가/X_VALUE1/I_이상/X
-최소거리>=VALUE1:거/V+리/e_@2/X_VALUE1/I_이상/X
+최소거리_KM>=VALUE1:거리/X+가/X_VALUE1/I_이상/X
+최소거리_KM>=VALUE1:거/V+리/e_@2/X_VALUE1/I_이상/X
 // 최대거리
-최대거리<=VALUE1:거리/X+가/X_VALUE1/I_이하/X
-최대거리<=VALUE1:거/V+리/e_@2/X_VALUE1/I_이하/X
+최대거리_KM<=VALUE1:거리/X+가/X_VALUE1/I_이하/X
+최대거리_KM<=VALUE1:거/V+리/e_@2/X_VALUE1/I_이하/X
 // 최소질량
-최소질량>=VALUE1:질량/X+이/X_VALUE1/I_이상/X
-최소질량>=VALUE1:질량/X_@2/X_VALUE1/I_이상/X
+최소질량_KG>=VALUE1:질량/X+이/X_VALUE1/I_이상/X
+최소질량_KG>=VALUE1:질량/X_@2/X_VALUE1/I_이상/X
 // 최대질량
-최대질량<=VALUE1:질량/X+이/X_VALUE1/I_이하/X
-최대질량<=VALUE1:질량/X_@2/X_VALUE1/I_이하/X
+최대질량_KG<=VALUE1:질량/X+이/X_VALUE1/I_이하/X
+최대질량_KG<=VALUE1:질량/X_@2/X_VALUE1/I_이하/X
 // 최소크기
-최소크기>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
-최소크기>=VALUE1:크/V+기/e_@2/X_VALUE1/I_이상/X
+최소크기_KM>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
+최소크기_KM>=VALUE1:크/V+기/e_@2/X_VALUE1/I_이상/X
+최소크기_KM>=VALUE1:크/X+기/X+가/X_VALUE1/I_이상/X
+최소크기_KM>=VALUE1:크/V+기/e_@2/X_VALUE1/I_이상/X
 // 최대크기
-최대크기<=VALUE1:크/X+기/X+가/X_VALUE1/I_이하/X
-최대크기<=VALUE1:크/V+기/e_@2/X_VALUE1/I_이하/X
+최대크기_KM<=VALUE1:크/X+기/X+가/X_VALUE1/I_이하/X
+최대크기_KM<=VALUE1:크/V+기/e_@2/X_VALUE1/I_이하/X
 // 최소밝기
 최소밝기>=VALUE1:밝/X+기/X+가/X_VALUE1/I_이상/X
 최소밝기>=VALUE1:밝/V+기/e_@2/X_VALUE1/I_이상/X
